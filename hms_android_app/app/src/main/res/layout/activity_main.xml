@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hostel Management System"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="40sp" />
+
+        <EditText
+            android:id="@+id/rollNumberEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:ems="13"
+            android:hint="Roll Number"
+            android:textColorHint="#D0D0D0"
+            android:textColor="@android:color/white"
+            android:theme="@style/AppTheme.EditTextHint" />
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rollNumberEditText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:ems="13"
+            android:textColor="@android:color/white"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColorHint="#D0D0D0"
+            android:theme="@style/AppTheme.EditTextHint" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/passwordEditText"
+            android:layout_alignStart="@id/passwordEditText"
+            android:layout_alignLeft="@id/passwordEditText"
+            android:layout_alignEnd="@id/passwordEditText"
+            android:layout_alignRight="@id/passwordEditText"
+            android:layout_marginTop="24dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="Login"
+            android:theme="@style/AppTheme.LoginButton" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
