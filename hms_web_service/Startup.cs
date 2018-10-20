@@ -39,8 +39,6 @@ namespace hms_web_service
             {
                 app.UseHsts();
             }
-
-            app.UseHttpsRedirection();
             app.UseMvc();
         }
     }
