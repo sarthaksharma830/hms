@@ -4,29 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.StudentActivity">
+    android:fitsSystemWindows="true"
+    tools:context=".fragments.StudentProfileFragment">
 
-<!--    <android.support.design.widget.AppBarLayout
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:elevation="0dp"
-        android:theme="@style/AppTheme.NoActionBar.AppBarOverlay">
+        android:background="@android:color/white"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.NoActionBar.AppBarOverlay"
+        app:elevation="0dp">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/student_profile_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@android:color/white"
+            app:layout_collapseMode="pin"
+            app:title=" "
             app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay" />
 
-    </android.support.design.widget.AppBarLayout>-->
+    </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_student" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="3px"
-        android:layout_gravity="bottom"
-        android:background="#E0E0E0" />
+    <include layout="@layout/content_fragment_student_profile" />
 
 </android.support.design.widget.CoordinatorLayout>

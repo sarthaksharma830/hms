@@ -4,35 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@android:color/white"
     tools:context=".activities.MainActivity">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/logoLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="true"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_hotel_1" />
 
         <TextView
-            android:id="@+id/titleTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hostel Management System"
+            android:layout_marginTop="16dp"
+            android:text="Hostelity"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="40sp" />
+            android:textSize="48sp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/loginForm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Hostelity"
+            android:id="@+id/appTitle"
+            android:textAlignment="center"
+            android:textSize="48sp" />
 
         <EditText
             android:id="@+id/rollNumberEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/titleTextView"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="24dp"
             android:ems="13"
+            android:layout_below="@id/appTitle"
             android:hint="Roll Number"
-            android:textColor="@android:color/white"
-            android:textColorHint="#D0D0D0"
-            android:theme="@style/AppTheme.EditTextHint" />
+            android:textColor="@android:color/black"
+            android:textColorHint="#D0D0D0" />
 
         <EditText
             android:id="@+id/passwordEditText"
@@ -44,9 +73,8 @@
             android:ems="13"
             android:hint="Password"
             android:inputType="textPassword"
-            android:textColor="@android:color/white"
-            android:textColorHint="#D0D0D0"
-            android:theme="@style/AppTheme.EditTextHint" />
+            android:textColor="@android:color/black"
+            android:textColorHint="#D0D0D0" />
 
         <Button
             android:id="@+id/loginButton"
@@ -61,7 +89,7 @@
             android:clickable="true"
             android:focusable="true"
             android:text="Login"
-            android:theme="@style/AppTheme.LoginButton" />
+            android:theme="@style/Widget.MaterialComponents.Button.UnelevatedButton" />
 
     </RelativeLayout>
 
