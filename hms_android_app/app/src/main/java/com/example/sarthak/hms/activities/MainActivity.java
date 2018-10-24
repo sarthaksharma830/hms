@@ -1,6 +1,7 @@
 package com.example.sarthak.hms.activities;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sarthak.hms.R;
@@ -32,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
         final LinearLayout logoLayout = findViewById(R.id.logoLayout);
         final RelativeLayout loginForm = findViewById(R.id.loginForm);
+        TextView appTitleBefore = findViewById(R.id.appTitleBefore);
+        appTitleBefore.setTypeface(Typeface.createFromAsset(getAssets(), "font_regular.otf"));
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -44,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
                         final EditText rollNumberEditText = findViewById(R.id.rollNumberEditText);
                         final EditText passwordEditText = findViewById(R.id.passwordEditText);
+                        TextView appTitleAfter = findViewById(R.id.appTitleAfter);
+                        appTitleAfter.setTypeface(Typeface.createFromAsset(getAssets(), "font_regular.otf"));
                         Button loginButton = findViewById(R.id.loginButton);
 
                         loginButton.setOnClickListener(new View.OnClickListener() {
