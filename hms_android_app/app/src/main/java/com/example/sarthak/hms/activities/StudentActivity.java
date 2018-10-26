@@ -1,6 +1,7 @@
 package com.example.sarthak.hms.activities;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -12,12 +13,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.sarthak.hms.R;
+import com.example.sarthak.hms.fragments.ComplaintsListFragment;
 import com.example.sarthak.hms.fragments.StudentProfileFragment;
 
 public class StudentActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     FragmentManager fragmentManager;
+    private final Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,14 +34,19 @@ public class StudentActivity extends AppCompatActivity
 
         if (savedInstanceState == null) {
             changeFragments(new StudentProfileFragment());
-            navigationView.setCheckedItem(R.id.nav_home);
+            navigationView.setCheckedItem(R.id.nav_profile);
         }
     }
 
-    private void changeFragments(Fragment fragment) {
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, fragment);
-        fragmentTransaction.commit();
+    private void changeFragments(final Fragment fragment) {
+        Runnable runnable = new Runnable() {
+            public void run() {
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, fragment);
+                fragmentTransaction.commit();
+            }
+        };
+        handler.postDelayed(runnable, 500);
     }
 
     @Override
@@ -79,10 +87,10 @@ public class StudentActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
+        if (id == R.id.nav_profile) {
+            changeFragments(new StudentProfileFragment());
+        } else if (id == R.id.nav_complaints) {
+            changeFragments(new ComplaintsListFragment());
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {

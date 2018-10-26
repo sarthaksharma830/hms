@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.chip.Chip xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.MaterialComponents.Chip.Choice"
+    android:layout_width="wrap_content"
+    android:id="@+id/title"
+    android:layout_height="wrap_content"
+    android:text="Door Handle Broken"
+    android:layout_marginRight="8dp"
+    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+    app:chipBackgroundColor="@android:color/white"
+    app:chipStrokeColor="@color/green"
+    app:chipStrokeWidth="1dp" />

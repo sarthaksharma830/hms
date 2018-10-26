@@ -12,13 +12,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.sarthak.hms.R;
+import com.example.sarthak.hms.callbacks.ComplaintsListRecyclerViewOnItemClickCallback;
 
 public class RecentComplaintsListAdapter extends RecyclerView.Adapter<RecentComplaintsListAdapter.MyViewHolder> {
 
     private Context context;
+    private ComplaintsListRecyclerViewOnItemClickCallback onItemClickCallback;
 
     public RecentComplaintsListAdapter(Context context) {
         this.context = context;
+    }
+
+    public void setOnItemClickCallback(ComplaintsListRecyclerViewOnItemClickCallback onItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback;
     }
 
     @NonNull
@@ -61,7 +67,7 @@ public class RecentComplaintsListAdapter extends RecyclerView.Adapter<RecentComp
                 myViewHolder.statusTextView.setText("Scheduled");
                 myViewHolder.datetimeTextView.setText("7:00 PM • 20 October, 2018");
                 myViewHolder.statusTextView.setTextColor(ContextCompat.getColor(context, R.color.orange));
-                category = VectorDrawableCompat.create(context.getResources(), R.drawable.ic_socket, context.getTheme());
+                category = VectorDrawableCompat.create(context.getResources(), R.drawable.ic_clean, context.getTheme());
                 star = VectorDrawableCompat.create(context.getResources(), R.drawable.ic_star_filled, context.getTheme());
                 myViewHolder.categoryIcon.setImageDrawable(category);
                 myViewHolder.starIcon.setImageDrawable(star);
@@ -84,9 +90,10 @@ public class RecentComplaintsListAdapter extends RecyclerView.Adapter<RecentComp
         return 5;
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
+    class MyViewHolder extends RecyclerView.ViewHolder {
         TextView titleTextView, statusTextView, datetimeTextView;
         ImageView categoryIcon, starIcon;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             titleTextView = itemView.findViewById(R.id.title);
@@ -94,6 +101,15 @@ public class RecentComplaintsListAdapter extends RecyclerView.Adapter<RecentComp
             datetimeTextView = itemView.findViewById(R.id.datetime);
             categoryIcon = itemView.findViewById(R.id.categoryIcon);
             starIcon = itemView.findViewById(R.id.star);
+
+            if (onItemClickCallback != null) {
+                itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        onItemClickCallback.onClick();
+                    }
+                });
+            }
         }
     }
 }
