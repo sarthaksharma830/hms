@@ -79,7 +79,7 @@
             android:textColor="@android:color/black"
             android:textColorHint="#D0D0D0" />
 
-        <Button
+        <android.support.design.button.MaterialButton
             android:id="@+id/loginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

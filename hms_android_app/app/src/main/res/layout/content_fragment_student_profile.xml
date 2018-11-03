@@ -2,6 +2,7 @@
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:id="@+id/studentProfileNsv"
     android:layout_height="wrap_content"
     android:fitsSystemWindows="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -18,9 +19,9 @@
             <com.github.akashandroid90.imageletter.MaterialLetterIcon
                 android:layout_width="112dp"
                 android:layout_alignParentTop="true"
-                app:shape_color="#FAD2CF"
+                app:shape_color="#EE675C"
                 app:letter="S"
-                app:letter_color="#BD4444"
+                app:letter_color="#FFFFFF"
                 app:letter_size="48"
                 android:layout_centerHorizontal="true"
                 android:layout_height="112dp" />
@@ -29,6 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:id="@+id/studentName"
                 android:layout_marginLeft="16dp"
                 android:layout_marginBottom="20dp"
                 android:text="Sarthak Sharma"

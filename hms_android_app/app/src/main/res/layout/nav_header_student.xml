@@ -17,9 +17,9 @@
         android:layout_height="72dp"
         android:paddingTop="40dp"
         app:letter="S"
-        app:letter_color="#BD4444"
+        app:letter_color="#FFFFFF"
         app:letter_size="32"
-        app:shape_color="#FAD2CF" />
+        app:shape_color="#EE675C" />
 
     <TextView
         android:layout_width="match_parent"

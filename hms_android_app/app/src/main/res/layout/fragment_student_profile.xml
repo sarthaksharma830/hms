@@ -21,7 +21,15 @@
             android:layout_height="?attr/actionBarSize"
             app:layout_collapseMode="pin"
             app:title=" "
+            app:titleTextAppearance="@style/MyTitleTextAppearance"
             app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay" />
+
+        <View
+            android:layout_width="match_parent"
+            android:id="@+id/elevation"
+            android:visibility="invisible"
+            android:layout_height="1dp"
+            android:background="#E0E0E0" />
 
     </android.support.design.widget.AppBarLayout>
 

@@ -1,12 +1,15 @@
 package com.example.sarthak.hms.fragments;
 
 import android.content.Intent;
+import android.graphics.Rect;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,6 +19,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v7.widget.Toolbar;
 import android.widget.RelativeLayout;
+import android.widget.TextSwitcher;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ViewSwitcher;
 
 import com.example.sarthak.hms.R;
 import com.example.sarthak.hms.activities.ComplaintDetailActivity;
@@ -38,7 +45,7 @@ public class StudentProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_student_profile, container, false);
-        Toolbar toolbar = rootView.findViewById(R.id.student_profile_toolbar);
+        final Toolbar toolbar = rootView.findViewById(R.id.student_profile_toolbar);
         RelativeLayout seeMoreRow = rootView.findViewById(R.id.seeMoreRow);
         DrawerLayout drawer = getActivity().findViewById(R.id.drawer_layout);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
@@ -46,6 +53,28 @@ public class StudentProfileFragment extends Fragment {
                 getActivity(), drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        final TextView studentNameTextView = rootView.findViewById(R.id.studentName);
+        final NestedScrollView nestedScrollView = rootView.findViewById(R.id.studentProfileNsv);
+        final View elevation = rootView.findViewById(R.id.elevation);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            nestedScrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+                @Override
+                public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                    if (scrollY == 0) {
+                        elevation.setVisibility(View.INVISIBLE);
+                    } else {
+                        elevation.setVisibility(View.VISIBLE);
+                    }
+                    Rect scrollBounds = new Rect();
+                    if (studentNameTextView.getLocalVisibleRect(scrollBounds)) {
+                        toolbar.setTitle(" ");
+                    } else {
+                        toolbar.setTitle("Sarthak Sharma");
+                    }
+                }
+            });
+        }
 
         RecyclerView recentComplaintsList = rootView.findViewById(R.id.recentComplaintsList);
         recentComplaintsList.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));

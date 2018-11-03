@@ -38,4 +38,9 @@
 
     <style name="AppTheme.NoActionBar.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
 
+    <style name="MyTitleTextAppearance" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
 </resources>
