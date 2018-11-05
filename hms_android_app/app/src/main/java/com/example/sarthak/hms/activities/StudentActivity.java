@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.sarthak.hms.R;
+import com.example.sarthak.hms.fragments.AppointmentsFragment;
 import com.example.sarthak.hms.fragments.ComplaintsListFragment;
 import com.example.sarthak.hms.fragments.StudentProfileFragment;
 
@@ -91,10 +92,8 @@ public class StudentActivity extends AppCompatActivity
             changeFragments(new StudentProfileFragment());
         } else if (id == R.id.nav_complaints) {
             changeFragments(new ComplaintsListFragment());
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
+        } else if (id == R.id.nav_appointments) {
+            changeFragments(new AppointmentsFragment());
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {

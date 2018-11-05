@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:background="@android:color/white"
         android:fitsSystemWindows="true"
+        android:id="@+id/complaintsListAppBar"
         android:theme="@style/AppTheme.NoActionBar.AppBarOverlay"
         app:elevation="0dp">
 
@@ -20,6 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:layout_collapseMode="pin"
+            app:titleTextAppearance="@style/MyTitleTextAppearance"
             app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay"
             app:title="Complaints" />
 

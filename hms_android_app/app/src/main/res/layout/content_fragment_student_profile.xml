@@ -5,6 +5,7 @@
     android:id="@+id/studentProfileNsv"
     android:layout_height="wrap_content"
     android:fitsSystemWindows="true"
+    android:overScrollMode="never"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <LinearLayout

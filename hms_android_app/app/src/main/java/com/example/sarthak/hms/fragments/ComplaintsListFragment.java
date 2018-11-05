@@ -2,7 +2,10 @@ package com.example.sarthak.hms.fragments;
 
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -47,8 +50,9 @@ public class ComplaintsListFragment extends Fragment {
         toggle.syncState();
 
         RecyclerView complaintsListRecyclerView = rootView.findViewById(R.id.complaintsListRecyclerView);
-        complaintsListRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        RecentComplaintsListAdapter adapter = new RecentComplaintsListAdapter(getContext());
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        complaintsListRecyclerView.setLayoutManager(layoutManager);
+        RecentComplaintsListAdapter adapter = new RecentComplaintsListAdapter(getContext(), 10);
         adapter.setOnItemClickCallback(new ComplaintsListRecyclerViewOnItemClickCallback() {
             @Override
             public void onClick() {
@@ -64,6 +68,20 @@ public class ComplaintsListFragment extends Fragment {
                 startActivity(new Intent(getContext(), NewComplaintActivity.class));
             }
         });
+        final AppBarLayout appBarLayout = rootView.findViewById(R.id.complaintsListAppBar);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            complaintsListRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+                @Override
+                public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                    if (layoutManager.findFirstCompletelyVisibleItemPosition() == 0) {
+                        appBarLayout.setElevation(0.0f);
+                    } else {
+                        appBarLayout.setElevation(10.0f);
+                    }
+                    super.onScrolled(recyclerView, dx, dy);
+                }
+            });
+        }
 
         return rootView;
     }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/complaintDetailNsv"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
@@ -9,16 +10,17 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:descendantFocusability="blocksDescendants"
         android:layout_height="match_parent"
+        android:descendantFocusability="blocksDescendants"
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/complaintTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             android:text="Door Handle Broken"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             android:textColor="#212121"
             android:textSize="23sp" />
 
@@ -43,6 +45,80 @@
 
         <View
             android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#E0E0E0" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:letterSpacing="0.05"
+            android:text="APPOINTMENT"
+            android:textColor="#212121"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:text="Monday, 8th October, 2018"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_red"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="8dp"
+                    android:text="5:00 PM"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:text="to"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    android:textColor="#212121" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/border_green"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="8dp"
+                    android:text="6:00 PM"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginTop="16dp"
             android:layout_height="0.5dp"
             android:background="#E0E0E0" />
 
@@ -192,14 +268,14 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:text="@string/sample_complaint_description"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginBottom="6dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|start" />
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="6dp"
+            android:text="@string/sample_complaint_description"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
 
         <View
             android:layout_width="match_parent"
@@ -221,9 +297,9 @@
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/complaintPicturesRecyclerView"
-            android:nestedScrollingEnabled="false"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false" />
 
     </LinearLayout>
 

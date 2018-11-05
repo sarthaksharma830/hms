@@ -28,8 +28,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_mode_edit_black_24dp" />
-                            <entry key="sourceFile" value="C:\Users\Sarthak\work\hms\icons\docs.svg" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="outputName" value="ic_time" />
+                            <entry key="sourceFile" value="C:\Users\Sarthak\work\hms\icons\time.svg" />
                           </map>
                         </option>
                       </PersistentState>

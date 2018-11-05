@@ -4,39 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".fragments.StudentProfileFragment">
+    tools:context=".fragments.AppointmentsFragment">
 
     <android.support.design.widget.AppBarLayout
-        android:id="@+id/profileAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/appointmentsAppBar"
         android:background="@android:color/white"
-        android:fitsSystemWindows="true"
         android:theme="@style/AppTheme.NoActionBar.AppBarOverlay"
         app:elevation="0dp">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/student_profile_toolbar"
+            android:id="@+id/appointments_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay"
-            android:animateLayoutChanges="true">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:id="@+id/profileToolbarTitle"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="16dp"
-                android:textAppearance="@style/MyTitleTextAppearance"
-                android:text="Sarthak Sharma"
-                android:visibility="invisible"
-                android:layout_height="wrap_content" />
-
-        </android.support.v7.widget.Toolbar>
+            app:title="Appointments"
+            app:titleTextAppearance="@style/MyTitleTextAppearance" />
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_fragment_student_profile" />
+    <include layout="@layout/content_fragment_appointments" />
 
 </android.support.design.widget.CoordinatorLayout>

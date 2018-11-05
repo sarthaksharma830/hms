@@ -17,10 +17,12 @@ import com.example.sarthak.hms.callbacks.ComplaintsListRecyclerViewOnItemClickCa
 public class RecentComplaintsListAdapter extends RecyclerView.Adapter<RecentComplaintsListAdapter.MyViewHolder> {
 
     private Context context;
+    private int count;
     private ComplaintsListRecyclerViewOnItemClickCallback onItemClickCallback;
 
-    public RecentComplaintsListAdapter(Context context) {
+    public RecentComplaintsListAdapter(Context context, int count) {
         this.context = context;
+        this.count = count;
     }
 
     public void setOnItemClickCallback(ComplaintsListRecyclerViewOnItemClickCallback onItemClickCallback) {
@@ -87,7 +89,7 @@ public class RecentComplaintsListAdapter extends RecyclerView.Adapter<RecentComp
 
     @Override
     public int getItemCount() {
-        return 5;
+        return count;
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
