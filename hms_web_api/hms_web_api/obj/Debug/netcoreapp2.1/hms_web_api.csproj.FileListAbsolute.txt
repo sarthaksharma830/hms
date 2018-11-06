@@ -1,0 +1,14 @@
+C:\Users\Sarthak\work\hms\hms_web_api\hms_web_api\bin\Debug\netcoreapp2.1\hms_web_api.deps.json
+C:\Users\Sarthak\work\hms\hms_web_api\hms_web_api\bin\Debug\netcoreapp2.1\hms_web_api.runtimeconfig.json
+C:\Users\Sarthak\work\hms\hms_web_api\hms_web_api\bin\Debug\netcoreapp2.1\hms_web_api.runtimeconfig.dev.json
+C:\Users\Sarthak\work\hms\hms_web_api\hms_web_api\bin\Debug\netcoreapp2.1\hms_web_api.dll
+C:\Users\Sarthak\work\hms\hms_web_api\hms_web_api\bin\Debug\netcoreapp2.1\hms_web_api.pdb
+C:\Users\Sarthak\work\hms\hms_web_api\hms_web_api\obj\Debug\netcoreapp2.1\hms_web_api.csprojAssemblyReference.cache
+C:\Users\Sarthak\work\hms\hms_web_api\hms_web_api\obj\Debug\netcoreapp2.1\hms_web_api.csproj.CoreCompileInputs.cache
+C:\Users\Sarthak\work\hms\hms_web_api\hms_web_api\obj\Debug\netcoreapp2.1\hms_web_api.RazorAssemblyInfo.cache
+C:\Users\Sarthak\work\hms\hms_web_api\hms_web_api\obj\Debug\netcoreapp2.1\hms_web_api.RazorAssemblyInfo.cs
+C:\Users\Sarthak\work\hms\hms_web_api\hms_web_api\obj\Debug\netcoreapp2.1\hms_web_api.AssemblyInfoInputs.cache
+C:\Users\Sarthak\work\hms\hms_web_api\hms_web_api\obj\Debug\netcoreapp2.1\hms_web_api.AssemblyInfo.cs
+C:\Users\Sarthak\work\hms\hms_web_api\hms_web_api\obj\Debug\netcoreapp2.1\hms_web_api.RazorTargetAssemblyInfo.cache
+C:\Users\Sarthak\work\hms\hms_web_api\hms_web_api\obj\Debug\netcoreapp2.1\hms_web_api.dll
+C:\Users\Sarthak\work\hms\hms_web_api\hms_web_api\obj\Debug\netcoreapp2.1\hms_web_api.pdb

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Sarthak\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Sarthak\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_hms_web_api.1029588430.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Sarthak\work\hms\hms_web_api" t="IncludeFlat">
+      <e p="hms_web_api" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="Bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="AuthenticationController.cs" t="Include" />
+          <e p="ComplaintsController.cs" t="Include" />
+          <e p="StudentsController.cs" t="Include" />
+        </e>
+        <e p="DAO" t="Include">
+          <e p="Impl" t="Include">
+            <e p="AuthenticationDAO.cs" t="Include" />
+            <e p="ComplaintsDao.cs" t="Include" />
+            <e p="StudentsDao.cs" t="Include" />
+          </e>
+          <e p="Interfaces" t="Include">
+            <e p="IAuthenticationDao.cs" t="Include" />
+            <e p="IComplaintsDao.cs" t="Include" />
+            <e p="IStudentsDao.cs" t="Include" />
+          </e>
+          <e p="SqlConnectionManager.cs" t="Include" />
+        </e>
+        <e p="hms_web_api.csproj" t="IncludeRecursive" />
+        <e p="Models" t="Include">
+          <e p="Complaint.cs" t="Include" />
+          <e p="ComplaintCategory.cs" t="Include" />
+          <e p="ComplaintStatus.cs" t="Include" />
+          <e p="Credential.cs" t="Include" />
+          <e p="Hostel.cs" t="Include" />
+          <e p="LoginResult.cs" t="Include" />
+          <e p="Student.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="hms_web_api.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="wwwroot" t="Include" />
+      </e>
+      <e p="hms_web_api.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

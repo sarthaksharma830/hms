@@ -96,7 +96,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginLeft="16dp"
             android:letterSpacing="0.05"
-            android:text="DATE AND TIME PREFERENCE"
+            android:text="APPOINTMENT PREFERENCE"
             android:textColor="#212121"
             android:textSize="11sp"
             android:textStyle="bold" />

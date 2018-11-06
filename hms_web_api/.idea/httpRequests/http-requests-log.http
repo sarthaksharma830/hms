@@ -1,0 +1,127 @@
+GET http://localhost:5000/api/complaints?sid=1
+
+<> 2018-11-07T014123.500.html
+
+###
+
+GET http://localhost:5000/api/complaints?sid=1
+
+<> 2018-11-07T014115.500.html
+
+###
+
+GET http://localhost:5000/api/complaints?sid=1
+
+<> 2018-11-07T014102.200.json
+
+###
+
+GET http://localhost:5000/api/complaints?sid=1
+
+<> 2018-11-07T014004.200.json
+
+###
+
+GET http://localhost:5000/api/complaints?sid=1
+
+###
+
+GET http://localhost:5000/api/complaints?sid=1
+
+<> 2018-11-07T013404.200.json
+
+###
+
+POST http://localhost:5000/api/authentication/login
+Content-Type: application/json
+
+{
+  "rollno": "101783037",
+  "password": "test"
+}
+
+<> 2018-11-06T114232.200.json
+
+###
+
+POST http://localhost:5000/api/authentication/login
+
+Content-Type: application/json
+
+{
+  "rollno": "101783037",
+  "password": "test"
+}
+
+###
+
+GET http://localhost:5000/api/student/101783037
+
+<> 2018-11-06T114215.200.json
+
+###
+
+POST http://localhost:5000/api/authentication/login
+
+Content-Type: application/json
+
+{
+  "rollno": "101783037",
+  "password": "test"
+}
+
+###
+
+POST http://localhost:5000/api/authentication/login
+
+Content-Type: application/json
+
+{
+  "rollno": "101783037",
+  "password": "test"
+}
+
+###
+
+POST http://localhost:5000/api/authentication/login
+
+Content-Type: application/json
+
+{
+  "rollno": "101783037",
+  "password": "test"
+}
+
+###
+
+POST http://localhost:5000/api/student/101783037
+Content-Type: application/json
+
+{
+  "rollno": "101783037",
+  "password": "test"
+}
+
+###
+
+GET https://httpbin.org/get?show_env=1
+Accept: application/json
+
+<> 2018-11-06T113800.200.json
+
+###
+
+GET https://httpbin.org/get?show_env=1
+Accept: application/json
+
+<> 2018-11-06T113746.200.json
+
+###
+
+GET https://httpbin.org/ip
+Accept: application/json
+
+<> 2018-11-06T113734.200.json
+
+###
+
