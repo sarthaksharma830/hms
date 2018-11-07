@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80e044b5-927f-4c9b-8f2a-d5a1b547b9e2" name="Default Changelist" comment="" />
+    <list default="true" id="80e044b5-927f-4c9b-8f2a-d5a1b547b9e2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../database/hms_data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../database/hms_data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/hms_procedures.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../database/hms_procedures.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/hms_schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../database/hms_schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/activities/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/callbacks/LoginCallback.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/fragments/StudentProfileFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/fragments/StudentProfileFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/models/Credential.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/models/Credential.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/retrofit/ILoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/retrofit/ILoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/retrofit/RetrofitProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/retrofit/RetrofitProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/services/LoginService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/content_fragment_student_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/content_fragment_student_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/fragment_student_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/fragment_student_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.hms_web_api/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.hms_web_api/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.hms_web_api/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.hms_web_api/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hms_web_api/Controllers/ComplaintsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/hms_web_api/Controllers/ComplaintsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hms_web_api/Dao/Impl/ComplaintsDao.cs" beforeDir="false" afterPath="$PROJECT_DIR$/hms_web_api/Dao/Impl/ComplaintsDao.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hms_web_api/Dao/Interfaces/IComplaintsDao.cs" beforeDir="false" afterPath="$PROJECT_DIR$/hms_web_api/Dao/Interfaces/IComplaintsDao.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hms_web_api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/hms_web_api/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hms_web_api/obj/Debug/netcoreapp2.1/hms_web_api.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/hms_web_api/obj/Debug/netcoreapp2.1/hms_web_api.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hms_web_api/obj/Debug/netcoreapp2.1/hms_web_api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/hms_web_api/obj/Debug/netcoreapp2.1/hms_web_api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hms_web_api/obj/Debug/netcoreapp2.1/hms_web_api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/hms_web_api/obj/Debug/netcoreapp2.1/hms_web_api.pdb" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,15 +38,16 @@
     <session id="-942767016">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.53" value="1" />
           <entry key="project.open.time.81" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cs" value="26" />
+          <entry key="cs" value="41" />
           <entry key="editorconfig" value="1" />
           <entry key="http" value="9" />
           <entry key="json" value="1" />
@@ -29,7 +55,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="26" />
+          <entry key="C#" value="41" />
           <entry key="HTTP Request" value="5" />
           <entry key="JSON" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
@@ -38,94 +64,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="5573" />
+          <entry key="cs" value="6924" />
           <entry key="editorconfig" value="91" />
-          <entry key="http" value="257" />
+          <entry key="http" value="411" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="5573" />
+          <entry key="C#" value="6924" />
           <entry key="JSON" value="6" />
           <entry key="PLAIN_TEXT" value="91" />
-          <entry key="Scratch" value="251" />
+          <entry key="Scratch" value="405" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hms_web_api/Controllers/AuthenticationController.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-              <folding>
-                <marker date="1541527109794" expanded="false" signature="6:182" ph="..." />
-                <marker date="1541527109794" expanded="true" signature="218:619" ph="{...}" />
-                <marker date="1541527109794" expanded="true" signature="332:616" ph="{...}" />
-                <marker date="1541527109794" expanded="true" signature="481:609" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hms_web_api/Controllers/StudentsController.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-              <folding>
-                <marker date="1541529455964" expanded="false" signature="6:182" ph="..." />
-                <marker date="1541529455964" expanded="true" signature="218:523" ph="{...}" />
-                <marker date="1541529455964" expanded="true" signature="326:520" ph="{...}" />
-                <marker date="1541529455964" expanded="true" signature="415:513" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hms_web_api/Controllers/ComplaintsController.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-              <folding>
-                <marker date="1541532997368" expanded="true" signature="6:119" ph="..." />
-                <marker date="1541532997368" expanded="true" signature="155:496" ph="{...}" />
-                <marker date="1541532997368" expanded="true" signature="248:493" ph="{...}" />
-                <marker date="1541532997368" expanded="true" signature="372:478" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hms_web_api/Dao/Impl/ComplaintsDao.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
-              <caret line="74" column="61" selection-start-line="74" selection-start-column="61" selection-end-line="74" selection-end-column="61" />
-              <folding>
-                <marker date="1541536465917" expanded="true" signature="6:229" ph="..." />
-                <marker date="1541536465917" expanded="true" signature="262:3812" ph="{...}" />
-                <marker date="1541536465917" expanded="true" signature="313:3809" ph="{...}" />
-                <marker date="1541536465917" expanded="true" signature="379:3802" ph="{...}" />
-                <marker date="1541536465917" expanded="true" signature="509:3792" ph="{...}" />
-                <marker date="1541536465917" expanded="true" signature="854:3742" ph="{...}" />
-                <marker date="1541536465917" expanded="true" signature="900:1785" ph="{...}" />
-                <marker date="1541536465917" expanded="true" signature="1194:1470" ph="{...}" />
-                <marker date="1541536465917" expanded="true" signature="1897:2344" ph="{...}" />
-                <marker date="1541536465917" expanded="true" signature="2519:2758" ph="{...}" />
-                <marker date="1541536465917" expanded="true" signature="2758:2867" ph="{...}" />
-                <marker date="1541536465917" expanded="true" signature="3143:3253" ph="{...}" />
-                <marker date="1541536465917" expanded="true" signature="3253:3366" ph="{...}" />
-                <marker date="1541536465917" expanded="true" signature="3467:3573" ph="{...}" />
-                <marker date="1541536465917" expanded="true" signature="3573:3684" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hms_web_api/Models/Complaint.cs">
           <provider selected="true" editor-type-id="text-editor">
@@ -140,15 +95,81 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hms_web_api/Controllers/ComplaintsController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+              <folding>
+                <marker date="1541623668720" expanded="true" signature="6:166" ph="..." />
+                <marker date="1541623668720" expanded="true" signature="202:574" ph="{...}" />
+                <marker date="1541623668720" expanded="true" signature="295:571" ph="{...}" />
+                <marker date="1541623668720" expanded="true" signature="445:556" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hms_web_api/Dao/Impl/ComplaintsDao.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+              <folding>
+                <marker date="1541623668595" expanded="false" signature="6:229" ph="..." />
+                <marker date="1541623668595" expanded="true" signature="262:3889" ph="{...}" />
+                <marker date="1541623668595" expanded="true" signature="313:3886" ph="{...}" />
+                <marker date="1541623668595" expanded="true" signature="388:3879" ph="{...}" />
+                <marker date="1541623668595" expanded="true" signature="518:3869" ph="{...}" />
+                <marker date="1541623668595" expanded="true" signature="931:3819" ph="{...}" />
+                <marker date="1541623668595" expanded="true" signature="977:1862" ph="{...}" />
+                <marker date="1541623668595" expanded="true" signature="1271:1547" ph="{...}" />
+                <marker date="1541623668595" expanded="true" signature="1974:2421" ph="{...}" />
+                <marker date="1541623668595" expanded="true" signature="2596:2835" ph="{...}" />
+                <marker date="1541623668595" expanded="true" signature="2835:2944" ph="{...}" />
+                <marker date="1541623668595" expanded="true" signature="3220:3330" ph="{...}" />
+                <marker date="1541623668595" expanded="true" signature="3330:3443" ph="{...}" />
+                <marker date="1541623668595" expanded="true" signature="3544:3650" ph="{...}" />
+                <marker date="1541623668595" expanded="true" signature="3650:3761" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hms_web_api/Dao/SqlConnectionManager.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="11" column="112" selection-start-line="11" selection-start-column="112" selection-end-line="11" selection-end-column="112" />
+              <folding>
+                <marker date="1541495114587" expanded="false" signature="6:42" ph="..." />
+                <marker date="1541495114587" expanded="true" signature="69:472" ph="{...}" />
+                <marker date="1541495114587" expanded="true" signature="116:470" ph="{...}" />
+                <marker date="1541495114587" expanded="true" signature="177:464" ph="{...}" />
+                <marker date="1541495114587" expanded="true" signature="250:378" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.http">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="56" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hms_web_api/Dao/Interfaces/IComplaintsDao.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+            <state relative-caret-position="90">
+              <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
               <folding>
-                <marker date="1541529778034" expanded="true" signature="6:59" ph="..." />
-                <marker date="1541529778034" expanded="true" signature="98:206" ph="{...}" />
-                <marker date="1541529778034" expanded="true" signature="137:203" ph="{...}" />
+                <marker date="1541623668642" expanded="false" signature="6:59" ph="..." />
+                <marker date="1541623668642" expanded="true" signature="98:215" ph="{...}" />
+                <marker date="1541623668642" expanded="true" signature="137:212" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -168,24 +189,51 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.http">
+        <entry file="file://$PROJECT_DIR$/hms_web_api/Models/Student.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+            <state relative-caret-position="165">
+              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+              <folding>
+                <marker date="1541517780182" expanded="true" signature="55:415" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2018-11-07T013404.200.json">
+        <entry file="file://$PROJECT_DIR$/hms_web_api/Models/Hostel.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+            <state relative-caret-position="90">
+              <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+              <folding>
+                <marker date="1541518057252" expanded="true" signature="28:233" ph="{...}" />
+                <marker date="1541518057252" expanded="true" signature="54:231" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hms_web_api/Program.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="22" column="81" selection-start-line="22" selection-start-column="81" selection-end-line="22" selection-end-column="81" />
+              <folding>
+                <marker date="1541596532927" expanded="false" signature="6:283" ph="..." />
+                <marker date="1541596532927" expanded="true" signature="306:715" ph="{...}" />
+                <marker date="1541596532927" expanded="true" signature="333:713" ph="{...}" />
+                <marker date="1541596532927" expanded="true" signature="386:460" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Console.</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -203,7 +251,11 @@
     <setting file="file://$PROJECT_DIR$/hms_web_api/Models/Complaint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/hms_web_api/Controllers/ComplaintsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/hms_web_api/Models/Credential.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/hms_web_api/Dao/Impl/AppointmentsDao.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/hms_web_api/Dao/Interfaces/IAppointmentsDao.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/hms_web_api/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/hms_web_api/Models/Appointment.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/hms_web_api/Controllers/AppointmentsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/hms_web_api/Models/Student.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/hms_web_api/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/hms_web_api/Models/Hostel.cs" root0="FORCE_HIGHLIGHTING" />
@@ -220,13 +272,11 @@
         <option value="$PROJECT_DIR$/hms_web_api/Dao/ConnectionManager.cs" />
         <option value="$PROJECT_DIR$/hms_web_api/Dao/SqlConnectionManager.cs" />
         <option value="$PROJECT_DIR$/.editorconfig" />
-        <option value="$PROJECT_DIR$/hms_web_api/Startup.cs" />
         <option value="$PROJECT_DIR$/hms_web_api/Models/LoginResult.cs" />
         <option value="$PROJECT_DIR$/hms_web_api/Dao/Interfaces/IAuthenticationDao.cs" />
         <option value="$PROJECT_DIR$/hms_web_api/Dao/Impl/AuthenticationDao.cs" />
         <option value="$PROJECT_DIR$/hms_web_api/Dao/Interfaces/IStudentDao.cs" />
         <option value="$PROJECT_DIR$/hms_web_api/Models/Hostel.cs" />
-        <option value="$PROJECT_DIR$/hms_web_api/Program.cs" />
         <option value="$PROJECT_DIR$/hms_web_api/Models/Student.cs" />
         <option value="$PROJECT_DIR$/hms_web_api/Dao/Impl/StudentDao.cs" />
         <option value="$PROJECT_DIR$/hms_web_api/Models/Credential.cs" />
@@ -236,11 +286,17 @@
         <option value="$PROJECT_DIR$/hms_web_api/Controllers/ComplaintController.cs" />
         <option value="$PROJECT_DIR$/hms_web_api/Controllers/StudentController.cs" />
         <option value="$PROJECT_DIR$/hms_web_api/Controllers/StudentsController.cs" />
+        <option value="$PROJECT_DIR$/hms_web_api/Models/Complaint.cs" />
+        <option value="$PROJECT_DIR$/hms_web_api/Models/Appointment.cs" />
+        <option value="$PROJECT_DIR$/hms_web_api/Controllers/AppointmentsController.cs" />
+        <option value="$PROJECT_DIR$/hms_web_api/Dao/Interfaces/IAppointmentsDao.cs" />
+        <option value="$PROJECT_DIR$/hms_web_api/Dao/Impl/AppointmentsDao.cs" />
+        <option value="$PROJECT_DIR$/hms_web_api/Startup.cs" />
+        <option value="$PROJECT_DIR$/hms_web_api/Program.cs" />
+        <option value="$PROJECT_DIR$/hms_web_api/Dao/Impl/ComplaintsDao.cs" />
         <option value="$PROJECT_DIR$/hms_web_api/Dao/Interfaces/IComplaintsDao.cs" />
         <option value="$PROJECT_DIR$/hms_web_api/Controllers/ComplaintsController.cs" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.http" />
-        <option value="$PROJECT_DIR$/hms_web_api/Models/Complaint.cs" />
-        <option value="$PROJECT_DIR$/hms_web_api/Dao/Impl/ComplaintsDao.cs" />
       </list>
     </option>
   </component>
@@ -251,7 +307,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -263,22 +319,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="FileSystemExplorer">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="hms_web_api" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="hms_web_api" type="34e6ba20:FileSystemExplorerNode" />
-              <item name=".idea" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -323,19 +363,26 @@
               <item name="hms_web_api" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Models" type="24d0babc:SolutionExplorerModelNode" />
             </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-            </path>
           </expand>
           <select />
         </subPane>
         <option name="show-all-files" value="false" />
+      </pane>
+      <pane id="FileSystemExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
+              <item name="hms_web_api" type="34e6ba20:FileSystemExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
+              <item name="hms_web_api" type="34e6ba20:FileSystemExplorerNode" />
+              <item name=".idea" type="34e6ba20:FileSystemExplorerNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
       </pane>
     </panes>
   </component>
@@ -351,6 +398,96 @@
   <component name="RestClientSettings">
     <option name="REQUEST_HISTORY">
       <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:5000/api/complaints/student/1" />
+          <option name="urlPath" value="" />
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="len" />
+                <option name="value" value="0" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:5000/api/complaints/student/1" />
+          <option name="urlPath" value="" />
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="len" />
+                <option name="value" value="2" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:5000/api/complaints/student/1" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:5000/api/students/101783037" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:5000/api/student/101783037" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:5000/api/appointments/complaint/1" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:5000/api/appointments/student/1" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:5000/api/appointments" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:5000/api/appointments" />
+          <option name="urlPath" value="" />
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="sid" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
         <RestClientRequest>
           <option name="httpMethod" value="GET" />
           <option name="urlBase" value="http://localhost:5000/api/complaints" />
@@ -389,13 +526,6 @@
           <option name="urlPath" value="" />
           <option name="haveTextToSend" value="true" />
           <option name="textToSend" value="Content-Type: application/json&#10;&#10;{&#10;  &quot;rollno&quot;: &quot;101783037&quot;,&#10;  &quot;password&quot;: &quot;test&quot;&#10;}" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:5000/api/student/101783037" />
-          <option name="urlPath" value="" />
-          <option name="textToSend" value="" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
@@ -524,12 +654,13 @@
       <option name="presentableId" value="Default" />
       <updated>1541444775255</updated>
       <workItem from="1541444776738" duration="11742000" />
-      <workItem from="1541511792945" duration="12967000" />
+      <workItem from="1541511792945" duration="13062000" />
+      <workItem from="1541591961406" duration="12428000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24709000" />
+    <option name="totallyTimeSpent" value="37232000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -542,9 +673,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18017058" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18176973" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -596,9 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-          <folding>
-            <marker date="1541502238957" expanded="true" signature="105:176" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -606,29 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-          <folding>
-            <marker date="1541502440610" expanded="true" signature="6:125" ph="..." />
-            <marker date="1541502440610" expanded="true" signature="215:1152" ph="{...}" />
-            <marker date="1541502440610" expanded="true" signature="286:1146" ph="{...}" />
-            <marker date="1541502440610" expanded="true" signature="424:1136" ph="{...}" />
-            <marker date="1541502440610" expanded="true" signature="834:1074" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hms_web_api/Startup.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
-          <folding>
-            <marker date="1541501858178" expanded="false" signature="6:402" ph="..." />
-            <marker date="1541501858178" expanded="true" signature="452:1378" ph="{...}" />
-            <marker date="1541501858178" expanded="true" signature="511:574" ph="{...}" />
-            <marker date="1541501858178" expanded="true" signature="797:906" ph="{...}" />
-            <marker date="1541501858178" expanded="true" signature="1094:1372" ph="{...}" />
-            <marker date="1541501858178" expanded="true" signature="1141:1218" ph="{...}" />
-            <marker date="1541501858178" expanded="true" signature="1235:1294" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -636,22 +740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-          <folding>
-            <marker date="1541502140962" expanded="true" signature="60:153" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hms_web_api/Dao/SqlConnectionManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="112" selection-start-line="11" selection-start-column="112" selection-end-line="11" selection-end-column="112" />
-          <folding>
-            <marker date="1541495114587" expanded="true" signature="6:42" ph="..." />
-            <marker date="1541495114587" expanded="true" signature="116:470" ph="{...}" />
-            <marker date="1541495114587" expanded="true" signature="177:464" ph="{...}" />
-            <marker date="1541495114587" expanded="true" signature="250:378" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -659,45 +747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <marker date="1541529699052" expanded="true" signature="64:159" ph="{...}" />
-            <marker date="1541529699052" expanded="true" signature="100:156" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hms_web_api/Models/Hostel.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-          <folding>
-            <marker date="1541518057252" expanded="true" signature="28:233" ph="{...}" />
-            <marker date="1541518057252" expanded="true" signature="54:231" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hms_web_api/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
-          <folding>
-            <marker date="1541500654661" expanded="false" signature="6:283" ph="..." />
-            <marker date="1541500654661" expanded="true" signature="306:633" ph="{...}" />
-            <marker date="1541500654661" expanded="true" signature="333:631" ph="{...}" />
-            <marker date="1541500654661" expanded="true" signature="386:460" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hms_web_api/Models/Student.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-          <folding>
-            <marker date="1541517780182" expanded="true" signature="28:417" ph="{...}" />
-            <marker date="1541517780182" expanded="true" signature="55:415" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -705,23 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-          <folding>
-            <marker date="1541525923760" expanded="true" signature="29:160" ph="{...}" />
-            <marker date="1541525923760" expanded="true" signature="60:157" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hms_web_api/Controllers/AuthenticationController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-          <folding>
-            <marker date="1541527109794" expanded="false" signature="6:182" ph="..." />
-            <marker date="1541527109794" expanded="true" signature="218:619" ph="{...}" />
-            <marker date="1541527109794" expanded="true" signature="332:616" ph="{...}" />
-            <marker date="1541527109794" expanded="true" signature="481:609" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -745,15 +777,158 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hms_web_api/Dao/Impl/StudentsDao.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="10" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hms_web_api/Controllers/StudentsController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
           <folding>
             <marker date="1541529455964" expanded="false" signature="6:182" ph="..." />
-            <marker date="1541529455964" expanded="true" signature="218:523" ph="{...}" />
             <marker date="1541529455964" expanded="true" signature="326:520" ph="{...}" />
             <marker date="1541529455964" expanded="true" signature="415:513" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2018-11-07T013404.200.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hms_web_api/Controllers/AuthenticationController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+          <folding>
+            <marker date="1541527109794" expanded="false" signature="6:182" ph="..." />
+            <marker date="1541527109794" expanded="true" signature="218:619" ph="{...}" />
+            <marker date="1541527109794" expanded="true" signature="332:616" ph="{...}" />
+            <marker date="1541527109794" expanded="true" signature="481:609" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hms_web_api/Models/Appointment.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <marker date="1541594320151" expanded="true" signature="44:308" ph="{...}" />
+            <marker date="1541594320151" expanded="true" signature="76:305" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hms_web_api/Dao/Interfaces/IAppointmentsDao.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="58" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
+          <folding>
+            <marker date="1541595237211" expanded="true" signature="6:59" ph="..." />
+            <marker date="1541595237211" expanded="true" signature="98:275" ph="{...}" />
+            <marker date="1541595237211" expanded="true" signature="139:272" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hms_web_api/Controllers/AppointmentsController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+          <folding>
+            <marker date="1541595237139" expanded="true" signature="6:156" ph="..." />
+            <marker date="1541595237139" expanded="true" signature="192:785" ph="{...}" />
+            <marker date="1541595237139" expanded="true" signature="304:782" ph="{...}" />
+            <marker date="1541595237139" expanded="true" signature="423:533" ph="{...}" />
+            <marker date="1541595237139" expanded="true" signature="663:775" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hms_web_api/Dao/Impl/AppointmentsDao.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+          <folding>
+            <marker date="1541595285690" expanded="true" signature="6:214" ph="..." />
+            <marker date="1541595285690" expanded="true" signature="247:2693" ph="{...}" />
+            <marker date="1541595285690" expanded="true" signature="302:2690" ph="{...}" />
+            <marker date="1541595285690" expanded="true" signature="372:1491" ph="{...}" />
+            <marker date="1541595285690" expanded="true" signature="502:1481" ph="{...}" />
+            <marker date="1541595285690" expanded="true" signature="854:1413" ph="{...}" />
+            <marker date="1541595285690" expanded="true" signature="911:1393" ph="{...}" />
+            <marker date="1541595285690" expanded="true" signature="1030:1135" ph="{...}" />
+            <marker date="1541595285690" expanded="true" signature="1562:2683" ph="{...}" />
+            <marker date="1541595285690" expanded="true" signature="1692:2673" ph="{...}" />
+            <marker date="1541595285690" expanded="true" signature="2046:2605" ph="{...}" />
+            <marker date="1541595285690" expanded="true" signature="2103:2585" ph="{...}" />
+            <marker date="1541595285690" expanded="true" signature="2222:2327" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hms_web_api/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+          <folding>
+            <marker date="1541501858178" expanded="false" signature="6:402" ph="..." />
+            <marker date="1541501858178" expanded="true" signature="425:1380" ph="{...}" />
+            <marker date="1541501858178" expanded="true" signature="452:1378" ph="{...}" />
+            <marker date="1541501858178" expanded="true" signature="511:574" ph="{...}" />
+            <marker date="1541501858178" expanded="true" signature="797:906" ph="{...}" />
+            <marker date="1541501858178" expanded="true" signature="1094:1372" ph="{...}" />
+            <marker date="1541501858178" expanded="true" signature="1141:1218" ph="{...}" />
+            <marker date="1541501858178" expanded="true" signature="1235:1294" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hms_web_api/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="22" column="81" selection-start-line="22" selection-start-column="81" selection-end-line="22" selection-end-column="81" />
+          <folding>
+            <marker date="1541596532927" expanded="false" signature="6:283" ph="..." />
+            <marker date="1541596532927" expanded="true" signature="306:715" ph="{...}" />
+            <marker date="1541596532927" expanded="true" signature="333:713" ph="{...}" />
+            <marker date="1541596532927" expanded="true" signature="386:460" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hms_web_api/Models/Student.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding>
+            <marker date="1541517780182" expanded="true" signature="55:415" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hms_web_api/Models/Hostel.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+          <folding>
+            <marker date="1541518057252" expanded="true" signature="28:233" ph="{...}" />
+            <marker date="1541518057252" expanded="true" signature="54:231" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -765,80 +940,6 @@
           <folding>
             <marker date="1541529368208" expanded="true" signature="29:141" ph="{...}" />
             <marker date="1541529368208" expanded="true" signature="64:138" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hms_web_api/Models/ComplaintCategory.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-          <folding>
-            <marker date="1541529368270" expanded="true" signature="29:197" ph="{...}" />
-            <marker date="1541529368270" expanded="true" signature="67:194" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hms_web_api/Controllers/ComplaintsController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding>
-            <marker date="1541532997368" expanded="true" signature="6:119" ph="..." />
-            <marker date="1541532997368" expanded="true" signature="155:496" ph="{...}" />
-            <marker date="1541532997368" expanded="true" signature="248:493" ph="{...}" />
-            <marker date="1541532997368" expanded="true" signature="372:478" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hms_web_api/Dao/Impl/StudentsDao.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-          <folding>
-            <marker date="1541518057188" expanded="false" signature="6:99" ph="..." />
-            <marker date="1541518057188" expanded="true" signature="132:1651" ph="{...}" />
-            <marker date="1541518057188" expanded="true" signature="177:1648" ph="{...}" />
-            <marker date="1541518057188" expanded="true" signature="233:1641" ph="{...}" />
-            <marker date="1541518057188" expanded="true" signature="389:1631" ph="{...}" />
-            <marker date="1541518057188" expanded="true" signature="627:1587" ph="{...}" />
-            <marker date="1541518057188" expanded="true" signature="670:1568" ph="{...}" />
-            <marker date="1541518057188" expanded="true" signature="1205:1546" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="10" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.http">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/2018-11-07T013404.200.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hms_web_api/Dao/Interfaces/IComplaintsDao.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-          <folding>
-            <marker date="1541529778034" expanded="true" signature="6:59" ph="..." />
-            <marker date="1541529778034" expanded="true" signature="98:206" ph="{...}" />
-            <marker date="1541529778034" expanded="true" signature="137:203" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -855,26 +956,83 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hms_web_api/Models/ComplaintCategory.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding>
+            <marker date="1541529368270" expanded="true" signature="29:197" ph="{...}" />
+            <marker date="1541529368270" expanded="true" signature="67:194" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hms_web_api/Dao/SqlConnectionManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="112" selection-start-line="11" selection-start-column="112" selection-end-line="11" selection-end-column="112" />
+          <folding>
+            <marker date="1541495114587" expanded="false" signature="6:42" ph="..." />
+            <marker date="1541495114587" expanded="true" signature="69:472" ph="{...}" />
+            <marker date="1541495114587" expanded="true" signature="116:470" ph="{...}" />
+            <marker date="1541495114587" expanded="true" signature="177:464" ph="{...}" />
+            <marker date="1541495114587" expanded="true" signature="250:378" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hms_web_api/Dao/Interfaces/IComplaintsDao.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
+          <folding>
+            <marker date="1541623668642" expanded="false" signature="6:59" ph="..." />
+            <marker date="1541623668642" expanded="true" signature="98:215" ph="{...}" />
+            <marker date="1541623668642" expanded="true" signature="137:212" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hms_web_api/Dao/Impl/ComplaintsDao.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="74" column="61" selection-start-line="74" selection-start-column="61" selection-end-line="74" selection-end-column="61" />
+        <state relative-caret-position="21">
+          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
           <folding>
-            <marker date="1541536465917" expanded="true" signature="6:229" ph="..." />
-            <marker date="1541536465917" expanded="true" signature="262:3812" ph="{...}" />
-            <marker date="1541536465917" expanded="true" signature="313:3809" ph="{...}" />
-            <marker date="1541536465917" expanded="true" signature="379:3802" ph="{...}" />
-            <marker date="1541536465917" expanded="true" signature="509:3792" ph="{...}" />
-            <marker date="1541536465917" expanded="true" signature="854:3742" ph="{...}" />
-            <marker date="1541536465917" expanded="true" signature="900:1785" ph="{...}" />
-            <marker date="1541536465917" expanded="true" signature="1194:1470" ph="{...}" />
-            <marker date="1541536465917" expanded="true" signature="1897:2344" ph="{...}" />
-            <marker date="1541536465917" expanded="true" signature="2519:2758" ph="{...}" />
-            <marker date="1541536465917" expanded="true" signature="2758:2867" ph="{...}" />
-            <marker date="1541536465917" expanded="true" signature="3143:3253" ph="{...}" />
-            <marker date="1541536465917" expanded="true" signature="3253:3366" ph="{...}" />
-            <marker date="1541536465917" expanded="true" signature="3467:3573" ph="{...}" />
-            <marker date="1541536465917" expanded="true" signature="3573:3684" ph="{...}" />
+            <marker date="1541623668595" expanded="false" signature="6:229" ph="..." />
+            <marker date="1541623668595" expanded="true" signature="262:3889" ph="{...}" />
+            <marker date="1541623668595" expanded="true" signature="313:3886" ph="{...}" />
+            <marker date="1541623668595" expanded="true" signature="388:3879" ph="{...}" />
+            <marker date="1541623668595" expanded="true" signature="518:3869" ph="{...}" />
+            <marker date="1541623668595" expanded="true" signature="931:3819" ph="{...}" />
+            <marker date="1541623668595" expanded="true" signature="977:1862" ph="{...}" />
+            <marker date="1541623668595" expanded="true" signature="1271:1547" ph="{...}" />
+            <marker date="1541623668595" expanded="true" signature="1974:2421" ph="{...}" />
+            <marker date="1541623668595" expanded="true" signature="2596:2835" ph="{...}" />
+            <marker date="1541623668595" expanded="true" signature="2835:2944" ph="{...}" />
+            <marker date="1541623668595" expanded="true" signature="3220:3330" ph="{...}" />
+            <marker date="1541623668595" expanded="true" signature="3330:3443" ph="{...}" />
+            <marker date="1541623668595" expanded="true" signature="3544:3650" ph="{...}" />
+            <marker date="1541623668595" expanded="true" signature="3650:3761" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.http">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="56" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hms_web_api/Controllers/ComplaintsController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+          <folding>
+            <marker date="1541623668720" expanded="true" signature="6:166" ph="..." />
+            <marker date="1541623668720" expanded="true" signature="202:574" ph="{...}" />
+            <marker date="1541623668720" expanded="true" signature="295:571" ph="{...}" />
+            <marker date="1541623668720" expanded="true" signature="445:556" ph="{...}" />
           </folding>
         </state>
       </provider>

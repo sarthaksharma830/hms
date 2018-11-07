@@ -67,7 +67,7 @@ immutable;
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 drop function if exists getComplaintsByStudent;
-create function getComplaintsByStudent(_sid int)
+create or replace function getComplaintsByStudent(_sid int, _len int)
   returns table(
     id                         int,
     title                      text,
@@ -86,13 +86,77 @@ create function getComplaintsByStudent(_sid int)
   )
 as $$
 begin
-  return query select c.*, cc.name as complaint_category_name, cc.code as complaint_category_code
-               from complaints as c,
-                    complaint_categories as cc
-               where c.complaint_category_id = cc.id
+
+  if _len = 0
+  then
+    return query select c.*, cc.name as complaint_category_name, cc.code as complaint_category_code
+                 from complaints as c,
+                      complaint_categories as cc
+                 where c.complaint_category_id = cc.id
+                   and c.student_id = _sid
+                 order by c.datetime desc;
+  else
+    return query select c.*, cc.name as complaint_category_name, cc.code as complaint_category_code
+                 from complaints as c,
+                      complaint_categories as cc
+                 where c.complaint_category_id = cc.id
+                   and c.student_id = _sid
+                 order by c.datetime desc limit _len;
+  end if;
+end;
+$$
+language plpgsql
+strict
+immutable;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+drop function if exists getAppointmentsByStudent;
+create or replace function getAppointmentsByStudent(_sid int)
+  returns table(
+    id           int,
+    complaint_id int,
+    date         date,
+    from_time    time,
+    to_time      time
+  )
+as $$
+begin
+  return query select a.*
+               from appointments as a,
+                    complaints as c
+               where a.complaint_id = c.id
                  and c.student_id = _sid;
 end;
 $$
 language plpgsql
 strict
 immutable;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+drop function if exists getAppointmentsByComplaint;
+create or replace function getAppointmentsByComplaint(_cid int)
+  returns table(
+    id           int,
+    complaint_id int,
+    date         date,
+    from_time    time,
+    to_time      time
+  )
+as $$
+begin
+  return query select a.*
+               from appointments as a,
+                    complaints as c
+               where a.complaint_id = c.id
+                 and c.id = _cid;
+end;
+$$
+language plpgsql
+strict
+immutable;
+
+
+select *
+from getAppointmentsByComplaint(5);

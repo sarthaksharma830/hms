@@ -1,8 +1,25 @@
 package com.example.sarthak.hms.models;
 
 public class Credential {
-    public String rollno;
-    public String password;
+    private String rollno;
+
+    public String getRollno() {
+        return rollno;
+    }
+
+    public void setRollno(String rollno) {
+        this.rollno = rollno;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    private String password;
 
     public Credential() {}
 

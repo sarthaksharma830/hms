@@ -1,3 +1,107 @@
+GET http://localhost:5000/api/complaints/student/1?len=0
+
+<> 2018-11-08T022046.200.json
+
+###
+
+GET http://localhost:5000/api/complaints/student/1?len=2
+
+<> 2018-11-08T022036.200.json
+
+###
+
+GET http://localhost:5000/api/complaints/student/1
+
+<> 2018-11-08T022018.200.json
+
+###
+
+GET http://localhost:5000/api/complaints/student/1
+
+<> 2018-11-08T021351.200.json
+
+###
+
+GET http://localhost:5000/api/complaints/student/1
+
+###
+
+GET http://localhost:5000/api/complaints/student/1
+
+<> 2018-11-08T021302.500.html
+
+###
+
+GET http://localhost:5000/api/complaints/student/1
+
+<> 2018-11-08T021217.500.html
+
+###
+
+GET http://localhost:5000/api/students/101783037
+
+<> 2018-11-07T062529.200.json
+
+###
+
+GET http://localhost:5000/api/student/101783037
+
+###
+
+GET http://localhost:5000/api/appointments/complaint/1
+
+<> 2018-11-07T062454.200.json
+
+###
+
+GET http://localhost:5000/api/appointments/complaint/1
+
+###
+
+GET http://localhost:5000/api/appointments/complaint/1
+
+###
+
+GET http://localhost:5000/api/appointments/complaint/1
+
+###
+
+GET http://localhost:5000/api/appointments/student/1
+
+<> 2018-11-07T061804.200.json
+
+###
+
+GET http://localhost:5000/api/appointments/student/1
+
+###
+
+GET http://localhost:5000/api/complaints/student/1
+
+<> 2018-11-07T061707.200.json
+
+###
+
+GET http://localhost:5000/api/complaints/student/1
+
+###
+
+GET http://localhost:5000/api/complaints/student/1
+
+###
+
+GET http://localhost:5000/api/appointments
+
+<> 2018-11-07T061601.200.json
+
+###
+
+GET http://localhost:5000/api/appointments?sid=1
+
+<> 2018-11-07T061451.200.json
+
+###
+
 GET http://localhost:5000/api/complaints?sid=1
 
 <> 2018-11-07T014123.500.html

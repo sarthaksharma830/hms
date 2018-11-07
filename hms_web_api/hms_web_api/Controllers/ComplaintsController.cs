@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using hms_web_api.Dao.Impl;
 using hms_web_api.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace hms_web_api.Controllers {
@@ -9,10 +11,10 @@ namespace hms_web_api.Controllers {
     [ApiController]
     public class ComplaintsController {
 
-        [HttpGet]
-        public ActionResult<List<Complaint>> GetComplaintsByStudent([FromQuery(Name = "sid")] int sid) {
+        [HttpGet("student/{sid}")]
+        public ActionResult<List<Complaint>> GetComplaintsByStudent(int sid, [FromQuery(Name = "len")] int len) {
             var dao = new ComplaintsDao();
-            return dao.GetComplaintsByStudent(sid);
+            return dao.GetComplaintsByStudent(sid, len);
         }
         
     }

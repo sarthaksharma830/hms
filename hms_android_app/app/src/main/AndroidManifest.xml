@@ -32,6 +32,9 @@
         <activity
             android:name=".activities.NewComplaintActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.ChangeDevConfigActivity"
+            android:noHistory="true" />
     </application>
 
 </manifest>

@@ -24,6 +24,9 @@ import com.example.sarthak.hms.activities.ComplaintDetailActivity;
 import com.example.sarthak.hms.activities.NewComplaintActivity;
 import com.example.sarthak.hms.adapters.RecentComplaintsListAdapter;
 import com.example.sarthak.hms.callbacks.ComplaintsListRecyclerViewOnItemClickCallback;
+import com.example.sarthak.hms.models.Complaint;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -52,7 +55,7 @@ public class ComplaintsListFragment extends Fragment {
         RecyclerView complaintsListRecyclerView = rootView.findViewById(R.id.complaintsListRecyclerView);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         complaintsListRecyclerView.setLayoutManager(layoutManager);
-        RecentComplaintsListAdapter adapter = new RecentComplaintsListAdapter(getContext(), 10);
+        RecentComplaintsListAdapter adapter = new RecentComplaintsListAdapter(new ArrayList<Complaint>());
         adapter.setOnItemClickCallback(new ComplaintsListRecyclerViewOnItemClickCallback() {
             @Override
             public void onClick() {

@@ -11,13 +11,14 @@ namespace hms_web_api.Dao.Impl {
 
     public class ComplaintsDao : IComplaintsDao {
 
-        public List<Complaint> GetComplaintsByStudent(int sid) {
+        public List<Complaint> GetComplaintsByStudent(int sid, int len) {
             using (var connection = SqlConnectionManager.GetConnection())
             using (var command = new NpgsqlCommand()) {
                 var complaints = new List<Complaint>();
                 command.Connection = connection;
-                command.CommandText = "select * from getComplaintsByStudent(@sid)";
+                command.CommandText = "select * from getComplaintsByStudent(@sid, @len)";
                 command.Parameters.AddWithValue("@sid", sid);
+                command.Parameters.AddWithValue("@len", len);
                 var reader = command.ExecuteReader();
                 while (reader.Read()) {
                     var c = new Complaint() {
@@ -52,7 +53,7 @@ namespace hms_web_api.Dao.Impl {
                     if (!string.IsNullOrEmpty(appDate) || !string.IsNullOrWhiteSpace(appDate)) {
                         appDate = appDate.Substring(0, 10);
                         c.AppointmentDatePreference =
-                            DateTime.ParseExact(appDate, "dd-mm-yyyy", CultureInfo.InvariantCulture);
+                            DateTime.ParseExact(appDate, "dd-MM-yyyy", CultureInfo.InvariantCulture);
                     }
                     else {
                         c.AppointmentDatePreference = null;

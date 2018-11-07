@@ -1,6 +1,5 @@
 package com.example.sarthak.hms.callbacks;
 
-public interface LoginCallback {
+public interface ILoginCallback extends IApiCallback {
     void onLogin(boolean result);
-    void onError(Exception e);
 }

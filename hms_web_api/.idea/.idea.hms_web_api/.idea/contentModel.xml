@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
+    <e p="C:\Users\Sarthak\.Rider2018.2\config\scratches" t="IncludeRecursive" />
     <e p="C:\Users\Sarthak\.Rider2018.2\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Sarthak\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_hms_web_api.1029588430.00" t="ExcludeRecursive" />
     <e p="C:\Users\Sarthak\work\hms\hms_web_api" t="IncludeFlat">
@@ -9,17 +10,20 @@
         <e p="appsettings.json" t="Include" />
         <e p="Bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
+          <e p="AppointmentsController.cs" t="Include" />
           <e p="AuthenticationController.cs" t="Include" />
           <e p="ComplaintsController.cs" t="Include" />
           <e p="StudentsController.cs" t="Include" />
         </e>
         <e p="DAO" t="Include">
           <e p="Impl" t="Include">
+            <e p="AppointmentsDao.cs" t="Include" />
             <e p="AuthenticationDAO.cs" t="Include" />
             <e p="ComplaintsDao.cs" t="Include" />
             <e p="StudentsDao.cs" t="Include" />
           </e>
           <e p="Interfaces" t="Include">
+            <e p="IAppointmentsDao.cs" t="Include" />
             <e p="IAuthenticationDao.cs" t="Include" />
             <e p="IComplaintsDao.cs" t="Include" />
             <e p="IStudentsDao.cs" t="Include" />
@@ -28,6 +32,7 @@
         </e>
         <e p="hms_web_api.csproj" t="IncludeRecursive" />
         <e p="Models" t="Include">
+          <e p="Appointment.cs" t="Include" />
           <e p="Complaint.cs" t="Include" />
           <e p="ComplaintCategory.cs" t="Include" />
           <e p="ComplaintStatus.cs" t="Include" />

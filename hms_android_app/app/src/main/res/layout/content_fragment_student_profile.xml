@@ -21,7 +21,7 @@
                 android:layout_width="112dp"
                 android:layout_alignParentTop="true"
                 app:shape_color="#EE675C"
-                app:letter="S"
+                android:id="@+id/studentLetterIcon"
                 app:letter_color="#FFFFFF"
                 app:letter_size="48"
                 android:layout_centerHorizontal="true"
@@ -34,7 +34,6 @@
                 android:id="@+id/studentName"
                 android:layout_marginLeft="16dp"
                 android:layout_marginBottom="20dp"
-                android:text="Sarthak Sharma"
                 android:textColor="#212121"
                 android:textSize="28sp" />
 
@@ -69,7 +68,6 @@
                     android:id="@+id/rollno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="101783037"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="16sp" />
 
@@ -89,7 +87,7 @@
             android:layout_marginTop="6dp">
 
             <ImageView
-                android:id="@+id/phoneIcon"
+                android:id="@+id/personalContactIcon"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_centerVertical="true"
@@ -100,14 +98,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/phoneIcon"
+                android:layout_toRightOf="@id/personalContactIcon"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/phone"
+                    android:id="@+id/personalContact"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="+916280611919"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="16sp" />
 
@@ -115,7 +112,43 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Mobile" />
+                    android:text="Mobile • Personal" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp">
+
+            <ImageView
+                android:id="@+id/parentContactIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/parentContactIcon"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/parentContact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Mobile • Parent" />
 
             </LinearLayout>
 
@@ -145,7 +178,6 @@
                     android:id="@+id/hostel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="D 627 • Hostel M"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="16sp" />
 
@@ -180,10 +212,9 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/primaryEmail"
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ssharma60_be17@thapar.edu"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="16sp" />
 
@@ -191,44 +222,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Primary" />
-
-            </LinearLayout>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp">
-
-            <View
-                android:id="@+id/secondaryEmailIcon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_centerVertical="true"
-                android:layout_margin="16dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/secondaryEmailIcon"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/secondaryEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="sarthaksharma830@gmail.com"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="Secondary" />
+                    android:text="Email" />
 
             </LinearLayout>
 
@@ -252,37 +246,61 @@
             android:textSize="11sp"
             android:textStyle="bold" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recentComplaintsList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:nestedScrollingEnabled="false" />
-
         <RelativeLayout
-            android:id="@+id/seeMoreRow"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-8dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:clickable="true">
+            android:animateLayoutChanges="true"
+            android:layout_height="wrap_content">
 
-            <TextView
+            <ProgressBar
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:visibility="visible"
                 android:layout_centerInParent="true"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:text="See more"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-                android:textColor="@color/colorPrimary"
-                android:textStyle="bold" />
+                android:id="@+id/recentComplaintsProgressBar"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:id="@+id/recentComplaintsListLayout"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recentComplaintsList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false" />
+
+                <RelativeLayout
+                    android:id="@+id/seeMoreRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-8dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="See more"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#E0E0E0" />
+
+            </LinearLayout>
 
         </RelativeLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="#E0E0E0" />
 
         <View
             android:layout_width="match_parent"
