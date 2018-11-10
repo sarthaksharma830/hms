@@ -1,20 +1,23 @@
 package com.example.sarthak.hms.models;
 
+import org.parceler.Parcel;
+
 import java.util.Date;
 
+@Parcel
 public class Complaint {
-    private int id;
-    private String title;
-    private Student student;
-    private ComplaintCategory complaintCategory;
-    private Date dateTime;
-    private String description;
-    private String feedback;
-    private ComplaintStatus complaintStatus;
-    private boolean starred;
-    private Date appointmentDatePreference;
-    private Date appointmentFromTimePreference;
-    private Date appointmentToTimePreference;
+    int id;
+    String title;
+    Student student;
+    ComplaintCategory complaintCategory;
+    Date dateTime;
+    String description;
+    String feedback;
+    int complaintStatus;
+    boolean starred;
+    Date appointmentDatePreference;
+    Date appointmentFromTimePreference;
+    Date appointmentToTimePreference;
 
     public int getId() {
         return id;
@@ -72,11 +75,11 @@ public class Complaint {
         this.feedback = feedback;
     }
 
-    public ComplaintStatus getComplaintStatus() {
+    public int getComplaintStatus() {
         return complaintStatus;
     }
 
-    public void setComplaintStatus(ComplaintStatus complaintStatus) {
+    public void setComplaintStatus(int complaintStatus) {
         this.complaintStatus = complaintStatus;
     }
 

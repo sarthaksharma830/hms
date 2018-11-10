@@ -33,7 +33,6 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="16dp"
                 android:textAppearance="@style/MyTitleTextAppearance"
-                android:text="Door Handle Broken"
                 android:visibility="invisible"
                 android:layout_height="wrap_content" />
 

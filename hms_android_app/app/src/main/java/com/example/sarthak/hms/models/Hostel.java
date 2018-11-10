@@ -1,10 +1,13 @@
 package com.example.sarthak.hms.models;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class Hostel {
-    private int id;
-    private String name;
-    private String roomNumber;
-    private String type;
+    int id;
+    String name;
+    String roomNumber;
+    String type;
 
     public int getId() {
         return id;

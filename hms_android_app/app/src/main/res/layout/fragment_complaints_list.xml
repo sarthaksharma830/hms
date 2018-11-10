@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:animateLayoutChanges="true"
     tools:context=".fragments.ComplaintsListFragment">
 
     <android.support.design.widget.AppBarLayout
@@ -28,6 +29,14 @@
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_fragment_complaints_list" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:indeterminateTint="?colorPrimary"
+        android:id="@+id/complaintsListProgressBar"
+        android:layout_height="wrap_content" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/newComplaint"

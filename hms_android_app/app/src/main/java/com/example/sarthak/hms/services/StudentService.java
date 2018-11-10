@@ -4,7 +4,7 @@ import android.os.Handler;
 
 import com.example.sarthak.hms.callbacks.IStudentCallback;
 import com.example.sarthak.hms.models.*;
-import com.example.sarthak.hms.retrofit.IStudentService;
+import com.example.sarthak.hms.retrofit.IStudentsService;
 import com.example.sarthak.hms.retrofit.RetrofitProvider;
 
 import retrofit2.Call;
@@ -34,17 +34,20 @@ public class StudentService {
 
     public void getStudentByRollnoAsync(String rollno, final IStudentCallback callback) {
         Retrofit retrofit = RetrofitProvider.newInstance();
-        IStudentService studentService = retrofit.create(IStudentService.class);
+        IStudentsService studentService = retrofit.create(IStudentsService.class);
         studentService.getStudentByRollno(rollno).enqueue(new Callback<Student>() {
             @Override
             public void onResponse(Call<Student> call, Response<Student> response) {
-                Student student = response.body();
-                callback.onStudent(student);
+                if (response.errorBody() != null) {
+                    callback.onError(new Exception(response.message()));
+                } else {
+                    callback.onStudent(response.body());
+                }
             }
 
             @Override
             public void onFailure(Call<Student> call, Throwable t) {
-                callback.onError(new Exception("Network Error"));
+                callback.onError(new Exception(t.toString()));
             }
         });
     }

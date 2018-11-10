@@ -1,7 +1,10 @@
 package com.example.sarthak.hms.models;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class Credential {
-    private String rollno;
+    String rollno;
 
     public String getRollno() {
         return rollno;
@@ -19,7 +22,7 @@ public class Credential {
         this.password = password;
     }
 
-    private String password;
+    String password;
 
     public Credential() {}
 

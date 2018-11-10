@@ -10,10 +10,16 @@ namespace hms_web_api.Controllers {
     [ApiController]
     public class AppointmentsController : ControllerBase {
 
-        [HttpGet("student/{sid}")]
-        public ActionResult<List<Appointment>> GetAppointmentsByStudent(int sid) {
+        [HttpGet("student/{sid}/p")]
+        public ActionResult<List<Appointment>> GetPendingAppointmentsByStudent(int sid) {
             var dao = new AppointmentsDao();
-            return dao.GetAppointmentsByStudent(sid);
+            return dao.GetPendingAppointmentsByStudent(sid);
+        }
+        
+        [HttpGet("student/{sid}/c")]
+        public ActionResult<List<Appointment>> GetCompletedAppointmentsByStudent(int sid) {
+            var dao = new AppointmentsDao();
+            return dao.GetCompletedAppointmentsByStudent(sid);
         }
         
         [HttpGet("complaint/{cid}")]

@@ -90,13 +90,14 @@ CREATE TABLE "complaint_categories" (
 );
 
 
-
+DROP TABLE IF EXISTS "appointments";
 CREATE TABLE "appointments" (
 	"id" serial NOT NULL,
 	"complaint_id" int NOT NULL,
 	"date" DATE NOT NULL,
 	"from_time" TIME NOT NULL,
 	"to_time" TIME NOT NULL,
+	"status" BOOLEAN NOT NULL DEFAULT FALSE,
 	CONSTRAINT appointments_pk PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
@@ -114,6 +115,15 @@ CREATE TABLE "complaint_pictures" (
 );
 
 
+DROP TABLE IF EXISTS "default_complaint_titles";
+CREATE TABLE "default_complaint_titles" (
+  "id" serial NOT NULL,
+  "complaint_category_id" int NOT NULL,
+  "title" text NOT NULL,
+  CONSTRAINT default_complaint_titles_pk PRIMARY KEY ("id")
+) WITH (
+  OIDS = FALSE
+);
 
 
 ALTER TABLE "student_credentials" ADD CONSTRAINT "student_credentials_fk0" FOREIGN KEY ("student_id") REFERENCES "students"("id");
@@ -132,3 +142,5 @@ ALTER TABLE "caretakers" ADD CONSTRAINT "caretakers_fk0" FOREIGN KEY ("hostel_id
 ALTER TABLE "appointments" ADD CONSTRAINT "appointments_fk0" FOREIGN KEY ("complaint_id") REFERENCES "complaints"("id");
 
 ALTER TABLE "complaint_pictures" ADD CONSTRAINT "complaint_pictures_fk0" FOREIGN KEY ("complaint_id") REFERENCES "complaints"("id");
+
+ALTER TABLE "default_complaint_titles" ADD CONSTRAINT "default_complaint_titles_fk_category" FOREIGN KEY ("complaint_category_id") REFERENCES "complaint_categories"("id");

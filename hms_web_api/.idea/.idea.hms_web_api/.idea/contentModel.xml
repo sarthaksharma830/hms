@@ -15,10 +15,10 @@
           <e p="ComplaintsController.cs" t="Include" />
           <e p="StudentsController.cs" t="Include" />
         </e>
-        <e p="DAO" t="Include">
+        <e p="Dao" t="Include">
           <e p="Impl" t="Include">
             <e p="AppointmentsDao.cs" t="Include" />
-            <e p="AuthenticationDAO.cs" t="Include" />
+            <e p="AuthenticationDao.cs" t="Include" />
             <e p="ComplaintsDao.cs" t="Include" />
             <e p="StudentsDao.cs" t="Include" />
           </e>
@@ -35,6 +35,7 @@
           <e p="Appointment.cs" t="Include" />
           <e p="Complaint.cs" t="Include" />
           <e p="ComplaintCategory.cs" t="Include" />
+          <e p="ComplaintPicture.cs" t="Include" />
           <e p="ComplaintStatus.cs" t="Include" />
           <e p="Credential.cs" t="Include" />
           <e p="Hostel.cs" t="Include" />

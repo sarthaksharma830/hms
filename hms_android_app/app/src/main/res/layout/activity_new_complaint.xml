@@ -27,4 +27,12 @@
 
     <include layout="@layout/content_new_complaint" />
 
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:indeterminateTint="?colorPrimary"
+        android:id="@+id/newComplaintProgressBar"
+        android:layout_height="wrap_content" />
+
 </android.support.design.widget.CoordinatorLayout>

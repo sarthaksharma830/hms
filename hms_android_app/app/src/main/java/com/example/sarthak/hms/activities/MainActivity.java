@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(View v) {
 
                                 progressBar.setVisibility(View.VISIBLE);
-                                final String rollno = rollNumberEditText.getText().toString();
+                                final String rollno = rollNumberEditText.getText().toString().trim();
                                 String password = passwordEditText.getText().toString();
                                 AuthenticationService authenticationService = new AuthenticationService();
                                 authenticationService.loginAsync(new Credential(rollno, password), new ILoginCallback() {
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                                         Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                         progressBar.setVisibility(View.INVISIBLE);
                                     }
-                                }, true);
+                                }, false);
                             }
                         });
                     }

@@ -6,7 +6,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 
-public interface IStudentService {
+public interface IStudentsService {
     @GET("students/{rollno}")
     Call<Student> getStudentByRollno(@Path("rollno") String rollno);
 }

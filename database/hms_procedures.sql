@@ -94,14 +94,15 @@ begin
                       complaint_categories as cc
                  where c.complaint_category_id = cc.id
                    and c.student_id = _sid
-                 order by c.datetime desc;
+                 order by c.starred desc, c.datetime desc;
   else
     return query select c.*, cc.name as complaint_category_name, cc.code as complaint_category_code
                  from complaints as c,
                       complaint_categories as cc
                  where c.complaint_category_id = cc.id
                    and c.student_id = _sid
-                 order by c.datetime desc limit _len;
+                 order by c.datetime desc
+                 limit _len;
   end if;
 end;
 $$
@@ -111,22 +112,72 @@ immutable;
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-drop function if exists getAppointmentsByStudent;
-create or replace function getAppointmentsByStudent(_sid int)
+drop function if exists getPendingAppointmentsByStudent;
+create or replace function getPendingAppointmentsByStudent(_sid int)
   returns table(
-    id           int,
-    complaint_id int,
-    date         date,
-    from_time    time,
-    to_time      time
+    id                      int,
+    complaint_id            int,
+    date                    date,
+    from_time               time,
+    to_time                 time,
+    status                  boolean,
+    complaint_title         text,
+    complaint_category_id   int,
+    complaint_category_name text,
+    complaint_category_code text
   )
 as $$
 begin
-  return query select a.*
+  return query select a.*,
+                      c.title,
+                      cc.id   as complaint_category_id,
+                      cc.name as complaint_category_name,
+                      cc.code as complaint_category_code
                from appointments as a,
-                    complaints as c
+                    complaints as c,
+                    complaint_categories as cc
                where a.complaint_id = c.id
-                 and c.student_id = _sid;
+                 and c.student_id = _sid
+                 and c.complaint_category_id = cc.id
+                 and a.status = false
+               order by a.date desc;
+end;
+$$
+language plpgsql
+strict
+immutable;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+drop function if exists getCompletedAppointmentsByStudent;
+create or replace function getCompletedAppointmentsByStudent(_sid int)
+  returns table(
+    id                      int,
+    complaint_id            int,
+    date                    date,
+    from_time               time,
+    to_time                 time,
+    status                  boolean,
+    complaint_title         text,
+    complaint_category_id   int,
+    complaint_category_name text,
+    complaint_category_code text
+  )
+as $$
+begin
+  return query select a.*,
+                      c.title,
+                      cc.id   as complaint_category_id,
+                      cc.name as complaint_category_name,
+                      cc.code as complaint_category_code
+               from appointments as a,
+                    complaints as c,
+                    complaint_categories as cc
+               where a.complaint_id = c.id
+                 and c.student_id = _sid
+                 and c.complaint_category_id = cc.id
+                 and a.status = true
+               order by a.date desc;
 end;
 $$
 language plpgsql
@@ -142,7 +193,8 @@ create or replace function getAppointmentsByComplaint(_cid int)
     complaint_id int,
     date         date,
     from_time    time,
-    to_time      time
+    to_time      time,
+    status       boolean
   )
 as $$
 begin
@@ -157,6 +209,172 @@ language plpgsql
 strict
 immutable;
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-select *
-from getAppointmentsByComplaint(5);
+drop function if exists getComplaintById;
+create or replace function getComplaintById(_id int)
+  returns table(
+    id                         int,
+    title                      text,
+    student_id                 int,
+    complaint_category_id      int,
+    datetime                   timestamp,
+    description                text,
+    status                     smallint,
+    starred                    bit,
+    feedback                   text,
+    appointment_date_pref      date,
+    appointment_from_time_pref time,
+    appointment_to_time_pref   time,
+    complaint_category_name    text,
+    complaint_category_code    text
+  )
+as $$
+begin
+  return query select c.*, cc.name as complaint_category_name, cc.code as complaint_category_code
+               from complaints as c,
+                    complaint_categories as cc
+               where c.complaint_category_id = cc.id
+                 and c.id = _id
+               limit 1;
+end;
+$$
+language plpgsql
+strict
+immutable;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+drop function if exists updateComplaintStarStatus;
+create or replace function updateComplaintStarStatus(_id int, _star bit)
+  returns table(
+    c_id                       int,
+    title                      text,
+    student_id                 int,
+    complaint_category_id      int,
+    datetime                   timestamp,
+    description                text,
+    status                     smallint,
+    c_starred                  bit,
+    feedback                   text,
+    appointment_date_pref      date,
+    appointment_from_time_pref time,
+    appointment_to_time_pref   time,
+    complaint_category_name    text,
+    complaint_category_code    text
+  )
+as $$
+begin
+  update complaints set starred = _star where id = _id;
+  return query select * from getComplaintById(_id);
+end;
+$$
+language plpgsql
+security definer;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+drop function if exists getComplaintPictures;
+create or replace function getComplaintPictures(_cid int)
+  returns table(
+    id           int,
+    complaint_id int,
+    picture      text
+  )
+as $$
+begin
+  return query select * from complaint_pictures as c where c.complaint_id = _cid;
+end;
+$$
+language plpgsql
+strict
+immutable;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+drop function if exists getAllComplaintCategories;
+create or replace function getAllComplaintCategories()
+  returns table(id int, name text, code text) as $$
+begin
+  return query select * from complaint_categories;
+end;
+$$
+language plpgsql
+strict
+immutable;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+drop function if exists getDefaultComplaintTitles;
+create or replace function getDefaultComplaintTitles(_id int)
+  returns table(complaint_title text) as $$
+begin
+  return query select title from default_complaint_titles where complaint_category_id = _id;
+end;
+$$
+language plpgsql
+strict
+immutable;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+drop function if exists createComplaint;
+create or replace function createComplaint(
+  _title                 text,
+  _student_id            int,
+  _complaint_category_id int,
+  _datetime              timestamp with time zone,
+  _description           text,
+  _date_pref             date,
+  _from_time_pref        time without time zone,
+  _to_time_pref          time without time zone,
+  _pictures              text []
+)
+  returns table(
+    c_id                         int,
+    c_title                      text,
+    c_student_id                 int,
+    c_complaint_category_id      int,
+    c_datetime                   timestamp,
+    c_description                text,
+    c_status                     smallint,
+    c_starred                    bit,
+    c_feedback                   text,
+    c_appointment_date_pref      date,
+    c_appointment_from_time_pref time,
+    c_appointment_to_time_pref   time,
+    c_complaint_category_name    text,
+    c_complaint_category_code    text
+  ) as $$
+declare
+  last_id int;
+begin
+  insert into complaints (title,
+                          student_id,
+                          complaint_category_id,
+                          datetime,
+                          description,
+                          status,
+                          appointment_date_pref,
+                          appointment_from_time_pref,
+                          appointment_to_time_pref)
+  values (_title,
+          _student_id,
+          _complaint_category_id,
+          _datetime,
+          _description,
+          0,
+          _date_pref,
+          _from_time_pref,
+          _to_time_pref) returning id
+    into last_id;
+
+  for i in 1 .. array_upper(_pictures, 1)
+  loop
+    insert into complaint_pictures (complaint_id, picture) values (last_id, _pictures[i]);
+  end loop;
+  return query select * from getComplaintById(last_id);
+end;
+$$
+language plpgsql
+security definer;

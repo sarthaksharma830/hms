@@ -1,14 +1,17 @@
 package com.example.sarthak.hms.models;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class Student {
-    private int id;
-    private String name;
-    private String rollno;
-    private String personalContact;
-    private String parentContact;
-    private String email;
-    private char gender;
-    private Hostel hostel;
+    int id;
+    String name;
+    String rollno;
+    String personalContact;
+    String parentContact;
+    String email;
+    char gender;
+    Hostel hostel;
 
     public int getId() {
         return id;

@@ -9,6 +9,7 @@ namespace hms_web_api.Models {
         public DateTime Date { get; set; }
         public TimeSpan FromTime { get; set; }
         public TimeSpan ToTime { get; set; }
+        public bool Status { get; set; }
 
     }
 

@@ -26,19 +26,25 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sarthak.hms.Constants;
+import com.example.sarthak.hms.Persistence;
 import com.example.sarthak.hms.R;
 import com.example.sarthak.hms.activities.ComplaintDetailActivity;
 import com.example.sarthak.hms.adapters.RecentComplaintsListAdapter;
-import com.example.sarthak.hms.callbacks.ComplaintsListRecyclerViewOnItemClickCallback;
 import com.example.sarthak.hms.callbacks.IComplaintCallback;
+import com.example.sarthak.hms.callbacks.IComplaintItemClickCallback;
+import com.example.sarthak.hms.callbacks.IComplaintItemStarClickCallback;
+import com.example.sarthak.hms.callbacks.IComplaintListCallback;
 import com.example.sarthak.hms.callbacks.IStudentCallback;
 import com.example.sarthak.hms.models.Complaint;
 import com.example.sarthak.hms.models.Student;
-import com.example.sarthak.hms.services.ComplaintService;
+import com.example.sarthak.hms.services.ComplaintsService;
 import com.example.sarthak.hms.services.StudentService;
 import com.github.akashandroid90.imageletter.MaterialLetterIcon;
 
+import org.parceler.Parcels;
+
 import java.util.List;
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +67,9 @@ public class StudentProfileFragment extends Fragment {
     private Student student;
     private RelativeLayout seeMoreRow;
     private LinearLayout recentComplaintsListLayout;
+    private NavigationView navigationView;
+    private List<Complaint> recentComplaints;
+    private RecentComplaintsListAdapter adapter;
 
     public StudentProfileFragment() {
         // Required empty public constructor
@@ -90,20 +99,60 @@ public class StudentProfileFragment extends Fragment {
         profileProgressBar.setVisibility(View.VISIBLE);
 
         StudentService studentService = new StudentService();
-        studentService.getStudentByRollnoAsync(rollno, new IStudentCallback() {
-            @Override
-            public void onStudent(Student student) {
-                StudentProfileFragment.this.student = student;
-                populateViews();
-            }
+        if (Persistence.student == null) {
+            studentService.getStudentByRollnoAsync(rollno, new IStudentCallback() {
+                @Override
+                public void onStudent(Student student) {
+                    StudentProfileFragment.this.student = student;
+                    Persistence.student = student;
+                    populateViews();
+                }
 
-            @Override
-            public void onError(Exception e) {
-                Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        }, true);
+                @Override
+                public void onError(Exception e) {
+                    Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                    profileProgressBar.setVisibility(View.GONE);
+                }
+            }, false);
+        } else {
+            this.student = Persistence.student;
+            populateViews();
+        }
 
         return rootView;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == Constants.REQUEST_CODE_VIEW_COMPLAINT_DETAIL) {
+            if (resultCode == Constants.RESULT_CODE_COMPLAINT_UPDATED) {
+                final int complaintId = data.getIntExtra(Constants.EXTRA_COMPLAINT_ID, -1);
+                if (complaintId != -1) {
+                    ComplaintsService service = new ComplaintsService();
+                    service.getComplaintById(complaintId, new IComplaintCallback() {
+                        @Override
+                        public void onComplaint(Complaint complaint) {
+                            int index = -1;
+                            for (int i = 0; i < recentComplaints.size(); i++) {
+                                if (recentComplaints.get(i).getId() == complaintId) {
+                                    index = i;
+                                    break;
+                                }
+                            }
+                            if (index != -1) {
+                                recentComplaints.set(index, complaint);
+                                adapter.setComplaints(recentComplaints);
+                            }
+                        }
+
+                        @Override
+                        public void onError(Exception e) {
+                            Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            }
+        }
     }
 
     private void populateViews() {
@@ -137,20 +186,52 @@ public class StudentProfileFragment extends Fragment {
 
         recentComplaintsProgressBar.setVisibility(View.VISIBLE);
         recentComplaintsListLayout.setVisibility(View.GONE);
-        ComplaintService complaintService = new ComplaintService();
-        complaintService.getComplaintsByStudentAsync(student.getId(), 3, new IComplaintCallback() {
+        ComplaintsService complaintsService = new ComplaintsService();
+        complaintsService.getComplaintsByStudentAsync(student.getId(), 3, new IComplaintListCallback() {
             @Override
-            public void onComplaints(List<Complaint> complaints) {
+            public void onComplaintsList(final List<Complaint> complaints) {
+                recentComplaints = complaints;
                 recentComplaintsList.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-                RecentComplaintsListAdapter adapter = new RecentComplaintsListAdapter(complaints);
-                adapter.setOnItemClickCallback(new ComplaintsListRecyclerViewOnItemClickCallback() {
+                adapter = new RecentComplaintsListAdapter(recentComplaints);
+                adapter.setOnItemClickCallback(new IComplaintItemClickCallback() {
                     @Override
-                    public void onClick() {
-                        startActivity(new Intent(getContext(), ComplaintDetailActivity.class));
+                    public void onClick(Complaint complaint) {
+                        Intent intent = new Intent(getContext(), ComplaintDetailActivity.class);
+                        intent.putExtra(Constants.EXTRA_COMPLAINT, Parcels.wrap(complaint));
+                        startActivityForResult(intent, Constants.REQUEST_CODE_VIEW_COMPLAINT_DETAIL);
+                    }
+                });
+                adapter.setOnItemStarClickCallback(new IComplaintItemStarClickCallback() {
+                    @Override
+                    public void onItemStarClick(final View v, Complaint complaint) {
+                        v.setClickable(false);
+                        ComplaintsService service = new ComplaintsService();
+                        service.updateComplaintStarStatus(complaint.getId(), !complaint.isStarred(), new IComplaintCallback() {
+                            @Override
+                            public void onComplaint(Complaint complaint) {
+                                int index = -1;
+                                for (int i = 0; i < recentComplaints.size(); i++) {
+                                    if (recentComplaints.get(i).getId() == complaint.getId()) {
+                                        index = i;
+                                        break;
+                                    }
+                                }
+                                if (index != -1) {
+                                    recentComplaints.set(index, complaint);
+                                    adapter.setComplaints(recentComplaints);
+                                }
+                                v.setClickable(true);
+                            }
+
+                            @Override
+                            public void onError(Exception e) {
+                                Toast.makeText(getContext(), "", Toast.LENGTH_SHORT).show();
+                                v.setClickable(true);
+                            }
+                        });
                     }
                 });
                 recentComplaintsList.setAdapter(adapter);
-                final NavigationView navigationView = getActivity().findViewById(R.id.nav_view);
                 seeMoreRow.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -167,9 +248,10 @@ public class StudentProfileFragment extends Fragment {
 
             @Override
             public void onError(Exception e) {
-                Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Recent Complaints: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                recentComplaintsProgressBar.setVisibility(View.GONE);
             }
-        }, true);
+        }, false);
 
         profileProgressBar.setVisibility(View.INVISIBLE);
         nestedScrollView.setVisibility(View.VISIBLE);
@@ -192,6 +274,7 @@ public class StudentProfileFragment extends Fragment {
         seeMoreRow = rootView.findViewById(R.id.seeMoreRow);
         nestedScrollView.setVisibility(View.INVISIBLE);
         recentComplaintsListLayout = rootView.findViewById(R.id.recentComplaintsListLayout);
+        navigationView = Objects.requireNonNull(getActivity()).findViewById(R.id.nav_view);
     }
 
 }

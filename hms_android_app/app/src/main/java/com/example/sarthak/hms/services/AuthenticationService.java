@@ -20,13 +20,17 @@ public class AuthenticationService {
         service.login(credential).enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
-                Boolean result = Integer.parseInt(response.body()) == 1;
-                callback.onLogin(result);
+                if (response.errorBody() != null) {
+                    callback.onError(new Exception(response.message()));
+                } else {
+                    Boolean result = Integer.parseInt(response.body()) == 1;
+                    callback.onLogin(result);
+                }
             }
 
             @Override
             public void onFailure(Call<String> call, Throwable t) {
-                callback.onError(new Exception("Network Error"));
+                callback.onError(new Exception(t.toString()));
             }
         });
     }

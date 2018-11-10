@@ -11,21 +11,20 @@ import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import com.example.sarthak.hms.R;
+import com.example.sarthak.hms.models.ComplaintCategory;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
-public class CategorySpinnerAdapter extends ArrayAdapter<String> {
+public class CategorySpinnerAdapter extends ArrayAdapter<ComplaintCategory> {
 
-    private ArrayList<String> categories;
+    private List<ComplaintCategory> categories;
     private LayoutInflater inflater;
     private int resId;
     private Context context;
 
-    public CategorySpinnerAdapter(Context context, int resource, String[] objects) {
-        super(context, resource, objects);
-
-        this.categories = new ArrayList<String>(Arrays.asList(objects));
+    public CategorySpinnerAdapter(Context context, int resource, List<ComplaintCategory> categories) {
+        super(context, resource, categories);
+        this.categories = categories;
         inflater = LayoutInflater.from(context);
         this.resId = resource;
         this.context = context;
@@ -49,19 +48,20 @@ public class CategorySpinnerAdapter extends ArrayAdapter<String> {
     private View createItemView(int position, View convertView, ViewGroup parent, int res) {
         final View view = inflater.inflate(res, parent, false);
         TextView categoryTextView = view.findViewById(R.id.category);
-        String category = categories.get(position);
-        categoryTextView.setText(category);
+        String categoryName = categories.get(position).getName();
+        String categoryCode = categories.get(position).getCode();
+        categoryTextView.setText(categoryName);
         ImageView categoryImageView = view.findViewById(R.id.categoryIcon);
-        int iconRes;
-        if (category.equals("Carpenter")) {
+        int iconRes = 0;
+        if (categoryCode.equals("carp")) {
             iconRes = R.drawable.ic_saw;
-        } else if (category.equals("Electrician")) {
+        } else if (categoryCode.equals("elec")) {
             iconRes = R.drawable.ic_socket;
-        } else if (category.equals("Housekeeping")) {
+        } else if (categoryCode.equals("house")) {
             iconRes = R.drawable.ic_clean;
-        } else if (category.equals("Technical Support")) {
+        } else if (categoryCode.equals("tech")) {
             iconRes = R.drawable.ic_server;
-        } else {
+        } else if (categoryCode.equals("plumb")) {
             iconRes = R.drawable.ic_pipe;
         }
         VectorDrawableCompat vector = VectorDrawableCompat.create(context.getResources(), iconRes, context.getTheme());

@@ -14,7 +14,7 @@ namespace hms_web_api.Controllers {
 
         [HttpPost("login")]
         [Consumes("application/json")]
-        public ActionResult<LoginResult> Get([FromBody] Credential credential) {
+        public ActionResult<LoginResult> Login([FromBody] Credential credential) {
             var dao = new AuthenticationDao();
             return dao.Login(credential.Rollno, credential.Password);
         }

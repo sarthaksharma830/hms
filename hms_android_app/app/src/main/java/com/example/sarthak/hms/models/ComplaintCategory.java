@@ -1,8 +1,11 @@
 package com.example.sarthak.hms.models;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class ComplaintCategory {
-    private int id;
-    private String name, code;
+    int id;
+    String name, code;
 
     public int getId() {
         return id;

@@ -1,5 +1,9 @@
 package com.example.sarthak.hms.models;
 
+import org.parceler.Parcel;
+import org.parceler.ParcelConstructor;
+
+@Parcel
 public enum ComplaintStatus {
     Pending(0),
     Scheduled(1),
@@ -7,6 +11,7 @@ public enum ComplaintStatus {
 
     private int val;
 
+    @ParcelConstructor
     ComplaintStatus(int val) {
         this.val = val;
     }

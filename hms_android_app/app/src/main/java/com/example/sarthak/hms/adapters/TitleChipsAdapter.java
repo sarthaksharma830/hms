@@ -11,13 +11,20 @@ import android.view.ViewGroup;
 import com.example.sarthak.hms.R;
 import com.example.sarthak.hms.callbacks.TitleChipOnClickCallback;
 
+import java.util.List;
+
 public class TitleChipsAdapter extends RecyclerView.Adapter<TitleChipsAdapter.MyViewHolder> {
 
     private final Context context;
-    private String[] titles;
+    private List<String> titles;
+
+    public void setTitles(List<String> titles) {
+        this.titles = titles;
+        notifyDataSetChanged();
+    }
     private TitleChipOnClickCallback callback;
 
-    public TitleChipsAdapter(Context context, String[] titles) {
+    public TitleChipsAdapter(Context context, List<String> titles) {
         this.context = context;
         this.titles = titles;
     }
@@ -30,13 +37,13 @@ public class TitleChipsAdapter extends RecyclerView.Adapter<TitleChipsAdapter.My
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-        String title = titles[i];
+        String title = titles.get(i);
         myViewHolder.title.setText(title);
     }
 
     @Override
     public int getItemCount() {
-        return titles.length;
+        return titles.size();
     }
 
     public void setOnTitleChipClickCallback(TitleChipOnClickCallback callback) {
@@ -53,7 +60,7 @@ public class TitleChipsAdapter extends RecyclerView.Adapter<TitleChipsAdapter.My
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        callback.onClick(titles[getAdapterPosition()]);
+                        callback.onClick(titles.get(getAdapterPosition()));
                     }
                 });
             }

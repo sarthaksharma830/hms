@@ -8,13 +8,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.sarthak.hms.R;
-import com.example.sarthak.hms.callbacks.ComplaintsListRecyclerViewOnItemClickCallback;
+import com.example.sarthak.hms.callbacks.IComplaintItemClickCallback;
+import com.example.sarthak.hms.callbacks.IComplaintItemStarClickCallback;
 import com.example.sarthak.hms.models.Complaint;
-import com.example.sarthak.hms.models.ComplaintStatus;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -22,14 +24,21 @@ import java.util.List;
 public class RecentComplaintsListAdapter extends RecyclerView.Adapter<RecentComplaintsListAdapter.MyViewHolder> {
 
     private Context context;
-    private ComplaintsListRecyclerViewOnItemClickCallback onItemClickCallback;
+    private IComplaintItemClickCallback onItemClickCallback;
+    private IComplaintItemStarClickCallback onItemStarClickCallback;
     private List<Complaint> complaints;
+
+
+    public void setComplaints(List<Complaint> complaints) {
+        this.complaints = complaints;
+        notifyDataSetChanged();
+    }
 
     public RecentComplaintsListAdapter(List<Complaint> complaints) {
         this.complaints = complaints;
     }
 
-    public void setOnItemClickCallback(ComplaintsListRecyclerViewOnItemClickCallback onItemClickCallback) {
+    public void setOnItemClickCallback(IComplaintItemClickCallback onItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback;
     }
 
@@ -46,15 +55,15 @@ public class RecentComplaintsListAdapter extends RecyclerView.Adapter<RecentComp
         myViewHolder.titleTextView.setText(c.getTitle());
 
         switch (c.getComplaintStatus()) {
-            case Resolved:
+            case 2:
                 myViewHolder.statusTextView.setText("Resolved");
                 myViewHolder.statusTextView.setTextColor(ContextCompat.getColor(context, R.color.green));
                 break;
-            case Scheduled:
+            case 1:
                 myViewHolder.statusTextView.setText("Scheduled");
                 myViewHolder.statusTextView.setTextColor(ContextCompat.getColor(context, R.color.orange));
                 break;
-            case Pending:
+            case 0:
                 myViewHolder.statusTextView.setText("Pending");
                 myViewHolder.statusTextView.setTextColor(ContextCompat.getColor(context, R.color.red));
                 break;
@@ -62,7 +71,7 @@ public class RecentComplaintsListAdapter extends RecyclerView.Adapter<RecentComp
 
         SimpleDateFormat sdf = new SimpleDateFormat("h:mm a");
         String datetime = sdf.format(c.getDateTime());
-        sdf = new SimpleDateFormat("MMMM dd, YYYY");
+        sdf = new SimpleDateFormat("MMMM d, YYYY");
         datetime += " • ";
         datetime += sdf.format(c.getDateTime());
         myViewHolder.datetimeTextView.setText(datetime);
@@ -94,9 +103,14 @@ public class RecentComplaintsListAdapter extends RecyclerView.Adapter<RecentComp
         return complaints.size();
     }
 
+    public void setOnItemStarClickCallback(IComplaintItemStarClickCallback onItemStarClickCallback) {
+        this.onItemStarClickCallback = onItemStarClickCallback;
+    }
+
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView titleTextView, statusTextView, datetimeTextView;
-        ImageView categoryIcon, starIcon;
+        ImageView categoryIcon;
+        ImageButton starIcon;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -110,7 +124,16 @@ public class RecentComplaintsListAdapter extends RecyclerView.Adapter<RecentComp
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        onItemClickCallback.onClick();
+                        onItemClickCallback.onClick(complaints.get(getAdapterPosition()));
+                    }
+                });
+            }
+            if (onItemStarClickCallback != null) {
+                starIcon.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        v.setClickable(false);
+                        onItemStarClickCallback.onItemStarClick(v, complaints.get(getAdapterPosition()));
                     }
                 });
             }
