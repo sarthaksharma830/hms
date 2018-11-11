@@ -4,7 +4,7 @@ import android.os.Handler;
 
 import com.example.sarthak.hms.callbacks.ILoginCallback;
 import com.example.sarthak.hms.models.Credential;
-import com.example.sarthak.hms.retrofit.ILoginService;
+import com.example.sarthak.hms.retrofit.IAuthenticationService;
 import com.example.sarthak.hms.retrofit.RetrofitProvider;
 
 import retrofit2.Call;
@@ -15,7 +15,7 @@ import retrofit2.Retrofit;
 public class AuthenticationService {
     public void loginAsync(Credential credential, final ILoginCallback callback) {
         Retrofit retrofit = RetrofitProvider.newInstance();
-        ILoginService service = retrofit.create(ILoginService.class);
+        IAuthenticationService service = retrofit.create(IAuthenticationService.class);
 
         service.login(credential).enqueue(new Callback<String>() {
             @Override

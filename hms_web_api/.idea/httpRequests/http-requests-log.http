@@ -23,6 +23,131 @@ Content-Type: application/json
   "appointmentDatePreference": "2018-11-12T00:00:00",
   "appointmentFromTimePreference": "12:00:00",
   "appointmentToTimePreference": "13:00:00",
+  "pictures": []
+}
+
+<> 2018-11-11T080310.200.json
+
+###
+
+POST http://localhost:5000/api/complaints
+Content-Type: application/json
+
+{
+  "title": "Mirror broken",
+  "student": {
+    "id": 3,
+    "name": null,
+    "rollno": null,
+    "personalContact": null,
+    "parentContact": null,
+    "email": null,
+    "gender": "\u0000",
+    "hostel": null
+  },
+  "complaintCategory": {
+    "id": 3,
+    "name": "Housekeeping",
+    "code": "house"
+  },
+  "dateTime": "2018-11-11T02:30:00",
+  "description": "The mirror in my room is broken",
+  "appointmentDatePreference": "2018-11-12T00:00:00",
+  "appointmentFromTimePreference": "12:00:00",
+  "appointmentToTimePreference": "13:00:00",
+  "pictures": [
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six"
+  ]
+}
+
+<> 2018-11-11T080234.200.json
+
+###
+
+GET http://localhost:5000/api/complaints/student/1?len=0
+
+<> 2018-11-11T073506.200.json
+
+###
+
+GET http://localhost:5000/api/complaints/student/1?len=0
+
+<> 2018-11-11T073442.500.html
+
+###
+
+GET http://localhost:5000/api/complaints/student/1?len=0
+
+<> 2018-11-11T073221.200.json
+
+###
+
+GET http://localhost:5000/api/complaints/student/1?len=0
+
+<> 2018-11-11T073114.500.html
+
+###
+
+GET http://localhost:5000/api/complaints/student/1?len=0
+
+<> 2018-11-11T072944.500.html
+
+###
+
+GET http://localhost:5000/api/complaints/student/1?len=0
+
+<> 2018-11-11T072855.500.html
+
+###
+
+GET http://localhost:5000/api/complaints/student/1?len=0
+
+<> 2018-11-11T072736.500.html
+
+###
+
+GET http://localhost:5000/api/complaints/student/1?len=0
+
+<> 2018-11-11T072531.500.html
+
+###
+
+GET http://localhost:5000/api/complaints/student/1?len=0
+
+<> 2018-11-11T072330.200.json
+
+###
+
+POST http://localhost:5000/api/complaints
+Content-Type: application/json
+
+{
+  "title": "Mirror broken",
+  "student": {
+    "id": 3,
+    "name": null,
+    "rollno": null,
+    "personalContact": null,
+    "parentContact": null,
+    "email": null,
+    "gender": "\u0000",
+    "hostel": null
+  },
+  "complaintCategory": {
+    "id": 3,
+    "name": "Housekeeping",
+    "code": "house"
+  },
+  "dateTime": "2018-11-11T02:30:00",
+  "description": "The mirror in my room is broken",
+  "appointmentDatePreference": "2018-11-12T00:00:00",
+  "appointmentFromTimePreference": "12:00:00",
+  "appointmentToTimePreference": "13:00:00",
   "pictures": [
     "one",
     "two",
@@ -302,81 +427,6 @@ GET http://localhost:5000/api/complaints/student/1
 ###
 
 GET http://localhost:5000/api/complaints/student/1
-
-###
-
-GET http://localhost:5000/api/appointments
-
-<> 2018-11-07T061601.200.json
-
-###
-
-GET http://localhost:5000/api/appointments?sid=1
-
-<> 2018-11-07T061451.200.json
-
-###
-
-GET http://localhost:5000/api/complaints?sid=1
-
-<> 2018-11-07T014123.500.html
-
-###
-
-GET http://localhost:5000/api/complaints?sid=1
-
-<> 2018-11-07T014115.500.html
-
-###
-
-GET http://localhost:5000/api/complaints?sid=1
-
-<> 2018-11-07T014102.200.json
-
-###
-
-GET http://localhost:5000/api/complaints?sid=1
-
-<> 2018-11-07T014004.200.json
-
-###
-
-GET http://localhost:5000/api/complaints?sid=1
-
-###
-
-GET http://localhost:5000/api/complaints?sid=1
-
-<> 2018-11-07T013404.200.json
-
-###
-
-POST http://localhost:5000/api/authentication/login
-Content-Type: application/json
-
-{
-  "rollno": "101783037",
-  "password": "test"
-}
-
-<> 2018-11-06T114232.200.json
-
-###
-
-POST http://localhost:5000/api/authentication/login
-
-Content-Type: application/json
-
-{
-  "rollno": "101783037",
-  "password": "test"
-}
-
-###
-
-GET http://localhost:5000/api/student/101783037
-
-<> 2018-11-06T114215.200.json
 
 ###
 

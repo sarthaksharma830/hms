@@ -2,67 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80e044b5-927f-4c9b-8f2a-d5a1b547b9e2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../database/hms_procedures.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../database/hms_procedures.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../database/hms_schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../database/hms_schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hms_android_app/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/activities/ComplaintDetailActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/activities/ComplaintDetailActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/activities/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/activities/NewComplaintActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/activities/NewComplaintActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/activities/StudentActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/activities/StudentActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/adapters/AppointmentsRecyclerViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/adapters/AppointmentsRecyclerViewAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/adapters/CategorySpinnerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/adapters/CategorySpinnerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/adapters/ComplaintPicturesListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/adapters/ComplaintPicturesListAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/adapters/RecentComplaintsListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/adapters/RecentComplaintsListAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/adapters/TitleChipsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/adapters/TitleChipsAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/callbacks/ComplaintsListRecyclerViewOnItemClickCallback.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/callbacks/IComplaintCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/callbacks/IComplaintCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/fragments/AppointmentsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/fragments/AppointmentsFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/fragments/ComplaintsListFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/fragments/ComplaintsListFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/fragments/StudentProfileFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/fragments/StudentProfileFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/models/Complaint.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/models/Complaint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/models/ComplaintCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/models/ComplaintCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/models/ComplaintStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/models/ComplaintStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/models/Credential.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/models/Credential.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/models/Hostel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/models/Hostel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/models/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/models/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/retrofit/IComplaintService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/retrofit/IStudentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/retrofit/IComplaintsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/retrofit/IComplaintsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/retrofit/ILoginService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/retrofit/RetrofitProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/retrofit/RetrofitProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/services/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/services/AuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/services/ComplaintService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/services/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/services/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/drawable/ic_star_border.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/drawable/ic_star_border.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/activity_complaint_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/activity_complaint_detail.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/services/ComplaintsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/java/com/example/sarthak/hms/services/ComplaintsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/activity_new_complaint.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/activity_new_complaint.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/appointments_list_row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/appointments_list_row.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/complaint_pictures_list_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/complaint_pictures_list_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/content_complaint_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/content_complaint_detail.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/content_fragment_appointments.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/content_new_complaint.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/content_new_complaint.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/fragment_appointments.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/fragment_appointments.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/fragment_complaints_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/fragment_complaints_list.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/fragment_student_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/fragment_student_profile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/recent_complaints_list_row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/layout/recent_complaints_list_row.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/menu/menu_complaint_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/menu/menu_complaint_detail.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.hms_web_api/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.hms_web_api/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/menu/menu_new_complaint.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hms_android_app/app/src/main/res/menu/menu_new_complaint.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.hms_web_api/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.hms_web_api/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-06T113734.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-06T113746.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-06T113800.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-06T114215.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-06T114232.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-07T013404.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-07T014004.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-07T014102.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-07T014115.500.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-07T014123.500.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-07T061451.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-07T061601.200.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hms_web_api/Controllers/AppointmentsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/hms_web_api/Controllers/AppointmentsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hms_web_api/Controllers/AuthenticationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/hms_web_api/Controllers/AuthenticationController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hms_web_api/Controllers/ComplaintsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/hms_web_api/Controllers/ComplaintsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hms_web_api/Dao/Impl/AppointmentsDao.cs" beforeDir="false" afterPath="$PROJECT_DIR$/hms_web_api/Dao/Impl/AppointmentsDao.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hms_web_api/Dao/Impl/ComplaintsDao.cs" beforeDir="false" afterPath="$PROJECT_DIR$/hms_web_api/Dao/Impl/ComplaintsDao.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hms_web_api/Dao/Interfaces/IAppointmentsDao.cs" beforeDir="false" afterPath="$PROJECT_DIR$/hms_web_api/Dao/Interfaces/IAppointmentsDao.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hms_web_api/Dao/Interfaces/IComplaintsDao.cs" beforeDir="false" afterPath="$PROJECT_DIR$/hms_web_api/Dao/Interfaces/IComplaintsDao.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hms_web_api/Models/Appointment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/hms_web_api/Models/Appointment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hms_web_api/obj/Debug/netcoreapp2.1/hms_web_api.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/hms_web_api/obj/Debug/netcoreapp2.1/hms_web_api.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hms_web_api/obj/Debug/netcoreapp2.1/hms_web_api.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/hms_web_api/obj/Debug/netcoreapp2.1/hms_web_api.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hms_web_api/Models/Complaint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/hms_web_api/Models/Complaint.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hms_web_api/obj/Debug/netcoreapp2.1/hms_web_api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/hms_web_api/obj/Debug/netcoreapp2.1/hms_web_api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hms_web_api/obj/Debug/netcoreapp2.1/hms_web_api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/hms_web_api/obj/Debug/netcoreapp2.1/hms_web_api.pdb" afterDir="false" />
     </list>
@@ -77,21 +42,22 @@
     <session id="-942767016">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.141" value="1" />
           <entry key="project.open.time.176" value="1" />
+          <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.53" value="1" />
           <entry key="project.open.time.58" value="1" />
           <entry key="project.open.time.66" value="1" />
           <entry key="project.open.time.81" value="1" />
           <entry key="project.open.time.94" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cs" value="50" />
+          <entry key="cs" value="53" />
           <entry key="editorconfig" value="1" />
           <entry key="http" value="10" />
           <entry key="json" value="5" />
@@ -99,7 +65,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="50" />
+          <entry key="C#" value="53" />
           <entry key="HTTP Request" value="6" />
           <entry key="JSON" value="5" />
           <entry key="PLAIN_TEXT" value="1" />
@@ -108,18 +74,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="11205" />
+          <entry key="cs" value="12389" />
           <entry key="editorconfig" value="91" />
-          <entry key="http" value="626" />
+          <entry key="http" value="630" />
           <entry key="json" value="112" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="11205" />
+          <entry key="C#" value="12389" />
           <entry key="JSON" value="120" />
           <entry key="PLAIN_TEXT" value="91" />
-          <entry key="Scratch" value="618" />
+          <entry key="Scratch" value="622" />
         </counts>
       </usages-collector>
     </session>
@@ -129,11 +95,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hms_web_api/Controllers/ComplaintsController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
+            <state relative-caret-position="690">
               <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
               <folding>
                 <marker date="1541884109233" expanded="false" signature="6:166" ph="..." />
-                <marker date="1541884109233" expanded="true" signature="202:1912" ph="{...}" />
                 <marker date="1541884109233" expanded="true" signature="295:1909" ph="{...}" />
                 <marker date="1541884109233" expanded="true" signature="445:556" ph="{...}" />
                 <marker date="1541884109233" expanded="true" signature="648:747" ph="{...}" />
@@ -150,71 +115,75 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hms_web_api/Dao/Impl/ComplaintsDao.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-740">
-              <caret line="263" column="63" lean-forward="true" selection-start-line="263" selection-start-column="63" selection-end-line="263" selection-end-column="63" />
+            <state relative-caret-position="367">
+              <caret line="283" selection-start-line="283" selection-end-line="283" />
               <folding>
-                <marker date="1541884228647" expanded="false" signature="6:226" ph="..." />
-                <marker date="1541884228647" expanded="true" signature="259:17696" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="310:17693" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="385:3876" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="515:3866" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="928:3816" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="974:1859" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="1268:1544" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="1971:2418" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="2593:2832" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="2832:2941" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="3217:3327" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="3327:3440" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="3541:3647" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="3647:3758" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="3928:7268" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="4058:7258" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="4335:7214" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="4381:5266" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="4675:4951" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="5378:5825" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="6000:6239" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="6239:6348" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="6624:6734" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="6734:6847" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="6948:7054" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="7054:7165" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="7340:10781" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="7470:10771" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="7844:10727" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="7890:8779" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="8186:8462" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="8891:9338" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="9513:9752" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="9752:9861" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="10137:10247" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="10247:10360" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="10461:10567" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="10567:10678" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="10850:11634" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="10980:11624" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="11290:11574" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="11351:11554" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="11698:12311" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="11828:12301" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="12166:12255" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="12375:16736" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="12505:16726" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="13775:16682" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="13821:14726" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="14121:14403" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="14840:15287" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="15464:15703" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="15703:15812" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="16092:16202" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="16202:16315" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="16416:16522" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="16522:16633" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="16805:17686" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="16935:17676" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="17300:17628" ph="{...}" />
-                <marker date="1541884228647" expanded="true" signature="17358:17608" ph="{...}" />
+                <marker date="1541946811521" expanded="false" signature="6:226" ph="..." />
+                <marker date="1541946811521" expanded="true" signature="259:19126" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="310:19123" ph="{...}" />
+                <marker date="1541946811521" expanded="false" signature="385:4006" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="515:3996" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="928:3946" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="974:1859" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="1268:1544" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="1971:2418" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="2593:2832" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="2832:2941" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="3217:3394" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="3394:3507" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="3608:3777" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="3777:3888" ph="{...}" />
+                <marker date="1541946811521" expanded="false" signature="4058:7528" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="4188:7518" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="4465:7474" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="4511:5396" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="4805:5081" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="5508:5955" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="6130:6369" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="6369:6478" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="6754:6931" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="6931:7044" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="7145:7314" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="7314:7425" ph="{...}" />
+                <marker date="1541946811521" expanded="false" signature="7600:11171" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="7730:11161" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="8104:11117" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="8150:9039" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="8446:8722" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="9151:9598" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="9773:10012" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="10012:10121" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="10397:10574" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="10574:10687" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="10788:10957" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="10957:11068" ph="{...}" />
+                <marker date="1541946811521" expanded="false" signature="11240:12024" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="11370:12014" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="11680:11964" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="11741:11944" ph="{...}" />
+                <marker date="1541946811521" expanded="false" signature="12088:12701" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="12218:12691" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="12556:12645" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="12765:18166" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="12895:18156" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="13941:14315" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="14315:14449" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="14518:14852" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="14852:14984" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="15075:18112" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="15121:16026" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="15421:15703" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="16140:16587" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="16764:17003" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="17003:17112" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="17392:17569" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="17569:17682" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="17783:17952" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="17952:18063" ph="{...}" />
+                <marker date="1541946811521" expanded="false" signature="18235:19116" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="18365:19106" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="18730:19058" ph="{...}" />
+                <marker date="1541946811521" expanded="true" signature="18788:19038" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -223,8 +192,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.http">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="77" column="41" lean-forward="true" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
+            <state relative-caret-position="175">
+              <caret line="92" column="12" lean-forward="true" selection-start-line="92" selection-start-column="12" selection-end-line="92" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -236,7 +205,6 @@
               <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
               <folding>
                 <marker date="1541884109264" expanded="false" signature="6:73" ph="..." />
-                <marker date="1541884109264" expanded="true" signature="112:515" ph="{...}" />
                 <marker date="1541884109264" expanded="true" signature="151:512" ph="{...}" />
               </folding>
             </state>
@@ -341,7 +309,6 @@
         <option value="$PROJECT_DIR$/hms_web_api/Controllers/ComplaintController.cs" />
         <option value="$PROJECT_DIR$/hms_web_api/Controllers/StudentController.cs" />
         <option value="$PROJECT_DIR$/hms_web_api/Controllers/StudentsController.cs" />
-        <option value="$PROJECT_DIR$/hms_web_api/Models/Complaint.cs" />
         <option value="$PROJECT_DIR$/hms_web_api/Startup.cs" />
         <option value="$PROJECT_DIR$/hms_web_api/Program.cs" />
         <option value="$PROJECT_DIR$/hms_web_api/Models/Appointment.cs" />
@@ -350,9 +317,10 @@
         <option value="$PROJECT_DIR$/hms_web_api/Dao/Impl/AppointmentsDao.cs" />
         <option value="$PROJECT_DIR$/hms_web_api/Models/ComplaintPicture.cs" />
         <option value="$PROJECT_DIR$/hms_web_api/Controllers/AuthenticationController.cs" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.http" />
         <option value="$PROJECT_DIR$/hms_web_api/Dao/Interfaces/IComplaintsDao.cs" />
         <option value="$PROJECT_DIR$/hms_web_api/Controllers/ComplaintsController.cs" />
+        <option value="$PROJECT_DIR$/hms_web_api/Models/Complaint.cs" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.http" />
         <option value="$PROJECT_DIR$/hms_web_api/Dao/Impl/ComplaintsDao.cs" />
       </list>
     </option>
@@ -376,6 +344,22 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="FileSystemExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
+              <item name="hms_web_api" type="34e6ba20:FileSystemExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
+              <item name="hms_web_api" type="34e6ba20:FileSystemExplorerNode" />
+              <item name=".idea" type="34e6ba20:FileSystemExplorerNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -419,22 +403,6 @@
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="FileSystemExplorer">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="hms_web_api" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="hms_web_api" type="34e6ba20:FileSystemExplorerNode" />
-              <item name=".idea" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -462,7 +430,39 @@
             </list>
           </option>
           <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;title&quot;: &quot;Mirror broken&quot;,&#10;  &quot;student&quot;: {&#10;    &quot;id&quot;: 3,&#10;    &quot;name&quot;: null,&#10;    &quot;rollno&quot;: null,&#10;    &quot;personalContact&quot;: null,&#10;    &quot;parentContact&quot;: null,&#10;    &quot;email&quot;: null,&#10;    &quot;gender&quot;: &quot;\u0000&quot;,&#10;    &quot;hostel&quot;: null&#10;  },&#10;  &quot;complaintCategory&quot;: {&#10;    &quot;id&quot;: 3,&#10;    &quot;name&quot;: &quot;Housekeeping&quot;,&#10;    &quot;code&quot;: &quot;house&quot;&#10;  },&#10;  &quot;dateTime&quot;: &quot;2018-11-11T02:30:00&quot;,&#10;  &quot;description&quot;: &quot;The mirror in my room is broken&quot;,&#10;  &quot;appointmentDatePreference&quot;: &quot;2018-11-12T00:00:00&quot;,&#10;  &quot;appointmentFromTimePreference&quot;: &quot;12:00:00&quot;,&#10;  &quot;appointmentToTimePreference&quot;: &quot;13:00:00&quot;,&#10;  &quot;pictures&quot;: []&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:5000/api/complaints" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
           <option name="textToSend" value="{&#10;  &quot;title&quot;: &quot;Mirror broken&quot;,&#10;  &quot;student&quot;: {&#10;    &quot;id&quot;: 3,&#10;    &quot;name&quot;: null,&#10;    &quot;rollno&quot;: null,&#10;    &quot;personalContact&quot;: null,&#10;    &quot;parentContact&quot;: null,&#10;    &quot;email&quot;: null,&#10;    &quot;gender&quot;: &quot;\u0000&quot;,&#10;    &quot;hostel&quot;: null&#10;  },&#10;  &quot;complaintCategory&quot;: {&#10;    &quot;id&quot;: 3,&#10;    &quot;name&quot;: &quot;Housekeeping&quot;,&#10;    &quot;code&quot;: &quot;house&quot;&#10;  },&#10;  &quot;dateTime&quot;: &quot;2018-11-11T02:30:00&quot;,&#10;  &quot;description&quot;: &quot;The mirror in my room is broken&quot;,&#10;  &quot;appointmentDatePreference&quot;: &quot;2018-11-12T00:00:00&quot;,&#10;  &quot;appointmentFromTimePreference&quot;: &quot;12:00:00&quot;,&#10;  &quot;appointmentToTimePreference&quot;: &quot;13:00:00&quot;,&#10;  &quot;pictures&quot;: [&#10;    &quot;one&quot;,&#10;    &quot;two&quot;,&#10;    &quot;three&quot;,&#10;    &quot;four&quot;,&#10;    &quot;five&quot;,&#10;    &quot;six&quot;&#10;  ]&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:5000/api/complaints/student/1" />
+          <option name="urlPath" value="" />
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="len" />
+                <option name="value" value="0" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
@@ -497,22 +497,6 @@
           <option name="httpMethod" value="GET" />
           <option name="urlBase" value="http://localhost:5000/api/appointments/student/1/p" />
           <option name="urlPath" value="" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:5000/api/complaints/student/1" />
-          <option name="urlPath" value="" />
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="len" />
-                <option name="value" value="0" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
           <option name="textToSend" value="" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
@@ -771,11 +755,12 @@
       <workItem from="1541841084220" duration="7780000" />
       <workItem from="1541868117220" duration="3645000" />
       <workItem from="1541879983148" duration="2145000" />
+      <workItem from="1541944038161" duration="2812000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59615000" />
+    <option name="totallyTimeSpent" value="62427000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -789,7 +774,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.3391685" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.33901918" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -971,6 +956,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hms_web_api/Dao/Interfaces/IAppointmentsDao.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hms_web_api/Dao/Impl/AppointmentsDao.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="76" column="33" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hms_web_api/Controllers/AppointmentsController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hms_web_api/Controllers/AuthenticationController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hms_web_api/Controllers/ComplaintsController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
+          <folding>
+            <marker date="1541884109233" expanded="false" signature="6:166" ph="..." />
+            <marker date="1541884109233" expanded="true" signature="295:1909" ph="{...}" />
+            <marker date="1541884109233" expanded="true" signature="445:556" ph="{...}" />
+            <marker date="1541884109233" expanded="true" signature="648:747" ph="{...}" />
+            <marker date="1541884109233" expanded="true" signature="870:989" ph="{...}" />
+            <marker date="1541884109233" expanded="true" signature="1107:1210" ph="{...}" />
+            <marker date="1541884109233" expanded="true" signature="1325:1431" ph="{...}" />
+            <marker date="1541884109233" expanded="true" signature="1542:1650" ph="{...}" />
+            <marker date="1541884109233" expanded="true" signature="1797:1902" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hms_web_api/Dao/Interfaces/IComplaintsDao.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+          <folding>
+            <marker date="1541884109264" expanded="false" signature="6:73" ph="..." />
+            <marker date="1541884109264" expanded="true" signature="151:512" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hms_web_api/Models/Appointment.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1003,191 +1045,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hms_web_api/Dao/Interfaces/IAppointmentsDao.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
-          <folding>
-            <marker date="1541691718362" expanded="false" signature="6:59" ph="..." />
-            <marker date="1541691718362" expanded="true" signature="139:349" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hms_web_api/Dao/Impl/AppointmentsDao.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="76" column="33" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
-          <folding>
-            <marker date="1541693902467" expanded="false" signature="6:214" ph="..." />
-            <marker date="1541693902467" expanded="true" signature="247:4967" ph="{...}" />
-            <marker date="1541693902467" expanded="true" signature="302:4964" ph="{...}" />
-            <marker date="1541693902467" expanded="true" signature="379:2003" ph="{...}" />
-            <marker date="1541693902467" expanded="true" signature="509:1993" ph="{...}" />
-            <marker date="1541693902467" expanded="true" signature="868:1941" ph="{...}" />
-            <marker date="1541693902467" expanded="true" signature="925:1921" ph="{...}" />
-            <marker date="1541693902467" expanded="true" signature="1044:1589" ph="{...}" />
-            <marker date="1541693902467" expanded="true" signature="1271:1563" ph="{...}" />
-            <marker date="1541693902467" expanded="true" signature="2081:3707" ph="{...}" />
-            <marker date="1541693902467" expanded="true" signature="2211:3697" ph="{...}" />
-            <marker date="1541693902467" expanded="true" signature="2572:3645" ph="{...}" />
-            <marker date="1541693902467" expanded="true" signature="2629:3625" ph="{...}" />
-            <marker date="1541693902467" expanded="true" signature="2748:3293" ph="{...}" />
-            <marker date="1541693902467" expanded="true" signature="2975:3267" ph="{...}" />
-            <marker date="1541693902467" expanded="true" signature="3778:4957" ph="{...}" />
-            <marker date="1541693902467" expanded="true" signature="3908:4947" ph="{...}" />
-            <marker date="1541693902467" expanded="true" signature="4262:4895" ph="{...}" />
-            <marker date="1541693902467" expanded="true" signature="4319:4875" ph="{...}" />
-            <marker date="1541693902467" expanded="true" signature="4438:4543" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hms_web_api/Models/Complaint.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        <state relative-caret-position="240">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
           <folding>
-            <marker date="1541536466015" expanded="false" signature="6:47" ph="..." />
-            <marker date="1541536466015" expanded="true" signature="78:803" ph="{...}" />
-            <marker date="1541536466015" expanded="true" signature="108:800" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hms_web_api/Controllers/AppointmentsController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-          <folding>
-            <marker date="1541691718236" expanded="false" signature="6:156" ph="..." />
-            <marker date="1541691718236" expanded="true" signature="192:1057" ph="{...}" />
-            <marker date="1541691718236" expanded="true" signature="304:1054" ph="{...}" />
-            <marker date="1541691718236" expanded="true" signature="432:549" ph="{...}" />
-            <marker date="1541691718236" expanded="true" signature="686:805" ph="{...}" />
-            <marker date="1541691718236" expanded="true" signature="935:1047" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hms_web_api/Controllers/AuthenticationController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <marker date="1541883037436" expanded="false" signature="6:182" ph="..." />
-            <marker date="1541883037436" expanded="true" signature="218:621" ph="{...}" />
-            <marker date="1541883037436" expanded="true" signature="332:618" ph="{...}" />
-            <marker date="1541883037436" expanded="true" signature="483:611" ph="{...}" />
+            <marker date="1541945153106" expanded="false" signature="6:47" ph="..." />
+            <marker date="1541945153106" expanded="true" signature="78:803" ph="{...}" />
+            <marker date="1541945153106" expanded="true" signature="108:800" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.http">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="77" column="41" lean-forward="true" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hms_web_api/Dao/Interfaces/IComplaintsDao.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-          <folding>
-            <marker date="1541884109264" expanded="false" signature="6:73" ph="..." />
-            <marker date="1541884109264" expanded="true" signature="112:515" ph="{...}" />
-            <marker date="1541884109264" expanded="true" signature="151:512" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hms_web_api/Controllers/ComplaintsController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
-          <folding>
-            <marker date="1541884109233" expanded="false" signature="6:166" ph="..." />
-            <marker date="1541884109233" expanded="true" signature="202:1912" ph="{...}" />
-            <marker date="1541884109233" expanded="true" signature="295:1909" ph="{...}" />
-            <marker date="1541884109233" expanded="true" signature="445:556" ph="{...}" />
-            <marker date="1541884109233" expanded="true" signature="648:747" ph="{...}" />
-            <marker date="1541884109233" expanded="true" signature="870:989" ph="{...}" />
-            <marker date="1541884109233" expanded="true" signature="1107:1210" ph="{...}" />
-            <marker date="1541884109233" expanded="true" signature="1325:1431" ph="{...}" />
-            <marker date="1541884109233" expanded="true" signature="1542:1650" ph="{...}" />
-            <marker date="1541884109233" expanded="true" signature="1797:1902" ph="{...}" />
-          </folding>
+        <state relative-caret-position="175">
+          <caret line="92" column="12" lean-forward="true" selection-start-line="92" selection-start-column="12" selection-end-line="92" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hms_web_api/Dao/Impl/ComplaintsDao.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-740">
-          <caret line="263" column="63" lean-forward="true" selection-start-line="263" selection-start-column="63" selection-end-line="263" selection-end-column="63" />
+        <state relative-caret-position="367">
+          <caret line="283" selection-start-line="283" selection-end-line="283" />
           <folding>
-            <marker date="1541884228647" expanded="false" signature="6:226" ph="..." />
-            <marker date="1541884228647" expanded="true" signature="259:17696" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="310:17693" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="385:3876" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="515:3866" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="928:3816" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="974:1859" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="1268:1544" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="1971:2418" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="2593:2832" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="2832:2941" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="3217:3327" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="3327:3440" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="3541:3647" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="3647:3758" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="3928:7268" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="4058:7258" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="4335:7214" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="4381:5266" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="4675:4951" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="5378:5825" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="6000:6239" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="6239:6348" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="6624:6734" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="6734:6847" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="6948:7054" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="7054:7165" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="7340:10781" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="7470:10771" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="7844:10727" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="7890:8779" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="8186:8462" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="8891:9338" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="9513:9752" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="9752:9861" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="10137:10247" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="10247:10360" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="10461:10567" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="10567:10678" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="10850:11634" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="10980:11624" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="11290:11574" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="11351:11554" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="11698:12311" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="11828:12301" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="12166:12255" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="12375:16736" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="12505:16726" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="13775:16682" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="13821:14726" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="14121:14403" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="14840:15287" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="15464:15703" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="15703:15812" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="16092:16202" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="16202:16315" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="16416:16522" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="16522:16633" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="16805:17686" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="16935:17676" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="17300:17628" ph="{...}" />
-            <marker date="1541884228647" expanded="true" signature="17358:17608" ph="{...}" />
+            <marker date="1541946811521" expanded="false" signature="6:226" ph="..." />
+            <marker date="1541946811521" expanded="true" signature="259:19126" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="310:19123" ph="{...}" />
+            <marker date="1541946811521" expanded="false" signature="385:4006" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="515:3996" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="928:3946" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="974:1859" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="1268:1544" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="1971:2418" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="2593:2832" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="2832:2941" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="3217:3394" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="3394:3507" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="3608:3777" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="3777:3888" ph="{...}" />
+            <marker date="1541946811521" expanded="false" signature="4058:7528" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="4188:7518" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="4465:7474" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="4511:5396" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="4805:5081" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="5508:5955" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="6130:6369" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="6369:6478" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="6754:6931" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="6931:7044" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="7145:7314" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="7314:7425" ph="{...}" />
+            <marker date="1541946811521" expanded="false" signature="7600:11171" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="7730:11161" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="8104:11117" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="8150:9039" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="8446:8722" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="9151:9598" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="9773:10012" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="10012:10121" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="10397:10574" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="10574:10687" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="10788:10957" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="10957:11068" ph="{...}" />
+            <marker date="1541946811521" expanded="false" signature="11240:12024" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="11370:12014" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="11680:11964" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="11741:11944" ph="{...}" />
+            <marker date="1541946811521" expanded="false" signature="12088:12701" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="12218:12691" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="12556:12645" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="12765:18166" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="12895:18156" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="13941:14315" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="14315:14449" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="14518:14852" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="14852:14984" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="15075:18112" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="15121:16026" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="15421:15703" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="16140:16587" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="16764:17003" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="17003:17112" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="17392:17569" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="17569:17682" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="17783:17952" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="17952:18063" ph="{...}" />
+            <marker date="1541946811521" expanded="false" signature="18235:19116" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="18365:19106" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="18730:19058" ph="{...}" />
+            <marker date="1541946811521" expanded="true" signature="18788:19038" ph="{...}" />
           </folding>
         </state>
       </provider>

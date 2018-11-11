@@ -5,7 +5,7 @@ import com.example.sarthak.hms.models.Credential;
 import retrofit2.Call;
 import retrofit2.http.*;
 
-public interface ILoginService {
+public interface IAuthenticationService {
     @POST("authentication/login")
     Call<String> login(@Body Credential credential);
 }

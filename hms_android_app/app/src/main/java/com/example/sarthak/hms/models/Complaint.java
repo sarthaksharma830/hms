@@ -3,6 +3,7 @@ package com.example.sarthak.hms.models;
 import org.parceler.Parcel;
 
 import java.util.Date;
+import java.util.List;
 
 @Parcel
 public class Complaint {
@@ -18,6 +19,16 @@ public class Complaint {
     Date appointmentDatePreference;
     Date appointmentFromTimePreference;
     Date appointmentToTimePreference;
+
+    public List<String> getPictures() {
+        return pictures;
+    }
+
+    public void setPictures(List<String> pictures) {
+        this.pictures = pictures;
+    }
+
+    List<String> pictures;
 
     public int getId() {
         return id;

@@ -313,4 +313,24 @@ public class ComplaintsService {
             }
         });
     }
+
+    public void createComplaint(Complaint complaint, final IComplaintCallback callback) {
+        Retrofit retrofit = RetrofitProvider.newInstance();
+        IComplaintsService service = retrofit.create(IComplaintsService.class);
+        service.createComplaint(complaint).enqueue(new Callback<Complaint>() {
+            @Override
+            public void onResponse(Call<Complaint> call, Response<Complaint> response) {
+                if (response.errorBody() != null) {
+                    callback.onError(new Exception(response.message()));
+                } else {
+                    callback.onComplaint(response.body());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Complaint> call, Throwable t) {
+                callback.onError(new Exception(t.toString()));
+            }
+        });
+    }
 }

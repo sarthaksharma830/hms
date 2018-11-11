@@ -64,14 +64,16 @@ namespace hms_web_api.Dao.Impl {
                     var appToTime = reader["appointment_to_time_pref"].ToString();
 
                     if (!string.IsNullOrEmpty(appFromTime) || !string.IsNullOrWhiteSpace(appFromTime)) {
-                        c.AppointmentFromTimePreference = TimeSpan.Parse(appFromTime);
+                        appFromTime = $"1970-01-01T{appFromTime}";
+                        c.AppointmentFromTimePreference = DateTime.Parse(appFromTime);
                     }
                     else {
                         c.AppointmentFromTimePreference = null;
                     }
 
                     if (!string.IsNullOrEmpty(appToTime) || !string.IsNullOrWhiteSpace(appToTime)) {
-                        c.AppointmentToTimePreference = TimeSpan.Parse(appToTime);
+                        appToTime = $"1970-01-01T{appToTime}";
+                        c.AppointmentToTimePreference = DateTime.Parse(appToTime);
                     }
                     else {
                         c.AppointmentToTimePreference = null;
@@ -134,14 +136,16 @@ namespace hms_web_api.Dao.Impl {
                     var appToTime = reader["appointment_to_time_pref"].ToString();
 
                     if (!string.IsNullOrEmpty(appFromTime) || !string.IsNullOrWhiteSpace(appFromTime)) {
-                        c.AppointmentFromTimePreference = TimeSpan.Parse(appFromTime);
+                        appFromTime = $"1970-01-01T{appFromTime}";
+                        c.AppointmentFromTimePreference = DateTime.Parse(appFromTime);
                     }
                     else {
                         c.AppointmentFromTimePreference = null;
                     }
 
                     if (!string.IsNullOrEmpty(appToTime) || !string.IsNullOrWhiteSpace(appToTime)) {
-                        c.AppointmentToTimePreference = TimeSpan.Parse(appToTime);
+                        appToTime = $"1970-01-01T{appToTime}";
+                        c.AppointmentToTimePreference = DateTime.Parse(appToTime);
                     }
                     else {
                         c.AppointmentToTimePreference = null;
@@ -206,14 +210,16 @@ namespace hms_web_api.Dao.Impl {
                     var appToTime = reader["appointment_to_time_pref"].ToString();
 
                     if (!string.IsNullOrEmpty(appFromTime) || !string.IsNullOrWhiteSpace(appFromTime)) {
-                        c.AppointmentFromTimePreference = TimeSpan.Parse(appFromTime);
+                        appFromTime = $"1970-01-01T{appFromTime}";
+                        c.AppointmentFromTimePreference = DateTime.Parse(appFromTime);
                     }
                     else {
                         c.AppointmentFromTimePreference = null;
                     }
 
                     if (!string.IsNullOrEmpty(appToTime) || !string.IsNullOrWhiteSpace(appToTime)) {
-                        c.AppointmentToTimePreference = TimeSpan.Parse(appToTime);
+                        appToTime = $"1970-01-01T{appToTime}";
+                        c.AppointmentToTimePreference = DateTime.Parse(appToTime);
                     }
                     else {
                         c.AppointmentToTimePreference = null;
@@ -265,7 +271,8 @@ namespace hms_web_api.Dao.Impl {
             using (var connection = SqlConnectionManager.GetConnection())
             using (var command = new NpgsqlCommand()) {
                 command.Connection = connection;
-                command.CommandText = "select * from createComplaint(@title, @studentId, @complaintCategoryId, @datetime, @description, @datePref, @fromTimePref, @toTimePref, @pictures)";
+                command.CommandText =
+                    "select * from createComplaint(@title, @studentId, @complaintCategoryId, @datetime, @description, @datePref, @fromTimePref, @toTimePref, @pictures)";
 
                 command.Parameters.AddWithValue("@title", complaint.Title);
                 command.Parameters.AddWithValue("@studentId", complaint.Student.Id);
@@ -273,9 +280,28 @@ namespace hms_web_api.Dao.Impl {
                 command.Parameters.AddWithValue("@description", complaint.Description);
                 command.Parameters.Add("@datetime", NpgsqlDbType.TimestampTz).Value = complaint.DateTime;
                 command.Parameters.Add("@datePref", NpgsqlDbType.Date).Value = complaint.AppointmentDatePreference;
-                command.Parameters.Add("@fromTimePref", NpgsqlDbType.Time).Value = complaint.AppointmentFromTimePreference;
-                command.Parameters.Add("@toTimePref", NpgsqlDbType.Time).Value = complaint.AppointmentToTimePreference;
                 command.Parameters.Add("@pictures", NpgsqlDbType.Array | NpgsqlDbType.Text).Value = complaint.Pictures;
+                    
+                if (complaint.AppointmentFromTimePreference != null) {
+                    var fromTimeString =
+                        complaint.AppointmentFromTimePreference.Value.ToString("HH:mm:ss",
+                            CultureInfo.InvariantCulture);
+                    var fromTime = TimeSpan.Parse(fromTimeString);
+                    command.Parameters.Add("@fromTimePref", NpgsqlDbType.Time).Value = fromTime;
+                }
+                else {
+                    command.Parameters.Add("@fromTimePref", NpgsqlDbType.Time).Value = null;
+                }
+
+                if (complaint.AppointmentToTimePreference != null) {
+                    var toTimeString =
+                        complaint.AppointmentToTimePreference.Value.ToString("HH:mm:ss", CultureInfo.InvariantCulture);
+                    var toTime = TimeSpan.Parse(toTimeString);
+                    command.Parameters.Add("@toTimePref", NpgsqlDbType.Time).Value = toTime;
+                }
+                else {
+                    command.Parameters.Add("@toTimePref", NpgsqlDbType.Time).Value = null;
+                }
 
                 var reader = command.ExecuteReader();
                 if (reader.Read()) {
@@ -321,14 +347,16 @@ namespace hms_web_api.Dao.Impl {
                     var appToTime = reader["c_appointment_to_time_pref"].ToString();
 
                     if (!string.IsNullOrEmpty(appFromTime) || !string.IsNullOrWhiteSpace(appFromTime)) {
-                        c.AppointmentFromTimePreference = TimeSpan.Parse(appFromTime);
+                        appFromTime = $"1970-01-01T{appFromTime}";
+                        c.AppointmentFromTimePreference = DateTime.Parse(appFromTime);
                     }
                     else {
                         c.AppointmentFromTimePreference = null;
                     }
 
                     if (!string.IsNullOrEmpty(appToTime) || !string.IsNullOrWhiteSpace(appToTime)) {
-                        c.AppointmentToTimePreference = TimeSpan.Parse(appToTime);
+                        appToTime = $"1970-01-01T{appToTime}";
+                        c.AppointmentToTimePreference = DateTime.Parse(appToTime);
                     }
                     else {
                         c.AppointmentToTimePreference = null;

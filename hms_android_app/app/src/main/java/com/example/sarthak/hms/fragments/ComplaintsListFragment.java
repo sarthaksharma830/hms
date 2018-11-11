@@ -1,6 +1,7 @@
 package com.example.sarthak.hms.fragments;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -37,8 +38,12 @@ import com.example.sarthak.hms.models.Student;
 import com.example.sarthak.hms.services.ComplaintsService;
 import com.example.sarthak.hms.services.StudentService;
 
+import org.joda.time.DateTimeComparator;
 import org.parceler.Parcels;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -158,6 +163,25 @@ public class ComplaintsListFragment extends Fragment {
                     });
                 }
             }
+        } else if (requestCode == Constants.REQUEST_CODE_NEW_COMPLAINT) {
+            if (resultCode == Activity.RESULT_OK) {
+                Complaint c = Parcels.unwrap(data.getParcelableExtra(Constants.EXTRA_COMPLAINT));
+                complaints.add(c);
+                Collections.sort(complaints, new Comparator<Complaint>() {
+                    @Override
+                    public int compare(Complaint o1, Complaint o2) {
+                        if (o1.isStarred() && !o2.isStarred()) {
+                            return -1;
+                        } else if (!o1.isStarred() && o2.isStarred()) {
+                            return 1;
+                        } else {
+                            DateTimeComparator comparator = DateTimeComparator.getDateOnlyInstance();
+                            return comparator.compare(o2.getDateTime(), o1.getDateTime());
+                        }
+                    }
+                });
+                adapter.setComplaints(complaints);
+            }
         }
     }
 
@@ -208,7 +232,7 @@ public class ComplaintsListFragment extends Fragment {
         newComplaintFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), NewComplaintActivity.class));
+                startActivityForResult(new Intent(getContext(), NewComplaintActivity.class), Constants.REQUEST_CODE_NEW_COMPLAINT);
             }
         });
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

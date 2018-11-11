@@ -15,8 +15,8 @@ namespace hms_web_api.Models {
         public ComplaintStatus ComplaintStatus { get; set; }
         public bool Starred { get; set; }
         public DateTime? AppointmentDatePreference { get; set; }
-        public TimeSpan? AppointmentFromTimePreference { get; set; }
-        public TimeSpan? AppointmentToTimePreference { get; set; }
+        public DateTime? AppointmentFromTimePreference { get; set; }
+        public DateTime? AppointmentToTimePreference { get; set; }
         public List<string> Pictures { get; set; }
 
     }

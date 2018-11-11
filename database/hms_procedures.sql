@@ -348,6 +348,7 @@ create or replace function createComplaint(
   ) as $$
 declare
   last_id int;
+  i text;
 begin
   insert into complaints (title,
                           student_id,
@@ -369,9 +370,9 @@ begin
           _to_time_pref) returning id
     into last_id;
 
-  for i in 1 .. array_upper(_pictures, 1)
+  foreach i in array _pictures
   loop
-    insert into complaint_pictures (complaint_id, picture) values (last_id, _pictures[i]);
+    insert into complaint_pictures (complaint_id, picture) values (last_id, i);
   end loop;
   return query select * from getComplaintById(last_id);
 end;

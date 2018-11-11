@@ -79,6 +79,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
+            android:id="@+id/descriptionEditText"
             android:layout_marginTop="6dp"
             android:layout_marginRight="16dp"
             android:gravity="top|left" />
@@ -119,6 +120,9 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/chooseDateRow"
+            android:clickable="true"
+            android:background="?android:attr/selectableItemBackground"
             android:layout_marginTop="16dp">
 
             <ImageView
@@ -140,8 +144,8 @@
                     android:id="@+id/date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Wednesday, 31st October, 2018"
-                    android:textColor="?android:attr/textColorPrimary"
+                    android:text="Tap to select"
+                    android:textStyle="italic"
                     android:textSize="16sp" />
 
                 <TextView
@@ -157,6 +161,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/chooseTimeRow"
             android:layout_marginTop="6dp">
 
             <ImageView
@@ -177,6 +182,8 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_weight="1"
+                    android:id="@+id/chooseFromTimeRow"
+                    android:background="?android:attr/selectableItemBackground"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
@@ -184,8 +191,8 @@
                         android:id="@+id/fromTime"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="6:00 PM"
-                        android:textColor="?android:attr/textColorPrimary"
+                        android:text="Tap to select"
+                        android:textStyle="italic"
                         android:textSize="16sp" />
 
                     <TextView
@@ -198,6 +205,8 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
+                    android:id="@+id/chooseToTimeRow"
+                    android:background="?android:attr/selectableItemBackground"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -206,8 +215,8 @@
                         android:id="@+id/toTime"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="7:00 PM"
-                        android:textColor="?android:attr/textColorPrimary"
+                        android:text="Tap to select"
+                        android:textStyle="italic"
                         android:textSize="16sp" />
 
                     <TextView
