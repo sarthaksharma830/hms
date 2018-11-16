@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:animateLayoutChanges="true"
-    tools:context=".fragments.ComplaintsListFragment">
+    tools:context=".fragments.StudentComplaintsListFragment">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_fragment_complaints_list" />
+    <include layout="@layout/content_fragment_student_complaints_list" />
 
     <ProgressBar
         android:layout_width="wrap_content"

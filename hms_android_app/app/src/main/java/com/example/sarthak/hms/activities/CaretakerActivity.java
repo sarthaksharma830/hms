@@ -2,10 +2,10 @@ package com.example.sarthak.hms.activities;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -13,11 +13,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.sarthak.hms.R;
+import com.example.sarthak.hms.fragments.CaretakerComplaintsListFragment;
+import com.example.sarthak.hms.fragments.CaretakerProfileFragment;
 import com.example.sarthak.hms.fragments.StudentAppointmentsFragment;
 import com.example.sarthak.hms.fragments.StudentComplaintsListFragment;
 import com.example.sarthak.hms.fragments.StudentProfileFragment;
 
-public class StudentActivity extends AppCompatActivity
+public class CaretakerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     FragmentManager fragmentManager;
@@ -26,15 +28,15 @@ public class StudentActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student);
+        setContentView(R.layout.activity_caretaker);
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         fragmentManager = getSupportFragmentManager();
 
         if (savedInstanceState == null) {
-            changeFragments(new StudentProfileFragment());
+            changeFragments(new CaretakerProfileFragment());
             navigationView.setCheckedItem(R.id.nav_profile);
         }
     }
@@ -89,18 +91,16 @@ public class StudentActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_profile) {
-            changeFragments(new StudentProfileFragment());
+            changeFragments(new CaretakerProfileFragment());
         } else if (id == R.id.nav_complaints) {
-            changeFragments(new StudentComplaintsListFragment());
-        } else if (id == R.id.nav_appointments) {
-            changeFragments(new StudentAppointmentsFragment());
+            changeFragments(new CaretakerComplaintsListFragment());
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

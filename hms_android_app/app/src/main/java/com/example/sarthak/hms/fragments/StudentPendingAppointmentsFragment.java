@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PendingAppointmentsFragment extends Fragment {
+public class StudentPendingAppointmentsFragment extends Fragment {
 
 
     private RecyclerView overdueAppointmentsRecyclerView;
@@ -41,7 +41,7 @@ public class PendingAppointmentsFragment extends Fragment {
     private List<Appointment> todayAppointments = new ArrayList<>();
     private List<Appointment> upcomingAppointments = new ArrayList<>();
 
-    public PendingAppointmentsFragment() {
+    public StudentPendingAppointmentsFragment() {
         // Required empty public constructor
     }
 
@@ -79,6 +79,7 @@ public class PendingAppointmentsFragment extends Fragment {
             @Override
             public void onError(Exception e) {
                 Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                pendingAppointmentsProgressBar.setVisibility(View.GONE);
             }
         }, false);
 

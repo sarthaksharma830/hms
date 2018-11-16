@@ -12,11 +12,18 @@ namespace hms_web_api.Controllers {
     [ApiController]
     public class AuthenticationController : ControllerBase {
 
-        [HttpPost("login")]
+        [HttpPost("login/s")]
         [Consumes("application/json")]
-        public ActionResult<LoginResult> Login([FromBody] Credential credential) {
+        public ActionResult<LoginResult> StudentLogin([FromBody] Credential credential) {
             var dao = new AuthenticationDao();
-            return dao.Login(credential.Rollno, credential.Password);
+            return dao.StudentLogin(credential.Rollno, credential.Password);
+        }
+        
+        [HttpPost("login/c")]
+        [Consumes("application/json")]
+        public ActionResult<LoginResult> CaretakerLogin([FromBody] Credential credential) {
+            var dao = new AuthenticationDao();
+            return dao.CaretakerLogin(credential.Rollno, credential.Password);
         }
 
     }

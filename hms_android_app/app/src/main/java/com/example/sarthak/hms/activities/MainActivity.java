@@ -22,71 +22,149 @@ import com.example.sarthak.hms.services.AuthenticationService;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button loginButton, continueButton;
+    private TextView appTitleAfter;
+    private TextView appTitleBefore;
+    private ProgressBar progressBar;
+    private RelativeLayout loginForm;
+    private RelativeLayout userTypeLayout;
+    private LinearLayout logoLayout, caretaker, student;
+    private int userType = 0;
+    private EditText usernameEditText;
+    private EditText passwordEditText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final LinearLayout logoLayout = findViewById(R.id.logoLayout);
-        final RelativeLayout loginForm = findViewById(R.id.loginForm);
-        final ProgressBar progressBar = findViewById(R.id.progressBar);
+        prepareViews();
 
-        TextView appTitleBefore = findViewById(R.id.appTitleBefore);
         appTitleBefore.setTypeface(Typeface.createFromAsset(getAssets(), "font_regular.otf"));
+        appTitleAfter.setTypeface(Typeface.createFromAsset(getAssets(), "font_regular.otf"));
+        appTitleAfter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ChangeDevConfigActivity.class));
+            }
+        });
+
+        logoLayout.setVisibility(View.VISIBLE);
+        userTypeLayout.setVisibility(View.GONE);
+        loginForm.setVisibility(View.GONE);
+
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                logoLayout.animate().alpha(0.0f).setDuration(500).withEndAction(new Runnable() {
-                    @Override
-                    public void run() {
-                        loginForm.animate().alpha(1.0f).setDuration(500).start();
-                        loginForm.setVisibility(View.VISIBLE);
 
-                        final EditText rollNumberEditText = findViewById(R.id.rollNumberEditText);
-                        final EditText passwordEditText = findViewById(R.id.passwordEditText);
-                        TextView appTitleAfter = findViewById(R.id.appTitleAfter);
-                        appTitleAfter.setTypeface(Typeface.createFromAsset(getAssets(), "font_regular.otf"));
-                        Button loginButton = findViewById(R.id.loginButton);
-                        appTitleAfter.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                startActivity(new Intent(MainActivity.this, ChangeDevConfigActivity.class));
-                            }
-                        });
+                logoLayout.setVisibility(View.GONE);
+                userTypeLayout.setVisibility(View.VISIBLE);
+
+                invalidateUserType();
+
+                caretaker.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        userType = 0;
+                        invalidateUserType();
+                    }
+                });
+
+                student.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        userType = 1;
+                        invalidateUserType();
+                    }
+                });
+
+                continueButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        userTypeLayout.setVisibility(View.GONE);
+                        loginForm.setVisibility(View.VISIBLE);
 
                         loginButton.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
 
                                 progressBar.setVisibility(View.VISIBLE);
-                                final String rollno = rollNumberEditText.getText().toString().trim();
+                                final String username = usernameEditText.getText().toString().trim();
                                 String password = passwordEditText.getText().toString();
-                                AuthenticationService authenticationService = new AuthenticationService();
-                                authenticationService.loginAsync(new Credential(rollno, password), new ILoginCallback() {
-                                    @Override
-                                    public void onLogin(boolean result) {
-                                        if (result) {
-                                            Intent intent = new Intent(MainActivity.this, StudentActivity.class);
-                                            intent.putExtra(Constants.EXTRA_STUDENT_ROLLNO, rollno);
-                                            startActivity(intent);
-                                        } else {
-                                            Toast.makeText(MainActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
-                                        }
-                                        progressBar.setVisibility(View.INVISIBLE);
-                                    }
 
-                                    @Override
-                                    public void onError(Exception e) {
-                                        Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                                        progressBar.setVisibility(View.INVISIBLE);
-                                    }
-                                }, false);
+                                AuthenticationService authenticationService = new AuthenticationService();
+                                Credential credential = new Credential(username, password);
+                                if (userType == 0) {
+                                    authenticationService.caretakerLogin(credential, new ILoginCallback() {
+                                        @Override
+                                        public void onLogin(boolean result) {
+                                            if (result) {
+                                                Intent intent = new Intent(MainActivity.this, CaretakerActivity.class);
+                                                intent.putExtra(Constants.EXTRA_CARETAKER_USERNAME, username);
+                                                startActivity(intent);
+                                            } else {
+                                                Toast.makeText(MainActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+                                            }
+                                            progressBar.setVisibility(View.INVISIBLE);
+                                        }
+
+                                        @Override
+                                        public void onError(Exception e) {
+
+                                        }
+                                    });
+                                } else {
+                                    authenticationService.studentLogin(credential, new ILoginCallback() {
+                                        @Override
+                                        public void onLogin(boolean result) {
+                                            if (result) {
+                                                Intent intent = new Intent(MainActivity.this, StudentActivity.class);
+                                                intent.putExtra(Constants.EXTRA_STUDENT_ROLLNO, username);
+                                                startActivity(intent);
+                                            } else {
+                                                Toast.makeText(MainActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+                                            }
+                                            progressBar.setVisibility(View.INVISIBLE);
+                                        }
+
+                                        @Override
+                                        public void onError(Exception e) {
+                                            Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                            progressBar.setVisibility(View.INVISIBLE);
+                                        }
+                                    }, false);
+                                }
                             }
                         });
                     }
-                }).start();
+                });
             }
         }, 2000);
+    }
+
+    private void invalidateUserType() {
+        if (userType == 0) {
+            caretaker.setBackgroundResource(R.drawable.border_green);
+            student.setBackground(null);
+        } else {
+            student.setBackgroundResource(R.drawable.border_green);
+            caretaker.setBackground(null);
+        }
+    }
+
+    private void prepareViews() {
+        logoLayout = findViewById(R.id.logoLayout);
+        userTypeLayout = findViewById(R.id.userTypeLayout);
+        loginForm = findViewById(R.id.loginForm);
+        progressBar = findViewById(R.id.progressBar);
+        appTitleBefore = findViewById(R.id.appTitleBefore);
+        appTitleAfter = findViewById(R.id.appTitleAfter);
+        loginButton = findViewById(R.id.loginButton);
+        caretaker = findViewById(R.id.caretaker);
+        student = findViewById(R.id.student);
+        continueButton = findViewById(R.id.continueButton);
+        usernameEditText = findViewById(R.id.usernameEditText);
+        passwordEditText = findViewById(R.id.passwordEditText);
     }
 }

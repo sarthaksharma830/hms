@@ -6,6 +6,9 @@ import retrofit2.Call;
 import retrofit2.http.*;
 
 public interface IAuthenticationService {
-    @POST("authentication/login")
-    Call<String> login(@Body Credential credential);
+    @POST("authentication/login/s")
+    Call<String> studentLogin(@Body Credential credential);
+
+    @POST("authentication/login/c")
+    Call<String> caretakerLogin(@Body Credential credential);
 }

@@ -13,8 +13,11 @@ insert into student_hostels (student_id, hostel_id, room_no) VALUES (1, 1, 'D 62
 insert into student_hostels (student_id, hostel_id, room_no) VALUES (4, 1, 'D 627');
 insert into student_hostels (student_id, hostel_id, room_no) VALUES (3, 2, 'A 123');
 
-insert into caretakers (name, code, email, hostel_id) VALUES ('John Doe', 'john_doe', 'johndoe@example.com', 1);
-insert into caretakers (name, code, email, hostel_id) VALUES ('Jane Doe', 'jane_doe', 'janedoe@example.com', 2);
+insert into caretakers (name, username, contact, email, hostel_id) VALUES ('John Doe', 'johndoe', '+911234567890', 'johndoe@example.com', 1);
+insert into caretakers (name, username, contact, email, hostel_id) VALUES ('Jane Doe', 'janedoe', '+911432587690', 'janedoe@example.com', 2);
+
+insert into caretaker_credentials (caretaker_id, password) values (1, sha256('test'));
+insert into caretaker_credentials (caretaker_id, password) values (2, sha256('test'));
 
 insert into complaint_categories (name, code) VALUES ('Carpenter', 'carp'),
                                                      ('Plumber', 'plumb'),

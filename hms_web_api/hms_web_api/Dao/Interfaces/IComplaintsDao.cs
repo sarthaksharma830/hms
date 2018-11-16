@@ -7,6 +7,8 @@ namespace hms_web_api.Dao.Interfaces {
     public interface IComplaintsDao {
 
         List<Complaint> GetComplaintsByStudent(int sid, int len);
+        
+        List<Complaint> GetComplaintsByCaretaker(int cid, int len);
 
         Complaint GetComplaintById(int id);
 

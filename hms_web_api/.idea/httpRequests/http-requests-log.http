@@ -1,3 +1,287 @@
+POST http://localhost:5000/api/complaints/pictures/upload
+
+--null
+
+
+< C:\Users\Sarthak\Pictures\259.JPG
+--null--
+
+###
+
+POST http://localhost:5000/api/complaints/pictures/upload
+
+--null
+
+
+< C:\Users\Sarthak\Pictures\259.JPG
+--null--
+
+<> 2018-11-16T111409.500.html
+
+###
+
+POST http://localhost:5000/api/complaints/pictures/upload
+
+--null
+
+
+< C:\Users\Sarthak\Pictures\259.JPG
+--null--
+
+<> 2018-11-16T111341.500.html
+
+###
+
+POST http://localhost:5000/api/complaints/pictures/upload?=
+
+--null
+
+
+< C:\Users\Sarthak\Pictures\259.JPG
+--null--
+
+###
+
+POST http://localhost:5000/api/complaints/pictures/upload?=
+
+--null
+
+
+< C:\Users\Sarthak\Pictures\259.JPG
+--null--
+
+<> 2018-11-16T111219.500.html
+
+###
+
+POST http://localhost:5000/api/complaints/pictures/upload?=
+
+--null
+
+
+< C:\Users\Sarthak\Pictures\259.JPG
+--null--
+
+###
+
+POST http://localhost:5000/api/complaints/pictures/upload?=
+
+--null
+
+
+< C:\Users\Sarthak\Pictures\259.JPG
+--null--
+
+<> 2018-11-16T111144.500.html
+
+###
+
+POST http://localhost:5000/api/complaints/pictures/upload?=
+
+--null
+
+
+< C:\Users\Sarthak\Pictures\259.JPG
+--null--
+
+###
+
+POST http://localhost:5000/api/complaints/pictures/upload?=
+
+--null
+
+
+< C:\Users\Sarthak\Pictures\259.JPG
+--null--
+
+<> 2018-11-16T111141.500.html
+
+###
+
+POST http://localhost:5000/api/complaints/pictures/upload?=
+
+--null
+
+
+< C:\Users\Sarthak\Pictures\259.JPG
+--null--
+
+<> 2018-11-16T111059.500.html
+
+###
+
+GET http://localhost:5000/api/complaints/caretaker/1?len=0
+
+<> 2018-11-15T114058.200.json
+
+###
+
+GET http://localhost:5000/api/complaints/caretaker/1?len=0
+
+<> 2018-11-15T113833.200.json
+
+###
+
+GET http://localhost:5000/api/complaints/caretaker/1?len=0
+
+<> 2018-11-15T100626.200.json
+
+###
+
+GET http://localhost:5000/api/complaints/caretaker/1?len=0
+
+###
+
+GET http://localhost:5000/api/complaints/caretaker/1?len=0
+
+<> 2018-11-15T100506.500.html
+
+###
+
+GET http://localhost:5000/api/complaints/caretaker/1?len=0
+
+###
+
+GET http://localhost:5000/api/complaints/caretaker/1?len=0
+
+<> 2018-11-15T100422.500.html
+
+###
+
+GET http://localhost:5000/api/complaints/caretaker/1
+
+###
+
+GET http://localhost:5000/api/complaints/caretaker/1?len=1
+
+<> 2018-11-15T100004.200.json
+
+###
+
+GET http://localhost:5000/api/complaints/caretaker/1
+
+<> 2018-11-15T095958.200.json
+
+###
+
+GET http://localhost:5000/api/caretakers/johndoe
+
+<> 2018-11-15T085159.200.json
+
+###
+
+GET http://localhost:5000/api/caretakers/johndoe
+
+###
+
+GET http://localhost:5000/api/caretakers/johndoe
+
+###
+
+POST http://localhost:5000/api/authentication/login/c
+Content-Type: application/json
+
+{
+  "rollno": "johndoe",
+  "password": "test"
+}
+
+<> 2018-11-15T074956.200.json
+
+###
+
+POST http://localhost:5000/api/authentication/login/c
+Content-Type: application/json
+
+{
+  "rollno": "johndoe",
+  "password": "test1"
+}
+
+<> 2018-11-15T074953.200.json
+
+###
+
+POST http://localhost:5000/api/authentication/login/c
+Content-Type: application/json
+
+{
+  "rollno": "johndoes",
+  "password": "test"
+}
+
+<> 2018-11-15T074947.200.json
+
+###
+
+POST http://localhost:5000/api/authentication/login/c
+Content-Type: application/json
+
+{
+  "rollno": "johndoe",
+  "password": "test"
+}
+
+<> 2018-11-15T074943.200.json
+
+###
+
+POST http://localhost:5000/api/authentication/login/s
+Content-Type: application/json
+
+{
+  "rollno": "johndoe",
+  "password": "test"
+}
+
+<> 2018-11-15T074908.200.json
+
+###
+
+POST http://localhost:5000/api/authentication/login/s
+Content-Type: application/json
+
+{
+  "rollno": "johndoe",
+  "password": "test"
+}
+
+###
+
+POST http://localhost:5000/api/authentication/login/s
+Content-Type: application/json
+
+{
+  "rollno": "101783037",
+  "password": "test"
+}
+
+<> 2018-11-15T074634.200.json
+
+###
+
+POST http://localhost:5000/api/authentication/login/s
+Content-Type: application/json
+
+{
+  "rollno": "101783037",
+  "password": "test"
+}
+
+<> 2018-11-15T073355.200.json
+
+###
+
+POST http://localhost:5000/api/authentication/login
+Content-Type: application/json
+
+{
+  "rollno": "101783037",
+  "password": "test"
+}
+
+###
+
 POST http://localhost:5000/api/complaints
 Content-Type: application/json
 
@@ -261,172 +545,6 @@ PUT http://localhost:5000/api/complaints/star/1/0
 PUT http://localhost:5000/api/complaints/star/1/1
 
 <> 2018-11-10T044122.200.json
-
-###
-
-PUT http://localhost:5000/api/complaints/star/1/1
-
-<> 2018-11-10T044014.500.html
-
-###
-
-GET http://localhost:5000/api/appointments/student/1/p
-
-<> 2018-11-10T040855.200.json
-
-###
-
-GET http://localhost:5000/api/complaints/student/1?len=0
-
-<> 2018-11-10T035400.200.json
-
-###
-
-GET http://localhost:5000/api/appointments/complaint/1
-
-<> 2018-11-10T033219.500.html
-
-###
-
-GET http://localhost:5000/api/appointments/student/1/p
-
-<> 2018-11-08T094933.200.json
-
-###
-
-GET http://localhost:5000/api/appointments/student/1/p
-
-###
-
-GET http://localhost:5000/api/appointments/student/1/p
-
-###
-
-GET http://localhost:5000/api/appointments/student/1/p
-
-###
-
-GET http://localhost:5000/api/appointments/student/1/p
-
-<> 2018-11-08T091442.200.json
-
-###
-
-GET http://localhost:5000/api/appointments/student/1/c
-
-<> 2018-11-08T091224.200.json
-
-###
-
-GET http://localhost:5000/api/appointments/student/1/p
-
-<> 2018-11-08T091215.200.json
-
-###
-
-GET http://localhost:5000/api/appointments/student/1/p
-
-###
-
-GET http://localhost:5000/api/appointments/student/1/p
-
-###
-
-GET http://localhost:5000/api/appointments/student/1
-
-<> 2018-11-08T055802.200.json
-
-###
-
-GET http://localhost:5000/api/complaints/student/1?len=0
-
-<> 2018-11-08T022046.200.json
-
-###
-
-GET http://localhost:5000/api/complaints/student/1?len=2
-
-<> 2018-11-08T022036.200.json
-
-###
-
-GET http://localhost:5000/api/complaints/student/1
-
-<> 2018-11-08T022018.200.json
-
-###
-
-GET http://localhost:5000/api/complaints/student/1
-
-<> 2018-11-08T021351.200.json
-
-###
-
-GET http://localhost:5000/api/complaints/student/1
-
-###
-
-GET http://localhost:5000/api/complaints/student/1
-
-<> 2018-11-08T021302.500.html
-
-###
-
-GET http://localhost:5000/api/complaints/student/1
-
-<> 2018-11-08T021217.500.html
-
-###
-
-GET http://localhost:5000/api/students/101783037
-
-<> 2018-11-07T062529.200.json
-
-###
-
-GET http://localhost:5000/api/student/101783037
-
-###
-
-GET http://localhost:5000/api/appointments/complaint/1
-
-<> 2018-11-07T062454.200.json
-
-###
-
-GET http://localhost:5000/api/appointments/complaint/1
-
-###
-
-GET http://localhost:5000/api/appointments/complaint/1
-
-###
-
-GET http://localhost:5000/api/appointments/complaint/1
-
-###
-
-GET http://localhost:5000/api/appointments/student/1
-
-<> 2018-11-07T061804.200.json
-
-###
-
-GET http://localhost:5000/api/appointments/student/1
-
-###
-
-GET http://localhost:5000/api/complaints/student/1
-
-<> 2018-11-07T061707.200.json
-
-###
-
-GET http://localhost:5000/api/complaints/student/1
-
-###
-
-GET http://localhost:5000/api/complaints/student/1
 
 ###
 

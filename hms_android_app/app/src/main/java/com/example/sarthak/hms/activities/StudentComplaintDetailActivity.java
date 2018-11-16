@@ -1,10 +1,7 @@
 package com.example.sarthak.hms.activities;
 
-import android.app.MediaRouteButton;
 import android.content.Intent;
-import android.graphics.PorterDuff;
 import android.graphics.Rect;
-import android.os.Build;
 import android.support.design.widget.AppBarLayout;
 import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.content.ContextCompat;
@@ -12,10 +9,8 @@ import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,7 +18,6 @@ import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,7 +41,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-public class ComplaintDetailActivity extends AppCompatActivity {
+public class StudentComplaintDetailActivity extends AppCompatActivity {
 
     private NestedScrollView nestedScrollView;
     private AppBarLayout appBarLayout;
@@ -146,7 +140,7 @@ public class ComplaintDetailActivity extends AppCompatActivity {
             service.getAppointmentsByComplaint(complaint.getId(), new IAppointmentsListCallback() {
                 @Override
                 public void onAppointmentsList(List<Appointment> appointmentsList) {
-                    ComplaintDetailActivity.this.appointments = appointmentsList;
+                    StudentComplaintDetailActivity.this.appointments = appointmentsList;
                     if (appointments.size() > 0) {
                         SimpleDateFormat appDateFormat = new SimpleDateFormat("EEEE, MMMM d, YYYY");
                         appointmentDate.setText(appDateFormat.format(appointments.get(0).getDate()));
@@ -155,7 +149,7 @@ public class ComplaintDetailActivity extends AppCompatActivity {
 
                         if (appointments.get(0).getStatus()) {
                             appointmentStatus.setText("Completed");
-                            appointmentStatus.setTextColor(ContextCompat.getColor(ComplaintDetailActivity.this, R.color.green));
+                            appointmentStatus.setTextColor(ContextCompat.getColor(StudentComplaintDetailActivity.this, R.color.green));
                         } else {
                             Date now = new Date();
                             DateTimeComparator cmp = DateTimeComparator.getDateOnlyInstance();
@@ -163,13 +157,13 @@ public class ComplaintDetailActivity extends AppCompatActivity {
 
                             if (res < 0) {
                                 appointmentStatus.setText("Upcoming");
-                                appointmentStatus.setTextColor(ContextCompat.getColor(ComplaintDetailActivity.this, R.color.orange));
+                                appointmentStatus.setTextColor(ContextCompat.getColor(StudentComplaintDetailActivity.this, R.color.orange));
                             } else if (res > 0) {
                                 appointmentStatus.setText("Overdue");
-                                appointmentStatus.setTextColor(ContextCompat.getColor(ComplaintDetailActivity.this, R.color.red));
+                                appointmentStatus.setTextColor(ContextCompat.getColor(StudentComplaintDetailActivity.this, R.color.red));
                             } else {
                                 appointmentStatus.setText("Today");
-                                appointmentStatus.setTextColor(ContextCompat.getColor(ComplaintDetailActivity.this, R.color.blue));
+                                appointmentStatus.setTextColor(ContextCompat.getColor(StudentComplaintDetailActivity.this, R.color.blue));
                             }
                         }
 
@@ -186,7 +180,7 @@ public class ComplaintDetailActivity extends AppCompatActivity {
 
                 @Override
                 public void onError(Exception e) {
-                    Toast.makeText(ComplaintDetailActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StudentComplaintDetailActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     appointmentProgressBar.setVisibility(View.INVISIBLE);
                     appointmentStatus.setVisibility(View.INVISIBLE);
                     appointmentLayout.setVisibility(View.INVISIBLE);
@@ -213,7 +207,7 @@ public class ComplaintDetailActivity extends AppCompatActivity {
                     complaintPicturesRecyclerView.setVisibility(View.GONE);
                     noComplaintPictures.setVisibility(View.VISIBLE);
                 } else {
-                    complaintPicturesRecyclerView.setLayoutManager(new GridLayoutManager(ComplaintDetailActivity.this, 4));
+                    complaintPicturesRecyclerView.setLayoutManager(new GridLayoutManager(StudentComplaintDetailActivity.this, 4));
                     ComplaintPicturesListAdapter adapter = new ComplaintPicturesListAdapter(complaintPictures);
                     complaintPicturesRecyclerView.setAdapter(adapter);
                     complaintPicturesRecyclerView.setVisibility(View.VISIBLE);
@@ -225,7 +219,7 @@ public class ComplaintDetailActivity extends AppCompatActivity {
 
             @Override
             public void onError(Exception e) {
-                Toast.makeText(ComplaintDetailActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(StudentComplaintDetailActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 picturesProgressBar.setVisibility(View.GONE);
             }
         });
@@ -308,14 +302,14 @@ public class ComplaintDetailActivity extends AppCompatActivity {
             service.updateComplaintStarStatus(complaint.getId(), !this.complaint.isStarred(), new IComplaintCallback() {
                 @Override
                 public void onComplaint(Complaint complaint) {
-                    ComplaintDetailActivity.this.complaint = complaint;
+                    StudentComplaintDetailActivity.this.complaint = complaint;
                     item.setActionView(null);
                     invalidateOptionsMenu();
                 }
 
                 @Override
                 public void onError(Exception e) {
-                    Toast.makeText(ComplaintDetailActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StudentComplaintDetailActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     invalidateOptionsMenu();
                 }
             });

@@ -3,10 +3,8 @@ package com.example.sarthak.hms.activities;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
 import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.NestedScrollView;
@@ -18,7 +16,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.AppCompatSpinner;
 import android.text.TextUtils;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -58,7 +55,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-public class NewComplaintActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+public class StudentNewComplaintActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     private AppCompatEditText titleEditText;
     private AppCompatSpinner categorySpinner;
@@ -98,7 +95,7 @@ public class NewComplaintActivity extends AppCompatActivity implements DatePicke
         service.getAllComplaintCategories(new IComplaintCategoriesListCallback() {
             @Override
             public void onComplaintCategoriesList(List<ComplaintCategory> complaintCategoriesList) {
-                NewComplaintActivity.this.complaintCategories = complaintCategoriesList;
+                StudentNewComplaintActivity.this.complaintCategories = complaintCategoriesList;
                 populateViews();
 
                 nestedScrollView.setVisibility(View.VISIBLE);
@@ -107,7 +104,7 @@ public class NewComplaintActivity extends AppCompatActivity implements DatePicke
 
             @Override
             public void onError(Exception e) {
-                Toast.makeText(NewComplaintActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(StudentNewComplaintActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 newComplaintProgressBar.setVisibility(View.GONE);
                 finish();
             }
@@ -115,7 +112,7 @@ public class NewComplaintActivity extends AppCompatActivity implements DatePicke
     }
 
     private void populateViews() {
-        categorySpinnerAdapter = new CategorySpinnerAdapter(NewComplaintActivity.this, R.layout.category_spinner_item, complaintCategories);
+        categorySpinnerAdapter = new CategorySpinnerAdapter(StudentNewComplaintActivity.this, R.layout.category_spinner_item, complaintCategories);
         categorySpinner.setAdapter(categorySpinnerAdapter);
         categorySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -129,7 +126,7 @@ public class NewComplaintActivity extends AppCompatActivity implements DatePicke
 
                     @Override
                     public void onError(Exception e) {
-                        Toast.makeText(NewComplaintActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(StudentNewComplaintActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                         titleChipsAdapter.setTitles(new ArrayList<String>());
                     }
                 });
@@ -156,7 +153,7 @@ public class NewComplaintActivity extends AppCompatActivity implements DatePicke
         chooseDateRow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(NewComplaintActivity.this, NewComplaintActivity.this, now.getYear(), now.getMonthOfYear() - 1, now.getDayOfMonth());
+                DatePickerDialog datePickerDialog = new DatePickerDialog(StudentNewComplaintActivity.this, StudentNewComplaintActivity.this, now.getYear(), now.getMonthOfYear() - 1, now.getDayOfMonth());
                 datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
                 datePickerDialog.show();
             }
@@ -179,7 +176,7 @@ public class NewComplaintActivity extends AppCompatActivity implements DatePicke
                             DateTimeComparator comparator = DateTimeComparator.getTimeOnlyInstance();
                             int res = comparator.compare(new Date(calendar.getTimeInMillis()), chosenToTime);
                             if (res >= 0) {
-                                Toast.makeText(NewComplaintActivity.this, "From Time can't be after or same as To Time", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(StudentNewComplaintActivity.this, "From Time can't be after or same as To Time", Toast.LENGTH_SHORT).show();
                                 return;
                             }
                         }
@@ -190,7 +187,7 @@ public class NewComplaintActivity extends AppCompatActivity implements DatePicke
 
                             TypedValue val = new TypedValue();
                             getTheme().resolveAttribute(android.R.attr.textColorPrimary, val, true);
-                            fromTime.setTextColor(ContextCompat.getColor(NewComplaintActivity.this, val.resourceId));
+                            fromTime.setTextColor(ContextCompat.getColor(StudentNewComplaintActivity.this, val.resourceId));
                             SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a");
                             fromTime.setText(timeFormat.format(chosenFromTime));
                             fromTime.setTypeface(Typeface.DEFAULT);
@@ -200,11 +197,11 @@ public class NewComplaintActivity extends AppCompatActivity implements DatePicke
                                 chooseTimeRow.setBackgroundResource(val.resourceId);
                             }
                         } else {
-                            Toast.makeText(NewComplaintActivity.this, "This time is in the past!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(StudentNewComplaintActivity.this, "This time is in the past!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 };
-                TimePickerDialog timePickerDialog = new TimePickerDialog(NewComplaintActivity.this, timeSetListener, now.getHourOfDay(), now.getMinuteOfHour(), false);
+                TimePickerDialog timePickerDialog = new TimePickerDialog(StudentNewComplaintActivity.this, timeSetListener, now.getHourOfDay(), now.getMinuteOfHour(), false);
                 timePickerDialog.show();
             }
         });
@@ -226,7 +223,7 @@ public class NewComplaintActivity extends AppCompatActivity implements DatePicke
                             DateTimeComparator comparator = DateTimeComparator.getTimeOnlyInstance();
                             int res = comparator.compare(new Date(calendar.getTimeInMillis()), chosenFromTime);
                             if (res <= 0) {
-                                Toast.makeText(NewComplaintActivity.this, "To Time can't be before or same as From Time", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(StudentNewComplaintActivity.this, "To Time can't be before or same as From Time", Toast.LENGTH_SHORT).show();
                                 return;
                             }
                         }
@@ -238,7 +235,7 @@ public class NewComplaintActivity extends AppCompatActivity implements DatePicke
 
                             TypedValue val = new TypedValue();
                             getTheme().resolveAttribute(android.R.attr.textColorPrimary, val, true);
-                            toTime.setTextColor(ContextCompat.getColor(NewComplaintActivity.this, val.resourceId));
+                            toTime.setTextColor(ContextCompat.getColor(StudentNewComplaintActivity.this, val.resourceId));
                             SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a");
                             toTime.setText(timeFormat.format(chosenToTime));
                             toTime.setTypeface(Typeface.DEFAULT);
@@ -248,11 +245,11 @@ public class NewComplaintActivity extends AppCompatActivity implements DatePicke
                                 chooseTimeRow.setBackgroundResource(val.resourceId);
                             }
                         } else {
-                            Toast.makeText(NewComplaintActivity.this, "This time is in the past!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(StudentNewComplaintActivity.this, "This time is in the past!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 };
-                TimePickerDialog timePickerDialog = new TimePickerDialog(NewComplaintActivity.this, timeSetListener, now.getHourOfDay(), now.getMinuteOfHour(), false);
+                TimePickerDialog timePickerDialog = new TimePickerDialog(StudentNewComplaintActivity.this, timeSetListener, now.getHourOfDay(), now.getMinuteOfHour(), false);
                 timePickerDialog.show();
             }
         });
@@ -339,7 +336,7 @@ public class NewComplaintActivity extends AppCompatActivity implements DatePicke
                 service.createComplaint(c, new IComplaintCallback() {
                     @Override
                     public void onComplaint(Complaint complaint) {
-                        Toast.makeText(NewComplaintActivity.this, "Complaint Registered Successfully!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(StudentNewComplaintActivity.this, "Complaint Registered Successfully!", Toast.LENGTH_SHORT).show();
                         Intent data = new Intent();
                         data.putExtra(Constants.EXTRA_COMPLAINT, Parcels.wrap(complaint));
                         setResult(RESULT_OK, data);
@@ -349,7 +346,7 @@ public class NewComplaintActivity extends AppCompatActivity implements DatePicke
 
                     @Override
                     public void onError(Exception e) {
-                        Toast.makeText(NewComplaintActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(StudentNewComplaintActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                         item.setActionView(null);
                     }
                 });

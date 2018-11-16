@@ -18,20 +18,19 @@ import com.example.sarthak.hms.callbacks.IAppointmentsListCallback;
 import com.example.sarthak.hms.models.Appointment;
 import com.example.sarthak.hms.services.AppointmentsService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CompletedAppointmentsFragment extends Fragment {
+public class StudentCompletedAppointmentsFragment extends Fragment {
 
 
     private RecyclerView recyclerView;
     private ProgressBar completedAppointmentsProgressBar;
     private List<Appointment> appointments;
 
-    public CompletedAppointmentsFragment() {
+    public StudentCompletedAppointmentsFragment() {
         // Required empty public constructor
     }
 
@@ -50,7 +49,7 @@ public class CompletedAppointmentsFragment extends Fragment {
         service.getCompletedAppointmentsByStudent(Persistence.student.getId(), new IAppointmentsListCallback() {
             @Override
             public void onAppointmentsList(List<Appointment> appointments) {
-                CompletedAppointmentsFragment.this.appointments = appointments;
+                StudentCompletedAppointmentsFragment.this.appointments = appointments;
                 populateViews();
                 recyclerView.setVisibility(View.VISIBLE);
                 completedAppointmentsProgressBar.setVisibility(View.GONE);
@@ -68,7 +67,7 @@ public class CompletedAppointmentsFragment extends Fragment {
 
     private void populateViews() {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        AppointmentsRecyclerViewAdapter adapter = new AppointmentsRecyclerViewAdapter(new ArrayList<Appointment>());
+        AppointmentsRecyclerViewAdapter adapter = new AppointmentsRecyclerViewAdapter(appointments);
         recyclerView.setAdapter(adapter);
     }
 

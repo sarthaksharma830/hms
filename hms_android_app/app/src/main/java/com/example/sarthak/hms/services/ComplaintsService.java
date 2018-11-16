@@ -333,4 +333,24 @@ public class ComplaintsService {
             }
         });
     }
+
+    public void getComplaintsByCaretaker(int cid, int len, final IComplaintListCallback callback) {
+        Retrofit retrofit = RetrofitProvider.newInstance();
+        IComplaintsService service = retrofit.create(IComplaintsService.class);
+        service.getComplaintsByCaretaker(cid, len).enqueue(new Callback<List<Complaint>>() {
+            @Override
+            public void onResponse(Call<List<Complaint>> call, Response<List<Complaint>> response) {
+                if (response.errorBody() != null) {
+                    callback.onError(new Exception(response.message()));
+                } else {
+                    callback.onComplaintsList(response.body());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Complaint>> call, Throwable t) {
+                callback.onError(new Exception(t.toString()));
+            }
+        });
+    }
 }

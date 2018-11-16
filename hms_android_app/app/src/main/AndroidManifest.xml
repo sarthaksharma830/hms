@@ -27,14 +27,17 @@
             android:name=".activities.StudentActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activities.ComplaintDetailActivity"
+            android:name=".activities.StudentComplaintDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activities.NewComplaintActivity"
+            android:name=".activities.StudentNewComplaintActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.ChangeDevConfigActivity"
             android:noHistory="true" />
+        <activity
+            android:name=".activities.CaretakerActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

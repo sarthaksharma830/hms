@@ -11,9 +11,6 @@
                 android:bottomLeftRadius="32dp"
                 android:topLeftRadius="32dp" />
 
-            <size
-                android:width="140dp"
-                android:height="48dp" />
 
             <padding
                 android:left="8dp"

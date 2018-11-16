@@ -18,8 +18,14 @@ public interface IComplaintsService {
     @GET("complaints/student/{sid}")
     Call<List<Complaint>> getComplaintsByStudent(@Path("sid") int sid);
 
+    @GET("complaints/caretaker/{cid}")
+    Call<List<Complaint>> getComplaintsByCaretaker(@Path("cid") int cid);
+
     @GET("complaints/student/{sid}")
     Call<List<Complaint>> getComplaintsByStudent(@Path("sid") int sid, @Query("len") int len);
+
+    @GET("complaints/caretaker/{cid}")
+    Call<List<Complaint>> getComplaintsByCaretaker(@Path("cid") int cid, @Query("len") int len);
 
     @GET("complaints/{id}")
     Call<Complaint> getComplaintById(@Path("id") int id);

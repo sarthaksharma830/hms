@@ -12,6 +12,7 @@
         <e p="Controllers" t="Include">
           <e p="AppointmentsController.cs" t="Include" />
           <e p="AuthenticationController.cs" t="Include" />
+          <e p="CaretakersController.cs" t="Include" />
           <e p="ComplaintsController.cs" t="Include" />
           <e p="StudentsController.cs" t="Include" />
         </e>
@@ -19,12 +20,14 @@
           <e p="Impl" t="Include">
             <e p="AppointmentsDao.cs" t="Include" />
             <e p="AuthenticationDao.cs" t="Include" />
+            <e p="CaretakersDao.cs" t="Include" />
             <e p="ComplaintsDao.cs" t="Include" />
             <e p="StudentsDao.cs" t="Include" />
           </e>
           <e p="Interfaces" t="Include">
             <e p="IAppointmentsDao.cs" t="Include" />
             <e p="IAuthenticationDao.cs" t="Include" />
+            <e p="ICaretakersDao.cs" t="Include" />
             <e p="IComplaintsDao.cs" t="Include" />
             <e p="IStudentsDao.cs" t="Include" />
           </e>
@@ -33,6 +36,7 @@
         <e p="hms_web_api.csproj" t="IncludeRecursive" />
         <e p="Models" t="Include">
           <e p="Appointment.cs" t="Include" />
+          <e p="Caretaker.cs" t="Include" />
           <e p="Complaint.cs" t="Include" />
           <e p="ComplaintCategory.cs" t="Include" />
           <e p="ComplaintPicture.cs" t="Include" />

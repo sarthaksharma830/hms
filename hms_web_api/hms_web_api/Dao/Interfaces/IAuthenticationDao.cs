@@ -4,6 +4,6 @@ namespace hms_web_api.Dao.Interfaces
 {
     public interface IAuthenticationDao
     {
-        LoginResult Login(string rollno, string password);
+        LoginResult StudentLogin(string rollno, string password);
     }
 }

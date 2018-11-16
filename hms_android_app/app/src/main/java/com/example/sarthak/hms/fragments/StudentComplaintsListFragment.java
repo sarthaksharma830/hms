@@ -15,7 +15,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,8 +24,8 @@ import android.widget.Toast;
 import com.example.sarthak.hms.Constants;
 import com.example.sarthak.hms.Persistence;
 import com.example.sarthak.hms.R;
-import com.example.sarthak.hms.activities.ComplaintDetailActivity;
-import com.example.sarthak.hms.activities.NewComplaintActivity;
+import com.example.sarthak.hms.activities.StudentComplaintDetailActivity;
+import com.example.sarthak.hms.activities.StudentNewComplaintActivity;
 import com.example.sarthak.hms.adapters.RecentComplaintsListAdapter;
 import com.example.sarthak.hms.callbacks.IComplaintItemClickCallback;
 import com.example.sarthak.hms.callbacks.IComplaintCallback;
@@ -36,12 +35,11 @@ import com.example.sarthak.hms.callbacks.IStudentCallback;
 import com.example.sarthak.hms.models.Complaint;
 import com.example.sarthak.hms.models.Student;
 import com.example.sarthak.hms.services.ComplaintsService;
-import com.example.sarthak.hms.services.StudentService;
+import com.example.sarthak.hms.services.StudentsService;
 
 import org.joda.time.DateTimeComparator;
 import org.parceler.Parcels;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -49,7 +47,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ComplaintsListFragment extends Fragment {
+public class StudentComplaintsListFragment extends Fragment {
 
 
     private RecyclerView complaintsListRecyclerView;
@@ -59,7 +57,7 @@ public class ComplaintsListFragment extends Fragment {
     private List<Complaint> complaints;
     private RecentComplaintsListAdapter adapter;
 
-    public ComplaintsListFragment() {
+    public StudentComplaintsListFragment() {
         // Required empty public constructor
     }
 
@@ -68,7 +66,7 @@ public class ComplaintsListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_complaints_list, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_student_complaints_list, container, false);
 
         // Applying ActionBar
         Toolbar toolbar = rootView.findViewById(R.id.complaints_list_toolbar);
@@ -87,8 +85,8 @@ public class ComplaintsListFragment extends Fragment {
         complaintsListProgressBar.setVisibility(View.VISIBLE);
 
         if (Persistence.student == null) {
-            StudentService studentService = new StudentService();
-            studentService.getStudentByRollnoAsync(getActivity().getIntent().getStringExtra(Constants.EXTRA_STUDENT_ROLLNO), new IStudentCallback() {
+            StudentsService studentsService = new StudentsService();
+            studentsService.getStudentByRollnoAsync(getActivity().getIntent().getStringExtra(Constants.EXTRA_STUDENT_ROLLNO), new IStudentCallback() {
                 @Override
                 public void onStudent(Student student) {
                     Persistence.student = student;
@@ -96,7 +94,7 @@ public class ComplaintsListFragment extends Fragment {
                     complaintsService.getComplaintsByStudentAsync(Persistence.student.getId(), new IComplaintListCallback() {
                         @Override
                         public void onComplaintsList(List<Complaint> complaints) {
-                            ComplaintsListFragment.this.complaints = complaints;
+                            StudentComplaintsListFragment.this.complaints = complaints;
                             populateViews();
                         }
 
@@ -118,7 +116,7 @@ public class ComplaintsListFragment extends Fragment {
             complaintsService.getComplaintsByStudentAsync(Persistence.student.getId(), new IComplaintListCallback() {
                 @Override
                 public void onComplaintsList(List<Complaint> complaints) {
-                    ComplaintsListFragment.this.complaints = complaints;
+                    StudentComplaintsListFragment.this.complaints = complaints;
                     populateViews();
                 }
 
@@ -192,7 +190,7 @@ public class ComplaintsListFragment extends Fragment {
         adapter.setOnItemClickCallback(new IComplaintItemClickCallback() {
             @Override
             public void onClick(Complaint complaint) {
-                Intent intent = new Intent(getContext(), ComplaintDetailActivity.class);
+                Intent intent = new Intent(getContext(), StudentComplaintDetailActivity.class);
                 intent.putExtra(Constants.EXTRA_COMPLAINT, Parcels.wrap(complaint));
                 startActivityForResult(intent, Constants.REQUEST_CODE_VIEW_COMPLAINT_DETAIL);
             }
@@ -232,7 +230,7 @@ public class ComplaintsListFragment extends Fragment {
         newComplaintFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivityForResult(new Intent(getContext(), NewComplaintActivity.class), Constants.REQUEST_CODE_NEW_COMPLAINT);
+                startActivityForResult(new Intent(getContext(), StudentNewComplaintActivity.class), Constants.REQUEST_CODE_NEW_COMPLAINT);
             }
         });
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

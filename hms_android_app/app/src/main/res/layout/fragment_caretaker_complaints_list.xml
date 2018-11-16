@@ -4,41 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="false"
-    tools:context=".activities.StudentNewComplaintActivity">
+    android:fitsSystemWindows="true"
+    android:animateLayoutChanges="true"
+    tools:context=".fragments.CaretakerComplaintsListFragment">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/white"
         android:fitsSystemWindows="true"
+        android:id="@+id/caretakerComplaintsListAppBar"
         android:theme="@style/AppTheme.NoActionBar.AppBarOverlay"
         app:elevation="0dp">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/new_complaint_toolbar"
+            android:id="@+id/caretaker_complaints_list_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:layout_collapseMode="pin"
+            app:titleTextAppearance="@style/MyTitleTextAppearance"
             app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay"
-            app:title="New Complaint" />
+            app:title="Complaints" />
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_student_new_complaint" />
+    <include layout="@layout/content_fragment_caretaker_complaints_list" />
 
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:indeterminate="true"
         android:indeterminateTint="?colorPrimary"
-        android:id="@+id/newComplaintProgressBar"
+        android:id="@+id/complaintsListProgressBar"
         android:layout_height="wrap_content" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#E0E0E0"
-        android:layout_gravity="bottom" />
 
 </android.support.design.widget.CoordinatorLayout>
