@@ -23,7 +23,7 @@
             android:layout_margin="16dp"
             android:id="@+id/changeBaseUrl"
             android:layout_gravity="center"
-            android:text="Change Base Url"
+            android:text="Change API IP ADDRESS"
             style="@style/Widget.MaterialComponents.Button"
             android:layout_height="wrap_content" />
 

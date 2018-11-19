@@ -150,6 +150,19 @@ public class StudentComplaintsListFragment extends Fragment {
                             }
                             if (index != -1) {
                                 complaints.set(index, complaint);
+                                Collections.sort(complaints, new Comparator<Complaint>() {
+                                    @Override
+                                    public int compare(Complaint o1, Complaint o2) {
+                                        if (o1.isStarred() && !o2.isStarred()) {
+                                            return -1;
+                                        } else if (!o1.isStarred() && o2.isStarred()) {
+                                            return 1;
+                                        } else {
+                                            DateTimeComparator comparator = DateTimeComparator.getDateOnlyInstance();
+                                            return comparator.compare(o2.getDateTime(), o1.getDateTime());
+                                        }
+                                    }
+                                });
                                 adapter.setComplaints(complaints);
                             }
                         }
@@ -212,6 +225,19 @@ public class StudentComplaintsListFragment extends Fragment {
                         }
                         if (index != -1) {
                             complaints.set(index, complaint);
+                            Collections.sort(complaints, new Comparator<Complaint>() {
+                                @Override
+                                public int compare(Complaint o1, Complaint o2) {
+                                    if (o1.isStarred() && !o2.isStarred()) {
+                                        return -1;
+                                    } else if (!o1.isStarred() && o2.isStarred()) {
+                                        return 1;
+                                    } else {
+                                        DateTimeComparator comparator = DateTimeComparator.getDateOnlyInstance();
+                                        return comparator.compare(o2.getDateTime(), o1.getDateTime());
+                                    }
+                                }
+                            });
                             adapter.setComplaints(complaints);
                         }
                         v.setClickable(true);

@@ -278,14 +278,42 @@ create or replace function getComplaintById(_id int)
     appointment_from_time_pref time,
     appointment_to_time_pref   time,
     complaint_category_name    text,
-    complaint_category_code    text
+    complaint_category_code    text,
+    student_name               varchar,
+    student_rollno             varchar,
+    student_personal_contact   varchar,
+    student_parent_contact     varchar,
+    student_gender             bit,
+    student_email              text,
+    student_hostel_id          int,
+    student_hostel_name        text,
+    student_hostel_type        bit,
+    student_room_number        text
   )
 as $$
 begin
-  return query select c.*, cc.name as complaint_category_name, cc.code as complaint_category_code
+  return query select c.*,
+                      cc.name as complaint_category_name,
+                      cc.code as complaint_category_code,
+                      s.name,
+                      s.rollno,
+                      s.personal_contact,
+                      s.parent_contact,
+                      s.gender,
+                      s.email,
+                      h.id,
+                      h.name,
+                      h.type,
+                      sh.room_no
                from complaints as c,
-                    complaint_categories as cc
+                    complaint_categories as cc,
+                    students as s,
+                    student_hostels as sh,
+                    hostels as h
                where c.complaint_category_id = cc.id
+                 and c.student_id = s.id
+                 and sh.student_id = s.id
+                 and sh.hostel_id = h.id
                  and c.id = _id
                limit 1;
 end;
@@ -528,6 +556,74 @@ begin
     insert into complaint_pictures (complaint_id, picture) values (_cid, p);
   end loop;
   return query select picture from complaint_pictures where complaint_id = _cid;
+end;
+$$
+language plpgsql
+security definer;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+drop function if exists createAppointment;
+create or replace function createAppointment(_cid int, _d date, _ft time, _tt time)
+  returns table(
+    a_id           int,
+    a_complaint_id int,
+    a_date         date,
+    a_from_time    time,
+    a_to_time      time,
+    a_status       boolean
+  ) as $$
+declare
+  last_id int;
+begin
+  insert into appointments (complaint_id, date, from_time, to_time, status)
+  values (_cid, _d, _ft, _tt, false) returning id
+    into last_id;
+  update complaints set status = 1 where id = _cid;
+  return query select * from appointments where id = last_id;
+end;
+$$
+language plpgsql
+security definer;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+drop function if exists updateAppointment;
+create or replace function updateAppointment(_aid int, _d date, _ft time, _tt time)
+  returns table(
+    a_id           int,
+    a_complaint_id int,
+    a_date         date,
+    a_from_time    time,
+    a_to_time      time,
+    a_status       boolean
+  ) as $$
+declare
+  cid int;
+begin
+  update appointments
+  set date      = _d,
+      from_time = _ft,
+      to_time   = _tt,
+      status    = false
+  where id = _aid;
+  select complaint_id into cid from appointments where id = _aid;
+  update complaints set status = 1 where id = cid;
+  return query select * from appointments where id = _aid;
+end;
+$$
+language plpgsql
+security definer;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+drop function if exists markComplaintAsResolved;
+create or replace function markComplaintAsResolved(_cid int)
+  returns boolean as $$
+begin
+  update complaints set status = 2 where id = _cid;
+  update appointments set status = true where complaint_id = _cid;
+  return true;
 end;
 $$
 language plpgsql

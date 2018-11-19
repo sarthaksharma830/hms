@@ -168,4 +168,43 @@ public class AppointmentsService {
         }
     }
 
+    public void createAppointment(Appointment appointment, final IAppointmentsListCallback callback) {
+        Retrofit retrofit = RetrofitProvider.newInstance();
+        IAppointmentsService service = retrofit.create(IAppointmentsService.class);
+        service.createAppointment(appointment).enqueue(new Callback<List<Appointment>>() {
+            @Override
+            public void onResponse(Call<List<Appointment>> call, Response<List<Appointment>> response) {
+                if (response.isSuccessful()) {
+                    callback.onAppointmentsList(response.body());
+                } else {
+                    callback.onError(new Exception(response.message()));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Appointment>> call, Throwable t) {
+                callback.onError(new Exception(t.toString()));
+            }
+        });
+    }
+
+    public void updateAppointment(Appointment appointment, final IAppointmentsListCallback callback) {
+        Retrofit retrofit = RetrofitProvider.newInstance();
+        IAppointmentsService service = retrofit.create(IAppointmentsService.class);
+        service.updateAppointment(appointment).enqueue(new Callback<List<Appointment>>() {
+            @Override
+            public void onResponse(Call<List<Appointment>> call, Response<List<Appointment>> response) {
+                if (response.isSuccessful()) {
+                    callback.onAppointmentsList(response.body());
+                } else {
+                    callback.onError(new Exception(response.message()));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Appointment>> call, Throwable t) {
+                callback.onError(new Exception(t.toString()));
+            }
+        });
+    }
 }

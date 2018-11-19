@@ -22,10 +22,12 @@ import android.widget.Toast;
 import com.example.sarthak.hms.Constants;
 import com.example.sarthak.hms.Persistence;
 import com.example.sarthak.hms.R;
+import com.example.sarthak.hms.activities.CaretakerComplaintDetailActivity;
 import com.example.sarthak.hms.activities.StudentComplaintDetailActivity;
 import com.example.sarthak.hms.adapters.CaretakerComplaintsListAdapter;
 import com.example.sarthak.hms.adapters.RecentComplaintsListAdapter;
 import com.example.sarthak.hms.callbacks.ICaretakerCallback;
+import com.example.sarthak.hms.callbacks.IComplaintCallback;
 import com.example.sarthak.hms.callbacks.IComplaintItemClickCallback;
 import com.example.sarthak.hms.callbacks.IComplaintListCallback;
 import com.example.sarthak.hms.callbacks.IStudentCallback;
@@ -36,8 +38,11 @@ import com.example.sarthak.hms.services.CaretakersService;
 import com.example.sarthak.hms.services.ComplaintsService;
 import com.example.sarthak.hms.services.StudentsService;
 
+import org.joda.time.DateTimeComparator;
 import org.parceler.Parcels;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -125,57 +130,40 @@ public class CaretakerComplaintsListFragment extends Fragment {
         return rootView;
     }
 
-    /*@Override
+    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == Constants.REQUEST_CODE_VIEW_COMPLAINT_DETAIL) {
             if (resultCode == Constants.RESULT_CODE_COMPLAINT_UPDATED) {
-                final int complaintId = data.getIntExtra(Constants.EXTRA_COMPLAINT_ID, -1);
-                if (complaintId != -1) {
-                    ComplaintsService service = new ComplaintsService();
-                    service.getComplaintById(complaintId, new IComplaintCallback() {
-                        @Override
-                        public void onComplaint(Complaint complaint) {
-                            int index = -1;
-                            for (int i = 0; i < complaints.size(); i++) {
-                                if (complaints.get(i).getId() == complaintId) {
-                                    index = i;
-                                    break;
-                                }
-                            }
-                            if (index != -1) {
-                                complaints.set(index, complaint);
-                                adapter.setComplaints(complaints);
-                            }
-                        }
-
-                        @Override
-                        public void onError(Exception e) {
-                            Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }
-            }
-        } else if (requestCode == Constants.REQUEST_CODE_NEW_COMPLAINT) {
-            if (resultCode == Activity.RESULT_OK) {
                 Complaint c = Parcels.unwrap(data.getParcelableExtra(Constants.EXTRA_COMPLAINT));
-                complaints.add(c);
-                Collections.sort(complaints, new Comparator<Complaint>() {
-                    @Override
-                    public int compare(Complaint o1, Complaint o2) {
-                        if (o1.isStarred() && !o2.isStarred()) {
-                            return -1;
-                        } else if (!o1.isStarred() && o2.isStarred()) {
-                            return 1;
-                        } else {
-                            DateTimeComparator comparator = DateTimeComparator.getDateOnlyInstance();
-                            return comparator.compare(o2.getDateTime(), o1.getDateTime());
+                if (c != null) {
+                    int complaintId = c.getId();
+                    int index = -1;
+                    for (int i = 0; i < complaints.size(); i++) {
+                        if (complaints.get(i).getId() == complaintId) {
+                            index = i;
+                            break;
                         }
                     }
-                });
-                adapter.setComplaints(complaints);
+                    if (index != -1) {
+                        complaints.set(index, c);
+                        Collections.sort(complaints, new Comparator<Complaint>() {
+                            @Override
+                            public int compare(Complaint o1, Complaint o2) {
+                                if (o1.getComplaintStatus() != o2.getComplaintStatus()) {
+                                    return o1.getComplaintStatus() - o2.getComplaintStatus();
+                                } else {
+                                    DateTimeComparator comparator = DateTimeComparator.getDateOnlyInstance();
+                                    return comparator.compare(o2.getDateTime(), o1.getDateTime());
+                                }
+                            }
+                        });
+                        adapter.setComplaints(complaints);
+                    }
+                }
             }
         }
-    }*/
+
+    }
 
     private void populateViews() {
         final LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
@@ -184,9 +172,9 @@ public class CaretakerComplaintsListFragment extends Fragment {
         adapter.setOnItemClickCallback(new IComplaintItemClickCallback() {
             @Override
             public void onClick(Complaint complaint) {
-                /*Intent intent = new Intent(getContext(), StudentComplaintDetailActivity.class);
+                Intent intent = new Intent(getContext(), CaretakerComplaintDetailActivity.class);
                 intent.putExtra(Constants.EXTRA_COMPLAINT, Parcels.wrap(complaint));
-                startActivityForResult(intent, Constants.REQUEST_CODE_VIEW_COMPLAINT_DETAIL);*/
+                startActivityForResult(intent, Constants.REQUEST_CODE_VIEW_COMPLAINT_DETAIL);
             }
         });
 

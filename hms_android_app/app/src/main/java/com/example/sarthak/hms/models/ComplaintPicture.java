@@ -2,33 +2,27 @@ package com.example.sarthak.hms.models;
 
 import org.parceler.Parcel;
 
+import java.util.List;
+
 @Parcel
 public class ComplaintPicture {
-    int id;
-    Complaint complaint;
-    String url;
 
-    public int getId() {
-        return id;
+    String data;
+    String fileName;
+
+    public String getData() {
+        return data;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setData(String data) {
+        this.data = data;
     }
 
-    public Complaint getComplaint() {
-        return complaint;
+    public String getFileName() {
+        return fileName;
     }
 
-    public void setComplaint(Complaint complaint) {
-        this.complaint = complaint;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 }

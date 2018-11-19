@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using hms_web_api.Dao.Impl;
 using hms_web_api.Models;
 using Microsoft.AspNetCore.Http;
@@ -14,7 +15,7 @@ namespace hms_web_api.Controllers {
     public class ComplaintsController {
 
         private readonly string PICTURE_UPLOAD_PATH = "C:\\Users\\Sarthak\\hms\\complaint_pictures";
-        
+
         [HttpGet("student/{sid}")]
         public ActionResult<List<Complaint>> GetComplaintsByStudent(int sid, [FromQuery(Name = "len")] int len) {
             var dao = new ComplaintsDao();
@@ -26,7 +27,7 @@ namespace hms_web_api.Controllers {
             var dao = new ComplaintsDao();
             return dao.GetComplaintsByCaretaker(cid, len);
         }
-        
+
         [HttpGet("{id}")]
         public ActionResult<Complaint> GetComplaintById(int id) {
             var dao = new ComplaintsDao();
@@ -65,15 +66,15 @@ namespace hms_web_api.Controllers {
         }
 
         [HttpPost("pictures/{cid}")]
-        public ActionResult<List<string>> UploadComplaintPictures([FromForm(Name = "pictures")] IEnumerable<IFormFile> pictures, int cid) {
+        public ActionResult<List<string>> UploadComplaintPictures([FromBody] List<ComplaintPicture> pictures, int cid) {
             Directory.CreateDirectory(PICTURE_UPLOAD_PATH);
             var pictureNames = new List<string>();
             foreach (var picture in pictures) {
-                if (picture.Length > 0) {
+                if (picture.Data.Length > 0) {
                     var fileName = $"CID_{cid}_{Guid.NewGuid()}{Path.GetExtension(picture.FileName)}";
-                    using (var stream = new FileStream(Path.Combine(PICTURE_UPLOAD_PATH, fileName), FileMode.Create)) {
-                        picture.CopyTo(stream);
-                    }
+                    var filePath = Path.Combine(PICTURE_UPLOAD_PATH, fileName);
+                    var bytes = Convert.FromBase64String(picture.Data);
+                    File.WriteAllBytes(filePath, bytes);
                     pictureNames.Add($"/api/complaints/pictures/get/{fileName}");
                 }
             }
@@ -83,10 +84,17 @@ namespace hms_web_api.Controllers {
         }
 
         [HttpGet("pictures/get/{fileName}")]
-        public ActionResult GetPicture(string fileName) {
+        public async Task<IActionResult> GetPicture(string fileName) {
             var filePath = Path.Combine(PICTURE_UPLOAD_PATH, fileName);
-            var image = File.OpenRead(filePath);
-            return new FileStreamResult(image, "image/jpeg");
+            var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read, 4096,
+                FileOptions.Asynchronous | FileOptions.SequentialScan);
+            return new FileStreamResult(stream, "application/octet-stream");
+        }
+
+        [HttpPut("resolve/{id}")]
+        public ActionResult<Complaint> MarkComplaintAsResolved(int id) {
+            var dao = new ComplaintsDao();
+            return dao.MarkComplaintAsResolved(id);
         }
 
     }

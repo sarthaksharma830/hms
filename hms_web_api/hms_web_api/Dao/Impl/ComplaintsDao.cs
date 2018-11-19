@@ -79,6 +79,8 @@ namespace hms_web_api.Dao.Impl {
                         c.AppointmentToTimePreference = null;
                     }
 
+                    c.Pictures = GetComplaintPictures(c.Id);
+
                     complaints.Add(c);
                 }
 
@@ -97,7 +99,21 @@ namespace hms_web_api.Dao.Impl {
                     var c = new Complaint() {
                         Id = int.Parse(reader["id"].ToString()),
                         Title = reader["title"].ToString(),
-                        Student = new Student() {Id = int.Parse(reader["student_id"].ToString())},
+                        Student = new Student() {
+                            Id = int.Parse(reader["student_id"].ToString()),
+                            Name = reader["student_name"].ToString(),
+                            Rollno = reader["student_rollno"].ToString(),
+                            PersonalContact = reader["student_personal_contact"].ToString(),
+                            ParentContact =  reader["student_parent_contact"].ToString(),
+                            Gender =  ((BitArray) reader["student_gender"]).Get(0) ? 'M' : 'F',
+                            Email = reader["student_email"].ToString(),
+                            Hostel = new Hostel() {
+                                Id = int.Parse(reader["student_hostel_id"].ToString()),
+                                Name = reader["student_hostel_name"].ToString(),
+                                Type = ((BitArray) reader["student_hostel_type"]).Get(0) ? "Boys" : "Girls",
+                                RoomNumber = reader["student_room_number"].ToString()
+                            }
+                        },
                         ComplaintCategory = new ComplaintCategory() {
                             Id = int.Parse(reader["complaint_category_id"].ToString()),
                             Name = reader["complaint_category_name"].ToString(),
@@ -371,6 +387,23 @@ namespace hms_web_api.Dao.Impl {
             }
         }
 
+        public Complaint MarkComplaintAsResolved(int id) {
+            using (var connection = SqlConnectionManager.GetConnection())
+            using (var command = new NpgsqlCommand()) {
+                command.Connection = connection;
+                command.CommandText = "select * from markComplaintAsResolved(@cid)";
+                command.Parameters.AddWithValue("@cid", id);
+                var reader = command.ExecuteReader();
+                if (reader.Read()) {
+                    if (reader.GetBoolean(0)) {
+                        return GetComplaintById(id);
+                    }
+                }
+
+                return null;
+            }
+        }
+
         public List<string> GetComplaintPictures(int id) {
             using (var connection = SqlConnectionManager.GetConnection())
             using (var command = new NpgsqlCommand()) {
@@ -466,6 +499,8 @@ namespace hms_web_api.Dao.Impl {
                     else {
                         c.AppointmentToTimePreference = null;
                     }
+                    
+                    c.Pictures = GetComplaintPictures(c.Id);
 
                     complaints.Add(c);
                 }
@@ -492,6 +527,7 @@ namespace hms_web_api.Dao.Impl {
             }
         }
 
+        
     }
 
 }

@@ -20,6 +20,8 @@ namespace hms_web_api.Dao.Interfaces {
 
         Complaint CreateComplaint(Complaint complaint);
 
+        Complaint MarkComplaintAsResolved(int id);
+
     }
 
 }

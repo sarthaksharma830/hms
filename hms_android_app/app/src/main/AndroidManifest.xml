@@ -38,6 +38,9 @@
         <activity
             android:name=".activities.CaretakerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.CaretakerComplaintDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

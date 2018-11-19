@@ -7,19 +7,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
+import com.example.sarthak.hms.Constants;
 import com.example.sarthak.hms.R;
-import com.example.sarthak.hms.models.ComplaintPicture;
 
 import java.util.List;
 
 public class ComplaintPicturesListAdapter extends RecyclerView.Adapter<ComplaintPicturesListAdapter.MyViewHolder> {
 
-    private List<ComplaintPicture> pictures;
+    private List<String> pictures;
     private Context context;
 
-    public ComplaintPicturesListAdapter(List<ComplaintPicture> pictures) {
+    public ComplaintPicturesListAdapter(List<String> pictures) {
         this.pictures = pictures;
     }
 
@@ -32,7 +34,11 @@ public class ComplaintPicturesListAdapter extends RecyclerView.Adapter<Complaint
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int i) {
-
+        Glide.with(context)
+                .load(Constants.API_IP_ADDRESS + pictures.get(i))
+                .apply(RequestOptions.centerCropTransform())
+                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE))
+                .into(holder.picture);
     }
 
     @Override

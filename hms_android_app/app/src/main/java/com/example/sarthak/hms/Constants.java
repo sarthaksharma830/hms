@@ -8,5 +8,7 @@ public class Constants {
     public static final String EXTRA_COMPLAINT_ID = "EXTRA_COMPLAINT_ID";
     public static final int REQUEST_CODE_NEW_COMPLAINT = 3;
     public static final String EXTRA_CARETAKER_USERNAME = "EXTRA_CARETAKER_USERNAME";
-    public static String API_BASE_URL = "http://192.168.43.195:5000/api/";
+    public static final int REQUEST_PICK_IMAGES = 4;
+    public static String API_IP_ADDRESS = "http://192.168.43.195:5000";
+    public static String API_BASE_URL = API_IP_ADDRESS + "/api/";
 }

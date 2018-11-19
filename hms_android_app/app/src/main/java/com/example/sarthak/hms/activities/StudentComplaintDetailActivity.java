@@ -2,12 +2,12 @@ package com.example.sarthak.hms.activities;
 
 import android.content.Intent;
 import android.graphics.Rect;
+import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -26,10 +26,8 @@ import com.example.sarthak.hms.R;
 import com.example.sarthak.hms.adapters.ComplaintPicturesListAdapter;
 import com.example.sarthak.hms.callbacks.IAppointmentsListCallback;
 import com.example.sarthak.hms.callbacks.IComplaintCallback;
-import com.example.sarthak.hms.callbacks.IComplaintPicturesListCallback;
 import com.example.sarthak.hms.models.Appointment;
 import com.example.sarthak.hms.models.Complaint;
-import com.example.sarthak.hms.models.ComplaintPicture;
 import com.example.sarthak.hms.services.AppointmentsService;
 import com.example.sarthak.hms.services.ComplaintsService;
 
@@ -61,7 +59,7 @@ public class StudentComplaintDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_complaint_detail);
+        setContentView(R.layout.activity_student_complaint_detail);
 
         // Applying ActionBar
         final Toolbar toolbar = findViewById(R.id.complaint_detail_toolbar);
@@ -198,31 +196,18 @@ public class StudentComplaintDetailActivity extends AppCompatActivity {
         noComplaintPictures.setVisibility(View.GONE);
         picturesProgressBar.setVisibility(View.VISIBLE);
 
-        ComplaintsService service = new ComplaintsService();
-        service.getComplaintPictures(complaint.getId(), new IComplaintPicturesListCallback() {
-            @Override
-            public void onComplaintPicturesList(List<ComplaintPicture> complaintPictures) {
+        if (complaint.getPictures() == null || complaint.getPictures().size() == 0) {
+            complaintPicturesRecyclerView.setVisibility(View.GONE);
+            noComplaintPictures.setVisibility(View.VISIBLE);
+        } else {
+            complaintPicturesRecyclerView.setLayoutManager(new GridLayoutManager(StudentComplaintDetailActivity.this, 4));
+            ComplaintPicturesListAdapter adapter = new ComplaintPicturesListAdapter(complaint.getPictures());
+            complaintPicturesRecyclerView.setAdapter(adapter);
+            complaintPicturesRecyclerView.setVisibility(View.VISIBLE);
+            noComplaintPictures.setVisibility(View.GONE);
+        }
 
-                if (complaintPictures == null || complaintPictures.size() == 0) {
-                    complaintPicturesRecyclerView.setVisibility(View.GONE);
-                    noComplaintPictures.setVisibility(View.VISIBLE);
-                } else {
-                    complaintPicturesRecyclerView.setLayoutManager(new GridLayoutManager(StudentComplaintDetailActivity.this, 4));
-                    ComplaintPicturesListAdapter adapter = new ComplaintPicturesListAdapter(complaintPictures);
-                    complaintPicturesRecyclerView.setAdapter(adapter);
-                    complaintPicturesRecyclerView.setVisibility(View.VISIBLE);
-                    noComplaintPictures.setVisibility(View.GONE);
-                }
-
-                picturesProgressBar.setVisibility(View.GONE);
-            }
-
-            @Override
-            public void onError(Exception e) {
-                Toast.makeText(StudentComplaintDetailActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                picturesProgressBar.setVisibility(View.GONE);
-            }
-        });
+        picturesProgressBar.setVisibility(View.GONE);
 
         nestedScrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
             @Override
@@ -280,7 +265,7 @@ public class StudentComplaintDetailActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_complaint_detail, menu);
+        getMenuInflater().inflate(R.menu.menu_student_complaint_detail, menu);
         return true;
     }
 

@@ -20,11 +20,12 @@ public class ChangeDevConfigActivity extends AppCompatActivity {
         final EditText baseUrlEditText = findViewById(R.id.baseUrlEditText);
         Button changeBaseUrlButton = findViewById(R.id.changeBaseUrl);
 
-        baseUrlEditText.setText(Constants.API_BASE_URL);
+        baseUrlEditText.setText(Constants.API_IP_ADDRESS);
         changeBaseUrlButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Constants.API_BASE_URL = baseUrlEditText.getText().toString();
+                Constants.API_IP_ADDRESS = baseUrlEditText.getText().toString();
+                Constants.API_BASE_URL = Constants.API_IP_ADDRESS + "/api/";
             }
         });
     }

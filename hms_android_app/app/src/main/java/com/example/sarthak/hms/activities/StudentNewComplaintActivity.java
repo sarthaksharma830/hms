@@ -5,17 +5,22 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.net.Uri;
+import android.support.annotation.Nullable;
+import android.support.design.button.MaterialButton;
 import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatEditText;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.AppCompatSpinner;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -30,17 +35,22 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.sarthak.hms.Constants;
 import com.example.sarthak.hms.Persistence;
 import com.example.sarthak.hms.R;
+import com.example.sarthak.hms.Utils;
 import com.example.sarthak.hms.adapters.CategorySpinnerAdapter;
+import com.example.sarthak.hms.adapters.ComplaintPicturesUriListAdapter;
 import com.example.sarthak.hms.adapters.TitleChipsAdapter;
 import com.example.sarthak.hms.callbacks.IComplaintCallback;
 import com.example.sarthak.hms.callbacks.IComplaintCategoriesListCallback;
+import com.example.sarthak.hms.callbacks.IComplaintPicturesListCallback;
 import com.example.sarthak.hms.callbacks.IComplaintTitleListCallback;
 import com.example.sarthak.hms.callbacks.TitleChipOnClickCallback;
 import com.example.sarthak.hms.models.Complaint;
 import com.example.sarthak.hms.models.ComplaintCategory;
+import com.example.sarthak.hms.models.ComplaintPicture;
 import com.example.sarthak.hms.models.Student;
 import com.example.sarthak.hms.services.ComplaintsService;
 
@@ -48,6 +58,9 @@ import org.joda.time.DateTimeComparator;
 import org.joda.time.LocalDateTime;
 import org.parceler.Parcels;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -71,7 +84,10 @@ public class StudentNewComplaintActivity extends AppCompatActivity implements Da
     private TextView date, fromTime, toTime;
     private Date chosenDate = null;
     private Date chosenFromTime = null, chosenToTime = null;
-    private List<String> pictures = new ArrayList<>();
+    private List<Uri> pictures = new ArrayList<>();
+    private MaterialButton addPicturesButton;
+    private RecyclerView picturesRecyclerView;
+    private ComplaintPicturesUriListAdapter picturesAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +100,6 @@ public class StudentNewComplaintActivity extends AppCompatActivity implements Da
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(VectorDrawableCompat.create(getResources(), R.drawable.ic_clear_black_24dp, getTheme()));
-
         // Preparing Views
         prepareViews();
 
@@ -253,6 +268,40 @@ public class StudentNewComplaintActivity extends AppCompatActivity implements Da
                 timePickerDialog.show();
             }
         });
+
+        picturesRecyclerView.setLayoutManager(new GridLayoutManager(StudentNewComplaintActivity.this, 4));
+        picturesAdapter = new ComplaintPicturesUriListAdapter(pictures);
+        picturesRecyclerView.setAdapter(picturesAdapter);
+
+        addPicturesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                getIntent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+                getIntent.setType("image/*");
+                Intent chooserIntent = Intent.createChooser(getIntent, "Select Image");
+                startActivityForResult(Intent.createChooser(chooserIntent, "Select Pictures"), Constants.REQUEST_PICK_IMAGES);
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == Constants.REQUEST_PICK_IMAGES) {
+            if (resultCode == RESULT_OK) {
+                List<Uri> uris = new ArrayList<>();
+                if (data.getClipData() != null) {
+                    int count = data.getClipData().getItemCount();
+                    for (int i = 0; i < count; i++) {
+                        Uri imageUri = data.getClipData().getItemAt(i).getUri();
+                        uris.add(imageUri);
+                    }
+                } else if (data.getData() != null) {
+                    uris.add(data.getData());
+                }
+                picturesAdapter.addPictures(uris);
+            }
+        }
     }
 
     private void prepareViews() {
@@ -269,6 +318,8 @@ public class StudentNewComplaintActivity extends AppCompatActivity implements Da
         date = findViewById(R.id.date);
         fromTime = findViewById(R.id.fromTime);
         toTime = findViewById(R.id.toTime);
+        addPicturesButton = findViewById(R.id.addPicturesButton);
+        picturesRecyclerView = findViewById(R.id.picturesRecyclerView);
     }
 
     private boolean checkErrors() {
@@ -330,18 +381,46 @@ public class StudentNewComplaintActivity extends AppCompatActivity implements Da
                 c.setAppointmentDatePreference(chosenDate);
                 c.setAppointmentFromTimePreference(chosenFromTime);
                 c.setAppointmentToTimePreference(chosenToTime);
-                c.setPictures(pictures);
+                c.setPictures(new ArrayList<String>());
 
-                ComplaintsService service = new ComplaintsService();
+                final ComplaintsService service = new ComplaintsService();
                 service.createComplaint(c, new IComplaintCallback() {
                     @Override
-                    public void onComplaint(Complaint complaint) {
-                        Toast.makeText(StudentNewComplaintActivity.this, "Complaint Registered Successfully!", Toast.LENGTH_SHORT).show();
-                        Intent data = new Intent();
-                        data.putExtra(Constants.EXTRA_COMPLAINT, Parcels.wrap(complaint));
-                        setResult(RESULT_OK, data);
-                        item.setActionView(null);
-                        finish();
+                    public void onComplaint(final Complaint complaint) {
+
+                        try {
+                            if (pictures.size() > 0) {
+                                List<ComplaintPicture> complaintPictures = Utils.uriListToPicturesList(StudentNewComplaintActivity.this, pictures);
+                                service.uploadComplaintPictures(complaint.getId(), complaintPictures, new IComplaintPicturesListCallback() {
+                                    @Override
+                                    public void onPictures(List<String> picturesList) {
+                                        complaint.setPictures(picturesList);
+                                        Toast.makeText(StudentNewComplaintActivity.this, "Complaint Registered Successfully!", Toast.LENGTH_SHORT).show();
+                                        Intent data = new Intent();
+                                        data.putExtra(Constants.EXTRA_COMPLAINT, Parcels.wrap(complaint));
+                                        setResult(RESULT_OK, data);
+                                        item.setActionView(null);
+                                        finish();
+                                    }
+
+                                    @Override
+                                    public void onError(Exception e) {
+                                        Toast.makeText(StudentNewComplaintActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                        item.setActionView(null);
+                                    }
+                                });
+                            } else {
+                                Toast.makeText(StudentNewComplaintActivity.this, "Complaint Registered Successfully!", Toast.LENGTH_SHORT).show();
+                                Intent data = new Intent();
+                                data.putExtra(Constants.EXTRA_COMPLAINT, Parcels.wrap(complaint));
+                                setResult(RESULT_OK, data);
+                                item.setActionView(null);
+                                finish();
+                            }
+                        } catch (IOException e) {
+                            Toast.makeText(StudentNewComplaintActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                            item.setActionView(null);
+                        }
                     }
 
                     @Override

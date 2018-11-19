@@ -8,7 +8,6 @@
         android:id="@+id/picture"
         android:layout_width="88dp"
         android:layout_height="88dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/knob" />
+        android:scaleType="centerCrop" />
 
 </RelativeLayout>

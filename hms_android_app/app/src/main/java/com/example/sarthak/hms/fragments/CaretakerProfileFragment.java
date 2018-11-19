@@ -3,6 +3,7 @@ package com.example.sarthak.hms.fragments;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.os.Parcel;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -30,6 +31,7 @@ import com.example.sarthak.hms.Constants;
 import com.example.sarthak.hms.Persistence;
 import com.example.sarthak.hms.R;
 import com.example.sarthak.hms.Utils;
+import com.example.sarthak.hms.activities.CaretakerComplaintDetailActivity;
 import com.example.sarthak.hms.activities.StudentComplaintDetailActivity;
 import com.example.sarthak.hms.adapters.CaretakerComplaintsListAdapter;
 import com.example.sarthak.hms.adapters.RecentComplaintsListAdapter;
@@ -44,8 +46,11 @@ import com.example.sarthak.hms.services.CaretakersService;
 import com.example.sarthak.hms.services.ComplaintsService;
 import com.github.akashandroid90.imageletter.MaterialLetterIcon;
 
+import org.joda.time.DateTimeComparator;
 import org.parceler.Parcels;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
@@ -123,39 +128,6 @@ public class CaretakerProfileFragment extends Fragment {
         return rootView;
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == Constants.REQUEST_CODE_VIEW_COMPLAINT_DETAIL) {
-            if (resultCode == Constants.RESULT_CODE_COMPLAINT_UPDATED) {
-                final int complaintId = data.getIntExtra(Constants.EXTRA_COMPLAINT_ID, -1);
-                if (complaintId != -1) {
-                    ComplaintsService service = new ComplaintsService();
-                    service.getComplaintById(complaintId, new IComplaintCallback() {
-                        @Override
-                        public void onComplaint(Complaint complaint) {
-                            int index = -1;
-                            for (int i = 0; i < recentComplaints.size(); i++) {
-                                if (recentComplaints.get(i).getId() == complaintId) {
-                                    index = i;
-                                    break;
-                                }
-                            }
-                            if (index != -1) {
-                                recentComplaints.set(index, complaint);
-                                adapter.setComplaints(recentComplaints);
-                            }
-                        }
-
-                        @Override
-                        public void onError(Exception e) {
-                            Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }
-            }
-        }
-    }
-
     private void populateViews() {
         toolbarTitle.setText(caretaker.getName());
         nameTextView.setText(caretaker.getName());
@@ -197,18 +169,20 @@ public class CaretakerProfileFragment extends Fragment {
                 adapter.setOnItemClickCallback(new IComplaintItemClickCallback() {
                     @Override
                     public void onClick(Complaint complaint) {
-                        Toast.makeText(getContext(), "Clicked on Complaint", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getContext(), CaretakerComplaintDetailActivity.class);
+                        intent.putExtra(Constants.EXTRA_COMPLAINT, Parcels.wrap(complaint));
+                        startActivityForResult(intent, Constants.REQUEST_CODE_VIEW_COMPLAINT_DETAIL);
                     }
                 });
                 recentComplaintsList.setAdapter(adapter);
                 seeMoreRow.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        /*navigationView.setCheckedItem(R.id.nav_complaints);
+                        navigationView.setCheckedItem(R.id.nav_complaints);
                         FragmentManager manager = getActivity().getSupportFragmentManager();
                         FragmentTransaction transaction = manager.beginTransaction();
-                        transaction.replace(R.id.fragment_container, new StudentComplaintsListFragment());
-                        transaction.commit();*/
+                        transaction.replace(R.id.fragment_container, new CaretakerComplaintsListFragment());
+                        transaction.commit();
                     }
                 });
                 recentComplaintsProgressBar.setVisibility(View.GONE);
@@ -224,6 +198,41 @@ public class CaretakerProfileFragment extends Fragment {
 
         profileProgressBar.setVisibility(View.INVISIBLE);
         nestedScrollView.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == Constants.REQUEST_CODE_VIEW_COMPLAINT_DETAIL) {
+            if (resultCode == Constants.RESULT_CODE_COMPLAINT_UPDATED) {
+                Complaint c = Parcels.unwrap(data.getParcelableExtra(Constants.EXTRA_COMPLAINT));
+                if (c != null) {
+                    int complaintId = c.getId();
+                    int index = -1;
+                    for (int i = 0; i < recentComplaints.size(); i++) {
+                        if (recentComplaints.get(i).getId() == complaintId) {
+                            index = i;
+                            break;
+                        }
+                    }
+                    if (index != -1) {
+                        recentComplaints.set(index, c);
+                        Collections.sort(recentComplaints, new Comparator<Complaint>() {
+                            @Override
+                            public int compare(Complaint o1, Complaint o2) {
+                                if (o1.getComplaintStatus() != o2.getComplaintStatus()) {
+                                    return o1.getComplaintStatus() - o2.getComplaintStatus();
+                                } else {
+                                    DateTimeComparator comparator = DateTimeComparator.getDateOnlyInstance();
+                                    return comparator.compare(o2.getDateTime(), o1.getDateTime());
+                                }
+                            }
+                        });
+                        adapter.setComplaints(recentComplaints);
+                    }
+                }
+            }
+        }
+
     }
 
     private void prepareViews(View rootView) {

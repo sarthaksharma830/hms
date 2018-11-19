@@ -28,6 +28,18 @@ namespace hms_web_api.Controllers {
             return dao.GetAppointmentsByComplaint(cid);
         }
 
+        [HttpPost]
+        public ActionResult<List<Appointment>> CreateAppointment([FromBody] Appointment appointment) {
+            var dao = new AppointmentsDao();
+            return dao.CreateAppointment(appointment);
+        }
+
+        [HttpPut]
+        public ActionResult<List<Appointment>> UpdateAppointment([FromBody] Appointment appointment) {
+            var dao = new AppointmentsDao();
+            return dao.UpdateAppointment(appointment);
+        }
+
     }
 
 }

@@ -8,6 +8,8 @@ namespace hms_web_api.Dao.Interfaces {
         List<Appointment> GetPendingAppointmentsByStudent(int sid);
         List<Appointment> GetCompletedAppointmentsByStudent(int sid);
         List<Appointment> GetAppointmentsByComplaint(int cid);
+        List<Appointment> CreateAppointment(Appointment appointment);
+        List<Appointment> UpdateAppointment(Appointment appointment);
 
     }
 

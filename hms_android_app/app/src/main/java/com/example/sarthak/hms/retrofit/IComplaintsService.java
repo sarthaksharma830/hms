@@ -33,9 +33,6 @@ public interface IComplaintsService {
     @PUT("complaints/star/{cid}/{star}")
     Call<Complaint> updateComplaintStarStatus(@Path("cid") int cid, @Path("star") int star);
 
-    @GET("complaints/pictures/{id}")
-    Call<List<ComplaintPicture>> getComplaintPictures(@Path("id") int id);
-
     @GET("complaints/categories")
     Call<List<ComplaintCategory>> getAllComplaintCategories();
 
@@ -44,4 +41,10 @@ public interface IComplaintsService {
 
     @POST("complaints")
     Call<Complaint> createComplaint(@Body Complaint complaint);
+
+    @POST("complaints/pictures/{cid}")
+    Call<List<String>> uploadComplaintPictures(@Body List<ComplaintPicture> pictures, @Path("cid") int cid);
+
+    @PUT("complaints/resolve/{id}")
+    Call<Complaint> markComplaintAsResolved(@Path("id") int id);
 }

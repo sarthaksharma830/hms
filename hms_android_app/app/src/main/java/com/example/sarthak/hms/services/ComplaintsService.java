@@ -1,5 +1,6 @@
 package com.example.sarthak.hms.services;
 
+import android.net.Uri;
 import android.os.Handler;
 import android.util.Log;
 
@@ -12,6 +13,9 @@ import com.example.sarthak.hms.models.*;
 import com.example.sarthak.hms.retrofit.IComplaintsService;
 import com.example.sarthak.hms.retrofit.RetrofitProvider;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -254,26 +258,6 @@ public class ComplaintsService {
         }
     }
 
-    public void getComplaintPictures(int id, final IComplaintPicturesListCallback callback) {
-        Retrofit retrofit = RetrofitProvider.newInstance();
-        IComplaintsService service = retrofit.create(IComplaintsService.class);
-        service.getComplaintPictures(id).enqueue(new Callback<List<ComplaintPicture>>() {
-            @Override
-            public void onResponse(Call<List<ComplaintPicture>> call, Response<List<ComplaintPicture>> response) {
-                if (response.errorBody() != null) {
-                    callback.onError(new Exception(response.message()));
-                } else {
-                    callback.onComplaintPicturesList(response.body());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<ComplaintPicture>> call, Throwable t) {
-                callback.onError(new Exception(t.toString()));
-            }
-        });
-    }
-
     public void getDefaultComplaintTitles(int id, final IComplaintTitleListCallback callback) {
         Retrofit retrofit = RetrofitProvider.newInstance();
         IComplaintsService service = retrofit.create(IComplaintsService.class);
@@ -349,6 +333,46 @@ public class ComplaintsService {
 
             @Override
             public void onFailure(Call<List<Complaint>> call, Throwable t) {
+                callback.onError(new Exception(t.toString()));
+            }
+        });
+    }
+
+    public void uploadComplaintPictures(int cid, List<ComplaintPicture> pictures, final IComplaintPicturesListCallback callback) {
+        Retrofit retrofit = RetrofitProvider.newInstance();
+        IComplaintsService service = retrofit.create(IComplaintsService.class);
+        service.uploadComplaintPictures(pictures, cid).enqueue(new Callback<List<String>>() {
+            @Override
+            public void onResponse(Call<List<String>> call, Response<List<String>> response) {
+                if (response.isSuccessful()) {
+                    callback.onPictures(response.body());
+                } else {
+                    callback.onError(new Exception(response.message()));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<String>> call, Throwable t) {
+                callback.onError(new Exception(t.toString()));
+            }
+        });
+    }
+
+    public void markComplaintAsResolved(int id, final IComplaintCallback callback) {
+        Retrofit retrofit = RetrofitProvider.newInstance();
+        IComplaintsService service = retrofit.create(IComplaintsService.class);
+        service.markComplaintAsResolved(id).enqueue(new Callback<Complaint>() {
+            @Override
+            public void onResponse(Call<Complaint> call, Response<Complaint> response) {
+                if (response.isSuccessful()) {
+                    callback.onComplaint(response.body());
+                } else {
+                    callback.onError(new Exception(response.message()));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Complaint> call, Throwable t) {
                 callback.onError(new Exception(t.toString()));
             }
         });

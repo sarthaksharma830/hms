@@ -19,6 +19,7 @@ public class Complaint {
     Date appointmentDatePreference;
     Date appointmentFromTimePreference;
     Date appointmentToTimePreference;
+    List<String> pictures;
 
     public List<String> getPictures() {
         return pictures;
@@ -27,8 +28,6 @@ public class Complaint {
     public void setPictures(List<String> pictures) {
         this.pictures = pictures;
     }
-
-    List<String> pictures;
 
     public int getId() {
         return id;
