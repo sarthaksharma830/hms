@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.graphics.Rect;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.button.MaterialButton;
 import android.support.design.widget.AppBarLayout;
@@ -76,6 +77,7 @@ public class CaretakerComplaintDetailActivity extends AppCompatActivity {
     private ImageView editAppointmentCancel, editAppointmentDone;
     private SimpleDateFormat longDateFormat = new SimpleDateFormat("EEEE, MMMM d, YYYY", Locale.getDefault());
     private SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a", Locale.getDefault());
+    private ImageView callStudentButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,6 +145,14 @@ public class CaretakerComplaintDetailActivity extends AppCompatActivity {
         studentRoomNumber.setText(complaint.getStudent().getHostel().getRoomNumber() + " • Hostel " + Persistence.caretaker.getHostel().getName());
         studentLetterIcon.setLetter((complaint.getStudent().getName().charAt(0) + "").toUpperCase());
         studentLetterIcon.setShapeColor(ContextCompat.getColor(this, Utils.getRandomColor()));
+        callStudentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:" + complaint.getStudent().getPersonalContact()));
+                startActivity(intent);
+            }
+        });
         if (complaint.getAppointmentDatePreference() != null)
             prefDate.setText(longDateFormat.format(complaint.getAppointmentDatePreference()));
         if (complaint.getAppointmentFromTimePreference() != null)
@@ -654,6 +664,7 @@ public class CaretakerComplaintDetailActivity extends AppCompatActivity {
         finishEditAppointmentLayout = findViewById(R.id.finishEditAppointmentLayout);
         editAppointmentDone = findViewById(R.id.editAppointmentDone);
         editAppointmentCancel = findViewById(R.id.editAppointmentCancel);
+        callStudentButton = findViewById(R.id.callStudent);
     }
 
     @Override
